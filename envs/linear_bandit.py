@@ -7,6 +7,7 @@ class LinearBandit:
         state_dim: int,
         action_num: int,
         reward_param: np.ndarray,
+        score_param: np.ndarray,
         feature_func,
         num_trials_for_eval: int = None,
     ) -> None:
@@ -14,6 +15,7 @@ class LinearBandit:
         self.action_num = action_num
         self.action_space = [action_idx for action_idx in range(action_num)]
         self.reward_param = reward_param
+        self.score_param = score_param
         self.feature_func = feature_func
         self.cur_state = np.random.uniform(0, 1, self.state_dim)
 
@@ -31,7 +33,22 @@ class LinearBandit:
         ), "The feature is invalid."
         rew = np.dot(feature, self.reward_param)
         return rew
-
+    
+    def score(self, action_pref, action_nonpref) -> float:
+        assert action_pref in self.action_space, "The input action_one is invalid."
+        assert action_nonpref in self.action_space, "The input action_two is invalid."
+        
+        feature_one = self.feature_func(self.cur_state, action_pref)
+        feature_two = self.feature_func(self.cur_state, action_nonpref)
+            
+        feature = np.concatenate([feature_one, feature_two])
+        assert np.shape(feature) == np.shape(
+            self.score_param
+        ), "The feature_one is invalid." 
+        
+        score = np.dot(feature, self.score_param)
+        return score
+    
     def get_opt_policy(self):
         def opt_policy(state: np.ndarray):
             # compute the optimal policy by enumerating the action space
@@ -42,6 +59,7 @@ class LinearBandit:
                 ],
                 dtype=np.float32,
             )
+           
             assert np.shape(feature_mat) == (
                 self.action_num,
                 self.reward_param.size,

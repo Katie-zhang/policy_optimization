@@ -20,6 +20,7 @@ do
     --pg_num_iters ${PG_NUM_ITERS} \
     --reg_coef ${REG_COEF} \
     --dpo_adaptive \
+    --sppo_adaptive \
     --pg_adaptive \
     --seed ${seed} \
     --flip_feature \

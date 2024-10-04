@@ -5,7 +5,7 @@ from typing import List
 from envs.linear_bandit import LinearBandit
 
 Transition = collections.namedtuple(
-    "Transition", ["state", "action_0", "action_1", "reward_0", "reward_1", "pref"]
+    "Transition", ["state", "action_0", "action_1", "reward_0", "reward_1", "pref", "chosen_probs"]
 )
 
 
@@ -36,13 +36,20 @@ def collect_preference_data(
         )
         action_one, action_two = sampled_actions[0], sampled_actions[1]
         reward_one, reward_two = env.sample(action_one), env.sample(action_two)
-        # print(state, reward_one, reward_two, reward_two - reward_one)
 
         bernoulli_param = sigmoid(reward_two - reward_one)
         # pref=1 means that the second action is preferred over the first one
         pref = np.random.binomial(1, bernoulli_param, 1)[0]
+        
+        # define p(action_pref > action_nonpref|x)
+        if pref == 0:
+            score = env.score(action_one, action_two)   
+        elif pref == 1:
+            score = env.score(action_two, action_one)   
+        chosen_probs = sigmoid(score)
+        
         transition = Transition(
-            state, action_one, action_two, reward_one, reward_two, pref
+            state, action_one, action_two, reward_one, reward_two, pref, chosen_probs
         )
         pref_dataset.append(transition)
     return pref_dataset

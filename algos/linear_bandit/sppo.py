@@ -7,32 +7,29 @@ from utils.collect_data import Transition, ret_uniform_policy, collect_preferenc
 from utils.utils import softmax, sigmoid
 from utils.logger import Logger
 
-
-class DirectPolicyOptimization:
+class SelfPlayPreferenceOptimization:
     def __init__(
         self,
         state_dim: int,
         action_num: int,
         feature_dim: int,
         feature_func,
-        ref_policy,
-        reg_coef: float,
+        beta: float,  # beta=1/eta has a different meaning, and is usually chosen around 1e-3.
         step_size: float,
         num_iters: int,
         is_adaptive: bool = False,
         ada_coef: float = None,
         logger: Logger = None,
-    ) -> None:
-        self.state_dim = state_dim
+        ) -> None:
+        self.state_diim = state_dim
         self.action_num = action_num
         self.feature_dim = feature_dim
         self.feature_func = feature_func
+        self.beta = beta
         self.step_size = step_size
         self.num_iters = num_iters
-        self.ref_policy = ref_policy
-        self.reg_coef = reg_coef
         self.logger = logger
-
+        
         self.is_adaptive = is_adaptive
         self.ada_coef = ada_coef
         self.hist_grad_squared_norm = 0.0
@@ -62,20 +59,17 @@ class DirectPolicyOptimization:
             return prob
 
         return policy
-
-    def sample_action(self, state: np.ndarray) -> int:
-        prob = self.ret_action_prob(state)
-        sampled_act = np.random.choice(a=self.action_num, size=1, replace=True, p=prob)
-        return sampled_act
-
-    def update_once(self, dataset: List[Transition]) -> float:
+        
+        
+    def update_once(self, ref_policy, dataset: List[Transition]) -> float:
         grad = np.zeros_like(self.param)
         for transition in dataset:
-            state, action_one, action_two, pref = (
+            state, action_one, action_two, pref, chosen_probs = (
                 transition.state,
                 transition.action_0,
                 transition.action_1,
                 transition.pref,
+                transition.chosen_probs
             )
             pref_act = action_two if pref == 1 else action_one
             non_pref_act = action_two if pref == 0 else action_one
@@ -85,19 +79,18 @@ class DirectPolicyOptimization:
                 self.feature_func(state, non_pref_act),
             )
             cur_policy_act_prob = self.ret_action_prob(state)
-            ref_policy_act_prob = self.ref_policy(state)
-
-            log_ratio_diff = self.reg_coef * (
-                np.log(cur_policy_act_prob[pref_act] + 1e-6)
-                - np.log(ref_policy_act_prob[pref_act] + 1e-6)
-                - np.log(cur_policy_act_prob[non_pref_act] + 1e-6)
-                + np.log(ref_policy_act_prob[non_pref_act] + 1e-6)
-            )
-            coef = sigmoid(-log_ratio_diff)
-            neg_cur_data_grad = (
-                self.reg_coef * coef * (feat_pref_act - feat_non_pref_act)
-            )
-            grad -= neg_cur_data_grad
+            ref_policy_act_prob = ref_policy(state)
+            
+            logits_w = np.log(cur_policy_act_prob[pref_act] + 1e-6) - np.log(ref_policy_act_prob[pref_act] + 1e-6)
+            logits_l = np.log(cur_policy_act_prob[non_pref_act] + 1e-6) - np.log(ref_policy_act_prob[non_pref_act] + 1e-6)
+            
+            log_ratio_w = (logits_w - (1 / self.beta)*(chosen_probs - 0.5)) * 2
+            log_ratio_l = (logits_l - (1 / self.beta)*(1 - chosen_probs - 0.5)) * 2
+            
+            coef_w = 1 / np.log(cur_policy_act_prob[pref_act] + 1e-6)
+            coef_l = 1 / np.log(cur_policy_act_prob[non_pref_act] + 1e-6)
+            
+            grad +=  log_ratio_w * coef_w * feat_pref_act + log_ratio_l * coef_l * feat_non_pref_act 
 
         grad /= len(dataset)
         self.hist_grad_squared_norm += np.sum(np.square(grad))
@@ -107,8 +100,9 @@ class DirectPolicyOptimization:
             step_size = self.step_size
         self.param = self.param - step_size * grad
         return np.sqrt(np.sum(np.square(grad)))
-
-    def evaluate_loss(self, dataset: List[Transition], policy=None) -> float:
+        
+        
+    def evaluate_loss(self, ref_policy, dataset: List[Transition], policy=None) -> float:
         """
         Evaluate the loss on the dataset for any policy.
         """
@@ -117,35 +111,36 @@ class DirectPolicyOptimization:
 
         loss = 0.0
         for transition in dataset:
-            state, action_one, action_two, pref = (
+            state, action_one, action_two, pref, chosen_probs = (
                 transition.state,
                 transition.action_0,
                 transition.action_1,
                 transition.pref,
+                transition.chosen_probs
             )
             pref_act = action_two if pref == 1 else action_one
             non_pref_act = action_two if pref == 0 else action_one
 
             eval_policy_act_prob = policy(state)
-            ref_policy_act_prob = self.ref_policy(state)
+            ref_policy_act_prob = ref_policy(state)
             # if np.isclose(eval_policy_act_prob[pref_act], 0.) or np.isclose(eval_policy_act_prob[non_pref_act], 0.):
             #     print(eval_policy_act_prob[pref_act], eval_policy_act_prob[non_pref_act])
-            log_ratio_diff = self.reg_coef * (
-                np.log(eval_policy_act_prob[pref_act] + 1e-6)
-                - np.log(ref_policy_act_prob[pref_act] + 1e-6)
-                - np.log(eval_policy_act_prob[non_pref_act] + 1e-6)
-                + np.log(ref_policy_act_prob[non_pref_act] + 1e-6)
-            )
-
-            loss -= np.log(sigmoid(log_ratio_diff))
+            logits_w = np.log(eval_policy_act_prob[pref_act] + 1e-6) - np.log(ref_policy_act_prob[pref_act] + 1e-6)
+            logits_l = np.log(eval_policy_act_prob[non_pref_act] + 1e-6) - np.log(ref_policy_act_prob[non_pref_act] + 1e-6)
+            
+            loss_w = (logits_w - (1 / self.beta)*(chosen_probs - 0.5)) ** 2
+            loss_l = (logits_l - (1 / self.beta)*(1 - chosen_probs - 0.5)) ** 2
+            loss += (loss_w + loss_l)/2
         loss /= len(dataset)
         return loss
 
     def train(self, dataset: List[Transition], env: LinearBandit) -> float:
+        ref_policy = self.ret_policy()
         for step in range(self.num_iters):
-            grad_norm = self.update_once(dataset)
-            if step % 20 == 0:
-                loss = self.evaluate_loss(dataset)
+            grad_norm = self.update_once(ref_policy,dataset)
+            if step % 200 == 0:
+                ref_policy = self.ret_policy()
+                loss = self.evaluate_loss(ref_policy,dataset)
                 rew = self.evaluate_reward(env)
                 if self.logger:
                     self.logger.info(
@@ -159,66 +154,9 @@ class DirectPolicyOptimization:
         rew = self.evaluate_reward(env)
         rew = float(rew)
         return rew
-
-    def train_by_cvxpy(self, dataset: List[Transition], env: LinearBandit) -> float:
-        pref_features, non_pref_features = [], []
-        pref_ref_policy, non_pref_ref_policy = [], []
-        for transition in dataset:
-            state, action_one, action_two, pref = (
-                transition.state,
-                transition.action_0,
-                transition.action_1,
-                transition.pref,
-            )
-            if pref == 1:
-                pref_act = action_two
-                non_pref_act = action_one
-            else:
-                pref_act = action_one
-                non_pref_act = action_two
-
-            feature_pref_act, feature_non_pref_act = (
-                self.feature_func(state, pref_act),
-                self.feature_func(state, non_pref_act),
-            )
-            pref_features.append(feature_pref_act)
-            non_pref_features.append(feature_non_pref_act)
-
-            act_prob = self.ref_policy(state)
-            pref_ref_policy.append(act_prob[pref_act])
-            non_pref_ref_policy.append(act_prob[non_pref_act])
-
-        pref_features = np.stack(pref_features, axis=0)
-        non_pref_features = np.stack(non_pref_features, axis=0)
-
-        pref_ref_policy = np.stack(pref_ref_policy, axis=0)
-        non_pref_ref_policy = np.stack(non_pref_ref_policy, axis=0)
-
-        theta = cp.Variable(self.feature_dim)
-        log_policy_diff = (non_pref_features - pref_features) @ theta
-        log_ref_policy_diff = cp.log(non_pref_ref_policy) - cp.log(pref_ref_policy)
-
-        tmp = self.reg_coef * (log_policy_diff - log_ref_policy_diff)
-
-        loss = cp.sum(cp.logistic(tmp)) / len(dataset)
-        problem = cp.Problem(cp.Minimize(loss))
-        problem.solve(solver="ECOS", verbose=False)
-
-        theta_arr = np.array(theta.value)
-
-        self.param = theta_arr
-        loss, reward = self.evaluate_loss(dataset), self.evaluate_reward(env)
-        if self.logger:
-            self.logger.info("Train by cvxopt.")
-            self.logger.info(f"Loss calculated by cvxopt: {problem.value: .4f}.")
-            self.logger.info(f"Loss: {loss: .4f}, reward: {reward: .4f}.")
-        else:
-            print("Train by cvxopt.")
-            print(f"Loss calculated by cvxopt: {problem.value: .4f}.")
-            print(f"Loss: {loss: .4f}, reward: {reward: .4f}.")
-
-        return reward
-
+    
+    
+  
     def evaluate_reward(self, env: LinearBandit) -> float:
         policy = self.ret_policy()
         rew = env.evaluate_reward(policy)

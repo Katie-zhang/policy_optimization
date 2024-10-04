@@ -6,6 +6,7 @@ import yaml
 from algos.linear_bandit.mle import MLERewardLearning
 from algos.linear_bandit.pg import PolicyGradient
 from algos.linear_bandit.dpo import DirectPolicyOptimization
+from algos.linear_bandit.sppo import SelfPlayPreferenceOptimization
 from envs.linear_bandit import LinearBandit, ret_feature_func
 from utils.io_utils import save_code, save_config, create_log_dir
 from utils.logger import Logger
@@ -42,6 +43,12 @@ def parse_args():
     parser.add_argument("--dpo_adaptive", action="store_true")
     parser.add_argument("--dpo_ada_coef", type=float, default=1.0)
     parser.add_argument("--dpo_step_size", type=float, default=0.1)
+    
+    parser.add_argument("--sppo_num_iters", type=int, default=2000)
+    parser.add_argument("--sppo_adaptive", action="store_true")
+    parser.add_argument("--sppo_ada_coef", type=float, default=1.0)
+    parser.add_argument("--beta", type=float, default=0.1)
+    parser.add_argument("--sppo_step_size", type=float, default=0.1)
 
     parser.add_argument("--pg_num_iters", type=int, default=1000)
     parser.add_argument("--pg_adaptive", action="store_true")
@@ -80,10 +87,13 @@ def main(args):
     # reward_param = np.array([2.0, 1.0, 1.0, 2.0], np.float32)
     reward_param = np.array([1.0, 2.0], np.float32)
     # reward_param /= np.sqrt(np.sum(np.square(reward_param)))
+    
+    score_param = np.array([1.0, 2.0, 3.0, 4.0], np.float32)
     env = LinearBandit(
         state_dim,
         action_num,
         reward_param,
+        score_param,
         feature_func,
         num_trials_for_eval=num_trials_for_eval,
     )
@@ -122,6 +132,7 @@ def main(args):
         state_dim,
         action_num,
         learned_reward_param,
+        score_param,
         feature_func,
         num_trials_for_eval=num_trials_for_eval,
     )
@@ -166,7 +177,40 @@ def main(args):
     yaml.dump(rew_err_dict, open(save_path, "w"), default_flow_style=False)
     save_path = os.path.join(log_dir, "reward_dpo.yml")
     yaml.dump(rew_dict, open(save_path, "w"), default_flow_style=False)
-
+    
+    
+    #SPPO
+    agent = SelfPlayPreferenceOptimization(
+        state_dim=state_dim,
+        action_num=action_num,
+        feature_dim=feature_dim,
+        feature_func=policy_feature_func,
+        beta=args.beta,
+        step_size=args.dpo_step_size,
+        num_iters=args.dpo_num_iters,
+        is_adaptive=args.sppo_adaptive,
+        ada_coef=args.sppo_ada_coef,
+        logger=logger,
+    )
+        
+    reward = agent.train(dataset=pref_data, env=env)
+    rew_error = float(opt_reward - reward)
+    policy_param = agent.get_param
+    logger.info(
+        f"Policy parameter learned solely on the preference data (SPPO): {policy_param}."
+    )
+    logger.info(
+        f"Training solely on the preference data (SPPO), dataset size: {len(pref_data): d}, optimal reward: {opt_reward: .4f}, reward: {reward: .4f}, reward error: {rew_error: .4f}."
+    )
+    rew_err_dict, rew_dict = dict(), dict()
+    rew_err_dict[args.pref_data_num] = rew_error
+    rew_dict[args.pref_data_num] = float(reward)
+    save_path = os.path.join(log_dir, "reward_error_sppo.yml")
+    yaml.dump(rew_err_dict, open(save_path, "w"), default_flow_style=False)
+    save_path = os.path.join(log_dir, "reward_sppo.yml")
+    yaml.dump(rew_dict, open(save_path, "w"), default_flow_style=False)
+    
+    
     # RMB-PO
     logger.info(
         f"Train a policy on the preference data with policy-generated data (RMB-PO)."
