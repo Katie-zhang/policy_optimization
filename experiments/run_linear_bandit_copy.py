@@ -17,7 +17,7 @@ from utils.collect_data import (
     merge_datasets,
     pref_to_rl,
 )
-
+from utils.plot import plot_model_accuracies
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -35,20 +35,19 @@ def parse_args():
     parser.add_argument("--mle_adaptive", action="store_true")
     parser.add_argument("--mle_ada_coef", type=float, default=1.0)
     parser.add_argument("--mle_step_size", type=float, default=0.1)
-
-    parser.add_argument("--rl_data_ratio", type=float, default=4)
+    
     parser.add_argument("--reg_coef", type=float, default=1.0)
-
     parser.add_argument("--dpo_num_iters", type=int, default=200)
     parser.add_argument("--dpo_adaptive", action="store_true")
     parser.add_argument("--dpo_ada_coef", type=float, default=1.0)
     parser.add_argument("--dpo_step_size", type=float, default=0.1)
+
     
-    parser.add_argument("--sppo_num_iters", type=int, default=2000)
+    parser.add_argument("--sppo_num_iters", type=int, default=1000)
     parser.add_argument("--sppo_adaptive", action="store_true")
     parser.add_argument("--sppo_ada_coef", type=float, default=1.0)
-    parser.add_argument("--beta", type=float, default=0.1)
-    parser.add_argument("--sppo_step_size", type=float, default=0.1)
+    parser.add_argument("--beta", type=float, default=0.001)
+    parser.add_argument("--sppo_step_size", type=float, default=0.005)
 
     parser.add_argument("--pg_num_iters", type=int, default=1000)
     parser.add_argument("--pg_adaptive", action="store_true")
@@ -83,12 +82,10 @@ def main(args):
     feature_dim = 2 * args.state_dim
     num_trials_for_eval = 10000
     feature_func = ret_feature_func(num_action=action_num, state_dim=state_dim)
-    # reward_param = np.random.standard_normal(feature_dim)
-    # reward_param = np.array([2.0, 1.0, 1.0, 2.0], np.float32)
+
     reward_param = np.array([1.0, 2.0], np.float32)
-    # reward_param /= np.sqrt(np.sum(np.square(reward_param)))
     
-    score_param = np.array([1.0, 2.0, 3.0, 4.0], np.float32)
+    score_param = np.array([1.0, 2.0, 1.0, 2.0], np.float32)
     env = LinearBandit(
         state_dim,
         action_num,
@@ -102,8 +99,17 @@ def main(args):
 
     uniform_policy = ret_uniform_policy(action_num)
     unif_policy_rew = env.evaluate_reward(policy=uniform_policy)
-    pref_data = collect_preference_data(args.pref_data_num, env, uniform_policy)
-
+    pref_data,P = collect_preference_data(args.pref_data_num, env, uniform_policy)
+    logger.info(f"Preference data: ")
+    for i, transition in enumerate(pref_data):
+        logger.info(
+            f"Transition {i+1}: state={transition.state}, action_0={transition.action_0}, action_1={transition.action_1}, "
+            f" pref={transition.pref}, "
+            f"chosen_probs={transition.chosen_probs:.4f}"
+        )
+    logger.info(f"P: ")
+    logger.info(P)
+    
     logger.info(
         f"optimal policy reward: {opt_reward: .4f}, uniform policy reward: {unif_policy_rew: .4f}."
     )
@@ -127,7 +133,6 @@ def main(args):
     logger.info("True reward parameter: {}".format(reward_param))
     logger.info("Learned reward parameter: {}".format(learned_reward_param))
 
-    # Oracle test
     learned_env = LinearBandit(
         state_dim,
         action_num,
@@ -136,16 +141,48 @@ def main(args):
         feature_func,
         num_trials_for_eval=num_trials_for_eval,
     )
-    learned_oracle_opt_policy = learned_env.get_opt_policy()
-    learned_oracle_opt_reward = env.evaluate_reward(policy=learned_oracle_opt_policy)
-    logger.info("Learned oracle reward: {:.4f}".format(learned_oracle_opt_reward))
 
-    # Train the RL on the preference data
-    logger.info(f"Train a policy solely on the preference data (DPO).")
     # learn the policy
     policy_feature_func = ret_feature_func(
         num_action=action_num, state_dim=state_dim, is_flip=args.flip_feature
     )
+    
+    # RMB-PO
+    logger.info(
+        f"Train a policy on the preference data with policy-generated data (RMB-PO)."
+    )
+    agent = PolicyGradient(
+        policy_feature_func,
+        learned_reward_func,
+        uniform_policy,
+        feature_dim,
+        action_num,
+        args.reg_coef,
+        args.pg_step_size,
+        args.pg_num_iters,
+        args.pg_adaptive,
+        args.pg_ada_coef,
+        logger=logger,
+    )
+
+    reward,RMB_PO_accuracy = agent.train(dataset=pref_data, env=env, learned_env=learned_env)
+    rew_error = float(opt_reward - reward)
+    policy_param = agent.get_param
+    logger.info(f"Policy parameter (RMB-PO): {policy_param}.")
+    logger.info(
+        f"Training solely on the preference data (RMB-PO), dataset size: {len(pref_data): d}, optimal reward: {opt_reward: .4f}, reward: {reward: .4f}, reward error: {rew_error: .4f}."
+    )
+    rew_err_dict, rew_dict = dict(), dict()
+    rew_err_dict[args.pref_data_num] = rew_error
+    rew_dict[args.pref_data_num] = float(reward)
+    save_path = os.path.join(log_dir, "reward_error_rmb_po.yml")
+    yaml.dump(rew_err_dict, open(save_path, "w"), default_flow_style=False)
+    save_path = os.path.join(log_dir, "reward_rmb_po.yml")
+    yaml.dump(rew_dict, open(save_path, "w"), default_flow_style=False)
+    
+    
+
+     # Train the RL on the preference data
     agent = DirectPolicyOptimization(
         state_dim=state_dim,
         action_num=action_num,
@@ -160,8 +197,7 @@ def main(args):
         logger=logger,
     )
 
-    # reward = agent.train_by_cvxpy(dataset=pref_data, env=env)
-    reward = agent.train(dataset=pref_data, env=env)
+    reward,dpo_accuracy = agent.train(dataset=pref_data, env=env)
     rew_error = float(opt_reward - reward)
     policy_param = agent.get_param
     logger.info(
@@ -178,7 +214,6 @@ def main(args):
     save_path = os.path.join(log_dir, "reward_dpo.yml")
     yaml.dump(rew_dict, open(save_path, "w"), default_flow_style=False)
     
-    
     #SPPO
     agent = SelfPlayPreferenceOptimization(
         state_dim=state_dim,
@@ -193,7 +228,7 @@ def main(args):
         logger=logger,
     )
         
-    reward = agent.train(dataset=pref_data, env=env)
+    reward,sppo_accuracy = agent.train(dataset=pref_data, env=env)
     rew_error = float(opt_reward - reward)
     policy_param = agent.get_param
     logger.info(
@@ -210,75 +245,10 @@ def main(args):
     save_path = os.path.join(log_dir, "reward_sppo.yml")
     yaml.dump(rew_dict, open(save_path, "w"), default_flow_style=False)
     
+    model_names = ['SPPO', 'DPO','RMB_PO']
+    accuracies = [sppo_accuracy, dpo_accuracy,RMB_PO_accuracy]
+    plot_model_accuracies(model_names, accuracies, os.path.join(log_dir, "model_accuracies.png"))
     
-    # RMB-PO
-    logger.info(
-        f"Train a policy on the preference data with policy-generated data (RMB-PO)."
-    )
-    rl_data = pref_to_rl(pref_data)
-    agent = PolicyGradient(
-        policy_feature_func,
-        learned_reward_func,
-        uniform_policy,
-        feature_dim,
-        action_num,
-        args.reg_coef,
-        args.pg_step_size,
-        args.pg_num_iters,
-        args.pg_adaptive,
-        args.pg_ada_coef,
-        logger=logger,
-    )
-
-    reward = agent.train(dataset=rl_data, env=env, learned_env=learned_env)
-    rew_error = float(opt_reward - reward)
-    policy_param = agent.get_param
-    logger.info(f"Policy parameter (RMB-PO): {policy_param}.")
-    logger.info(
-        f"Training solely on the preference data (RMB-PO), dataset size: {len(rl_data): d}, optimal reward: {opt_reward: .4f}, reward: {reward: .4f}, reward error: {rew_error: .4f}."
-    )
-    rew_err_dict, rew_dict = dict(), dict()
-    rew_err_dict[args.pref_data_num] = rew_error
-    rew_dict[args.pref_data_num] = float(reward)
-    save_path = os.path.join(log_dir, "reward_error_rmb_po.yml")
-    yaml.dump(rew_err_dict, open(save_path, "w"), default_flow_style=False)
-    save_path = os.path.join(log_dir, "reward_rmb_po.yml")
-    yaml.dump(rew_dict, open(save_path, "w"), default_flow_style=False)
-
-    # RMB-PO+: Collect a new RL data
-    logger.info(f"Train a policy on the augmented data (RMB-PO+).")
-    new_rl_data_num = int(args.pref_data_num * args.rl_data_ratio)
-    new_rl_data = collect_rl_data(new_rl_data_num, env)
-    aug_rl_data = merge_datasets(pref_data, new_rl_data)
-    agent = PolicyGradient(
-        policy_feature_func,
-        learned_reward_func,
-        uniform_policy,
-        feature_dim,
-        action_num,
-        args.reg_coef,
-        args.pg_step_size,
-        args.pg_num_iters,
-        args.pg_adaptive,
-        args.pg_ada_coef,
-        logger=logger,
-    )
-    reward = agent.train(aug_rl_data, env, learned_env)
-    policy_param = agent.get_param
-    logger.info(
-        f"Policy parameter learned on the augmented data (RMB-PO+): {policy_param}."
-    )
-    rew_error = float(opt_reward - reward)
-    logger.info(
-        f"Training on the augmented data (RMB-PO+), augmented dataset size: {len(aug_rl_data): d}, optimal reward: {opt_reward: .4f}, reward: {reward: .4f}, reward error: {rew_error: .4f}."
-    )
-    rew_err_dict, rew_dict = dict(), dict()
-    rew_err_dict[args.pref_data_num] = rew_error
-    rew_dict[args.pref_data_num] = float(reward)
-    save_path = os.path.join(log_dir, "reward_error_rmb_po_plus.yml")
-    yaml.dump(rew_err_dict, open(save_path, "w"), default_flow_style=False)
-    save_path = os.path.join(log_dir, "reward_aug_rmb_po_plus.yml")
-    yaml.dump(rew_dict, open(save_path, "w"), default_flow_style=False)
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@ from envs.linear_bandit import LinearBandit
 from utils.collect_data import Transition, ret_uniform_policy, collect_preference_data
 from utils.utils import softmax, sigmoid
 from utils.logger import Logger
-
+from utils.plot import compare_pref_with_policy
 class SelfPlayPreferenceOptimization:
     def __init__(
         self,
@@ -123,8 +123,7 @@ class SelfPlayPreferenceOptimization:
 
             eval_policy_act_prob = policy(state)
             ref_policy_act_prob = ref_policy(state)
-            # if np.isclose(eval_policy_act_prob[pref_act], 0.) or np.isclose(eval_policy_act_prob[non_pref_act], 0.):
-            #     print(eval_policy_act_prob[pref_act], eval_policy_act_prob[non_pref_act])
+          
             logits_w = np.log(eval_policy_act_prob[pref_act] + 1e-6) - np.log(ref_policy_act_prob[pref_act] + 1e-6)
             logits_l = np.log(eval_policy_act_prob[non_pref_act] + 1e-6) - np.log(ref_policy_act_prob[non_pref_act] + 1e-6)
             
@@ -133,6 +132,9 @@ class SelfPlayPreferenceOptimization:
             loss += (loss_w + loss_l)/2
         loss /= len(dataset)
         return loss
+
+
+    
 
     def train(self, dataset: List[Transition], env: LinearBandit) -> float:
         ref_policy = self.ret_policy()
@@ -150,12 +152,26 @@ class SelfPlayPreferenceOptimization:
                     print(
                         f"Iteration: {step: d}, loss: {loss: .4f}, grad_norm :{grad_norm:.4f}, reward: {rew: .4f}."
                     )
-
+        accuracy = compare_pref_with_policy(self.ret_action_prob, dataset)
+        self.logger.info(f"SPPO Preference accuracy: {accuracy:.4f}")
         rew = self.evaluate_reward(env)
         rew = float(rew)
-        return rew
+        return rew, accuracy
     
-    
+    # def train_by_closed_form(self, dataset: List[Transition], env: LinearBandit) -> float:
+    #     ref_policy = self.ret_policy()
+    #     for transition in dataset:
+    #         state, action_one, action_two, pref, chosen_probs = (
+    #             transition.state,
+    #             transition.action_0,
+    #             transition.action_1,
+    #             transition.pref,
+    #             transition.chosen_probs
+    #         )
+            
+    #         ref_policy_act_prob = self.ref_policy(state)
+    #         (1 / self.beta) * chosen_probs
+    #     return reward
   
     def evaluate_reward(self, env: LinearBandit) -> float:
         policy = self.ret_policy()

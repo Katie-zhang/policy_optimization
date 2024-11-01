@@ -4,7 +4,9 @@ from typing import List
 from envs.linear_bandit import LinearBandit
 from utils.collect_data import Transition, ret_uniform_policy
 from utils.utils import softmax
-
+from utils.logger import Logger
+from utils.plot import compare_pref_with_policy
+from utils.collect_data import pref_to_rl
 
 class PolicyGradient:
     def __init__(
@@ -77,9 +79,10 @@ class PolicyGradient:
 
         return policy
 
-    def update_once(self, dataset: List[np.ndarray]) -> (float, float):
+    def update_once(self, dataset: List[Transition]) -> (float, float):
+        rl_data = pref_to_rl(dataset)
         grad = np.zeros_like(self.policy_param, np.float32)
-        for state in dataset:
+        for state in rl_data:
             rews = [
                 self.reward_func(state, action_idx)
                 for action_idx in range(self.action_num)
@@ -98,7 +101,7 @@ class PolicyGradient:
 
             grad -= neg_cur_data_grad
 
-        grad = grad / len(dataset)
+        grad = grad / len(rl_data)
         self.hist_grad_squared_norm += np.sum(np.square(grad))
         if self.is_adaptive:
             step_size = self.ada_coef / np.sqrt(self.hist_grad_squared_norm)
@@ -134,9 +137,10 @@ class PolicyGradient:
         assert score_mat.shape == (self.action_num, self.feature_dim)
         return score_mat
 
-    def evaluate_loss(self, dataset: List[np.ndarray]) -> float:
+    def evaluate_loss(self, dataset: List[Transition]) -> float:
+        rl_data = pref_to_rl(dataset)
         loss = 0.0
-        for state in dataset:
+        for state in rl_data:
             rews = [
                 self.reward_func(state, action_idx)
                 for action_idx in range(self.action_num)
@@ -151,7 +155,7 @@ class PolicyGradient:
 
             aug_rew = avg_rew - self.reg_coef * kl
             loss -= aug_rew
-        loss /= len(dataset)
+        loss /= len(rl_data)
 
         return loss
 
@@ -161,7 +165,8 @@ class PolicyGradient:
 
         return rew
 
-    def train(self, dataset: List[np.ndarray], env: LinearBandit, learned_env) -> float:
+    def train(self, dataset: List[Transition], env: LinearBandit, learned_env) -> float:
+        
         for step in range(self.num_iters):
             step_size, grad_norm = self.update_once(dataset)
             eval_interval = max(1, int(self.num_iters / self.eval_times))
@@ -172,6 +177,7 @@ class PolicyGradient:
                 self.logger.info(
                     f"Iteration: {step: d}, step size: {step_size: .2f}, gradient norm: {grad_norm: .4f}, loss: {loss: .4f}, fake reward: {fake_rew: .4f}, reward: {rew: .4f}."
                 )
-
+        accuracy = compare_pref_with_policy(self.ret_action_prob, dataset)
+        self.logger.info(f"RMB-PO Preference accuracy: {accuracy:.4f}")
         rew = self.evaluate_reward(env)
-        return rew
+        return rew, accuracy

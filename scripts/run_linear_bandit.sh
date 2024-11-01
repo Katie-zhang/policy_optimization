@@ -9,6 +9,7 @@ PG_NUM_ITERS=1000
 REG_COEF=0.01
 STATE_DIM=1
 
+# for seed in 2021 2022 2023 2024 2025 2026 2027 2028 2029 2030
 for seed in 2021 2022 2023 2024 2025 2026 2027 2028 2029 2030
 do
     python -m experiments.run_linear_bandit \

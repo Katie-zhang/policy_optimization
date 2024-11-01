@@ -6,7 +6,7 @@ from envs.linear_bandit import LinearBandit
 from utils.collect_data import Transition, ret_uniform_policy, collect_preference_data
 from utils.utils import softmax, sigmoid
 from utils.logger import Logger
-
+from utils.plot import compare_pref_with_policy
 
 class DirectPolicyOptimization:
     def __init__(
@@ -128,8 +128,7 @@ class DirectPolicyOptimization:
 
             eval_policy_act_prob = policy(state)
             ref_policy_act_prob = self.ref_policy(state)
-            # if np.isclose(eval_policy_act_prob[pref_act], 0.) or np.isclose(eval_policy_act_prob[non_pref_act], 0.):
-            #     print(eval_policy_act_prob[pref_act], eval_policy_act_prob[non_pref_act])
+            
             log_ratio_diff = self.reg_coef * (
                 np.log(eval_policy_act_prob[pref_act] + 1e-6)
                 - np.log(ref_policy_act_prob[pref_act] + 1e-6)
@@ -155,10 +154,11 @@ class DirectPolicyOptimization:
                     print(
                         f"Iteration: {step: d}, loss: {loss: .4f}, grad_norm :{grad_norm:.4f}, reward: {rew: .4f}."
                     )
-
+        accuracy = compare_pref_with_policy(self.ret_action_prob, dataset)
+        self.logger.info(f"DPO Preference accuracy: {accuracy:.4f}")
         rew = self.evaluate_reward(env)
         rew = float(rew)
-        return rew
+        return rew,accuracy
 
     def train_by_cvxpy(self, dataset: List[Transition], env: LinearBandit) -> float:
         pref_features, non_pref_features = [], []

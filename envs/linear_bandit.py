@@ -18,6 +18,7 @@ class LinearBandit:
         self.score_param = score_param
         self.feature_func = feature_func
         self.cur_state = np.random.uniform(0, 1, self.state_dim)
+        
 
         self.num_trials_for_eval = num_trials_for_eval
 
@@ -25,14 +26,14 @@ class LinearBandit:
         self.cur_state = np.random.uniform(0, 1, self.state_dim)
         return self.cur_state
 
-    def sample(self, action) -> float:
-        assert action in self.action_space, "The input action is invalid."
-        feature = self.feature_func(self.cur_state, action)
-        assert np.shape(feature) == np.shape(
-            self.reward_param
-        ), "The feature is invalid."
-        rew = np.dot(feature, self.reward_param)
-        return rew
+    # def sample(self, action) -> float:
+    #     assert action in self.action_space, "The input action is invalid."
+    #     feature = self.feature_func(self.cur_state, action)
+    #     assert np.shape(feature) == np.shape(
+    #         self.reward_param
+    #     ), "The feature is invalid."
+    #     rew = np.dot(feature, self.reward_param)
+    #     return rew
     
     def score(self, action_pref, action_nonpref) -> float:
         assert action_pref in self.action_space, "The input action_one is invalid."
@@ -44,7 +45,7 @@ class LinearBandit:
         feature = np.concatenate([feature_one, feature_two])
         assert np.shape(feature) == np.shape(
             self.score_param
-        ), "The feature_one is invalid." 
+        ), "The feature is invalid." 
         
         score = np.dot(feature, self.score_param)
         return score
@@ -120,14 +121,14 @@ def ret_feature_func(num_action: int, state_dim: int, is_flip: bool = False):
 
         dim = 2 * state_dim
         feature = np.zeros(dim)
-        if not is_flip:
-            for idx in range(state_dim):
-                feature[2 * idx] = (action + 1) * np.cos(state[idx] * np.pi)
-                feature[2 * idx + 1] = (1.0 / (action + 1)) * np.sin(state[idx] * np.pi)
-        else:
-            for idx in range(state_dim):
-                feature[2 * idx] = (action + 1) * np.sin(state[idx] * np.pi)
-                feature[2 * idx + 1] = (1.0 / (action + 1)) * np.cos(state[idx] * np.pi)
+        # if not is_flip:
+        #     for idx in range(state_dim):
+        #         feature[2 * idx] = (action + 1) * np.cos(state[idx] * np.pi)
+        #         feature[2 * idx + 1] = (1.0 / (action + 1)) * np.sin(state[idx] * np.pi)
+        # else:
+        for idx in range(state_dim):
+            feature[2 * idx] = (action + 1) * np.sin(state[idx] * np.pi)
+            feature[2 * idx + 1] = (1.0 / (action + 1)) * np.cos(state[idx] * np.pi)
 
         return feature
 
