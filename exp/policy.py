@@ -60,17 +60,20 @@ class UniformPolicyModel(nn.Module):
 
 #TODO: other ref models       
 class Ref_PolicyModel(nn.Module):
-    def __init__(self,action_num:int, device: str = "cpu"):
+    def __init__(self,action_num:int, prob:torch.tensor, device: str = "cpu"):
         super().__init__()
         self.action_num = action_num
         self.device = torch.device(device)
-
-    def forward(self, prob:torch.tensor) -> torch.tensor:
-        prob = prob.to(self.device)
+        self.prob = prob.to(self.device)
         
-        assert prob.shape[0] == self.action_num      
+    def forward(self,state:torch.tensor) -> torch.tensor:
+        prob = self.prob
+        
+        assert prob.shape[1] == self.action_num      
         assert torch.all(prob >= 0)
         assert torch.all(prob <= 1)
         assert torch.sum(prob) == 1
         
+        batch_size = state.shape[0]
+        prob = prob.repeat(batch_size,1)
         return prob

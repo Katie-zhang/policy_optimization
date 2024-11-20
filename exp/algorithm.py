@@ -2,6 +2,7 @@ import collections
 from typing import List
 import numpy as np
 import math
+from utils.utils import generate_outputs_from_distribution
 import torch.cuda
 import torch
 import torch.nn as nn
@@ -11,8 +12,6 @@ import matplotlib.pyplot as plt
 import copy
 
 from utils.logger import Logger
-
-
 from utils.io_utils import save_code
 from utils.logger import Logger
 from utils.plot import two_action_prob_plot
@@ -58,8 +57,6 @@ class RewardModel(nn.Module):
        
         return rew
     
-
-
 class MaximumLikelihoodEstimator:
     def __init__(
         self,
@@ -439,3 +436,83 @@ class SelfPlayPreferenceOptimizer:
             if epoch % 30 == 0:
                 self.ref_policy = copy.deepcopy(self.policy)
         two_action_prob_plot(action_0_probs, action_1_probs,self.nash_point,'SPPO')
+
+####################################################################################################
+#                                      SPPOClosedForm                                              #
+####################################################################################################
+class SPPOClosedForm:
+   def __init__(
+       self,
+       ref_policy: nn.Module,
+       eta: float = 1e-4,
+       batch_size: int = 64,
+       logger: Logger = None,
+       nash_point: List[float] = None,
+       device: str = "cpu",
+   ):
+
+       self.ref_policy = ref_policy
+       self.eta = eta
+       self.batch_size = batch_size
+       self.logger = logger
+       self.nash_point = nash_point
+       self.device = torch.device(device)
+
+       state = torch.zeros(1, 1, dtype=torch.float32).to(self.device) # state = 0
+       self.ref_distribution = self.ref_policy(state).squeeze(0)
+       
+   def compute_pi(
+       self,
+       p_list:List[List[float]],
+   ):
+               
+        # generate 10 y_i from ref_policy
+        y_output = generate_outputs_from_distribution(self.ref_distribution,num_samples=10)
+        
+        exp_terms = []
+        for action in range(self.ref_distribution.size(0)):
+            p_y_pi = 0
+            for i in range(len(y_output)):
+                p_y_yi = p_list[action][y_output[i]] * self.ref_distribution[y_output[i]]
+                p_y_pi += p_y_yi
+            exp_term = torch.exp(self.eta * p_y_pi)
+            exp_terms.append(exp_term)
+        
+        Z = torch.sum(self.ref_distribution * torch.stack(exp_terms), dim=-1, keepdim=True)    
+        
+        new_distribution = self.ref_distribution * torch.stack(exp_terms) / Z
+        
+        # record prob of choosing action 0 and action 1
+        action_0_prob = new_distribution[0].cpu().numpy()
+        action_1_prob = new_distribution[1].cpu().numpy()
+                   
+        return new_distribution, action_0_prob, action_1_prob
+   
+   def optimize(
+       self,
+       p_list:List[List[float]],
+       num_iters: int = 3,
+   ):
+       
+        action_0_probs = []
+        action_1_probs = []
+        
+        for iter in range(num_iters):
+           
+           new_distribution,action_0_prob,action_1_prob = self.compute_pi(p_list)
+           ref_distribution = self.ref_distribution
+
+           action_0_probs.append(action_0_prob)
+           action_1_probs.append(action_1_prob)
+          
+           if self.logger:
+                self.logger.info(
+                    f"Iteration {iter}: ref_distribution = {ref_distribution}, new_distribution = {new_distribution}"
+                )
+
+            
+           self.ref_distribution = copy.deepcopy(new_distribution)
+           
+        two_action_prob_plot(action_0_probs, action_1_probs,self.nash_point,'SPPOClosedForm')
+        
+        return new_distribution

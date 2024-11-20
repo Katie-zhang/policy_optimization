@@ -16,7 +16,7 @@ def sigmoid(x: float) -> float:
     return 1.0 / (1.0 + np.exp(-x))
 
 # output is a action from the distribution of model
-def output_action(policy, state)->int:
+def output_action(policy, state):
     with torch.no_grad():
         state = torch.tensor(state, dtype=torch.float32).unsqueeze(0).to(device)
         actions = policy(state).squeeze(0)
@@ -24,23 +24,11 @@ def output_action(policy, state)->int:
         chosen_action = np.random.choice(len(actions), p=actions)
     return chosen_action
 
-def output_action_from_distribution(distribution:torch.tensor)->int:
-    actions = distribution.squeeze(0)
-    actions = actions.cpu().numpy()
-    chosen_action = np.random.choice(len(actions), p=actions)
-    return chosen_action
-
-def generate_outputs(policy,num_samples=10)->list:
+def generate_outputs(policy,num_samples=10):
     outputs = []
     state = torch.zeros(1, dtype=torch.float32).to(device)
     for _ in range(num_samples):
         outputs.append(output_action(policy, state))
-    return outputs
-
-def generate_outputs_from_distribution(distribution:torch.tensor, num_samples=10)->list:
-    outputs = []
-    for _ in range(num_samples):
-        outputs.append(output_action_from_distribution(distribution))   
     return outputs
 
 
