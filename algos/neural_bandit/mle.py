@@ -1,52 +1,48 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import numpy as np
 from utils.logger import Logger
 
-
+    
 class RewardModel(nn.Module):
     def __init__(
         self,
         state_dim,
-        action_num,
+        actions,
         is_target: bool = True,
         state_feature_extractor: nn.Module = None,
         action_feature_extractor: nn.Module = None,
         hidden_dim: int = 128,
         num_layers: int = 2,
-        activation: str = "relu",
         device: str = "cpu",
     ):
         super().__init__()
         self.device = torch.device(device)
         self.is_target = is_target
 
-        activation = {
-            "relu": nn.ReLU(),
-            "sigmoid": nn.Sigmoid(),
-            "tanh": nn.Tanh(),
-        }[activation]
 
         if state_feature_extractor is None:
             state_feature_extractor = [
                 nn.Linear(state_dim, hidden_dim),
-                activation,
+                nn.Tanh(),
             ]
             for _ in range(num_layers - 1):
                 state_feature_extractor.append(nn.Linear(hidden_dim, hidden_dim))
-                state_feature_extractor.append(activation)
-        self.state_feature_extractor = nn.Sequential(*state_feature_extractor)
+                state_feature_extractor.append(nn.Tanh())
+        self.state_feature_extractor = nn.Sequential(*state_feature_extractor).to(self.device)
         if action_feature_extractor is None:
             action_feature_extractor = [
-                nn.Linear(action_num, hidden_dim),
-                activation,
+                nn.Linear(len(actions), hidden_dim),
+                nn.Tanh(),
             ]
             for _ in range(num_layers - 1):
                 action_feature_extractor.append(nn.Linear(hidden_dim, hidden_dim))
-                action_feature_extractor.append(activation)
-        self.action_feature_extractor = nn.Sequential(*action_feature_extractor)
+                action_feature_extractor.append(nn.Tanh())
+        self.action_feature_extractor = nn.Sequential(*action_feature_extractor).to(self.device)
 
-        self.predict_layer = nn.Linear(hidden_dim * 2, 1)
+        # self.predict_layer = nn.Linear(hidden_dim * 2, 1).to(self.device)
+        self.predict_layer = nn.Linear(hidden_dim , 1).to(self.device)
 
     def forward(self, state: torch.tensor, action: torch.tensor) -> torch.tensor:
         assert len(state.shape) == len(action.shape)
@@ -59,23 +55,26 @@ class RewardModel(nn.Module):
         ha = self.action_feature_extractor(action)
 
         h = torch.cat([hs, ha], dim=1)
-        rew = self.predict_layer(h)
+        rew = self.predict_layer(ha)
         if self.is_target:
             rew = rew + torch.sign(rew)
         return rew
+    
+
+
 
 
 class MaximumLikelihoodEstimator:
     def __init__(
         self,
-        action_num: int,
+        actions: np.ndarray,
         reward_model: nn.Module,
         learning_rate: float = 1e-3,
         weight_decay: float = 0.0,
         batch_size: int = 64,
         logger: Logger = None,
     ):
-        self.action_num = action_num
+        self.actions = actions
         self.reward_model = reward_model
         self.batch_size = batch_size
         self.logger = logger
@@ -97,11 +96,15 @@ class MaximumLikelihoodEstimator:
             _negative_actions = negative_actions[i : i + self.batch_size]
 
             _positive_actions = F.one_hot(
-                _positive_actions, num_classes=self.action_num
+                _positive_actions, num_classes=len(self.actions)
             )
             _negative_actions = F.one_hot(
-                _negative_actions, num_classes=self.action_num
+                _negative_actions, num_classes=len(self.actions)
             )
+            
+         
+            _states = _states.unsqueeze(1) if _states.dim() == 1 else _states
+            
 
             positive_rews = self.reward_model(_states, _positive_actions)
             negative_rews = self.reward_model(_states, _negative_actions)

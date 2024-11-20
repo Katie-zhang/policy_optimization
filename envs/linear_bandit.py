@@ -5,17 +5,15 @@ class LinearBandit:
     def __init__(
         self,
         state_dim: int,
-        action_num: int,
+        actions: int,
         reward_param: np.ndarray,
-        score_param: np.ndarray,
         feature_func,
         num_trials_for_eval: int = None,
     ) -> None:
         self.state_dim = state_dim
-        self.action_num = action_num
-        self.action_space = [action_idx for action_idx in range(action_num)]
+        self.actions = actions
+        self.action_space = [action_idx for action_idx in range(len(actions))]
         self.reward_param = reward_param
-        self.score_param = score_param
         self.feature_func = feature_func
         self.cur_state = np.random.uniform(0, 1, self.state_dim)
         
@@ -24,50 +22,26 @@ class LinearBandit:
 
     def reset(self) -> np.ndarray:
         self.cur_state = np.random.uniform(0, 1, self.state_dim)
-        return self.cur_state
+        return self.cur_state    
 
-    # def sample(self, action) -> float:
-    #     assert action in self.action_space, "The input action is invalid."
-    #     feature = self.feature_func(self.cur_state, action)
-    #     assert np.shape(feature) == np.shape(
-    #         self.reward_param
-    #     ), "The feature is invalid."
-    #     rew = np.dot(feature, self.reward_param)
-    #     return rew
-    
-    def score(self, action_pref, action_nonpref) -> float:
-        assert action_pref in self.action_space, "The input action_one is invalid."
-        assert action_nonpref in self.action_space, "The input action_two is invalid."
-        
-        feature_one = self.feature_func(self.cur_state, action_pref)
-        feature_two = self.feature_func(self.cur_state, action_nonpref)
-            
-        feature = np.concatenate([feature_one, feature_two])
-        assert np.shape(feature) == np.shape(
-            self.score_param
-        ), "The feature is invalid." 
-        
-        score = np.dot(feature, self.score_param)
-        return score
     
     def get_opt_policy(self):
         def opt_policy(state: np.ndarray):
             # compute the optimal policy by enumerating the action space
+         
             feature_mat = np.array(
-                [
-                    self.feature_func(state, action_idx)
-                    for action_idx in range(self.action_num)
-                ],
-                dtype=np.float32,
-            )
+            [
+                self.feature_func(state, action)  
+                for action in self.actions
+            ],)
            
             assert np.shape(feature_mat) == (
-                self.action_num,
+                len(self.actions),
                 self.reward_param.size,
             ), "The feature matrix is invalid."
             rew_vec = np.matmul(feature_mat, self.reward_param)
             optimal_action = np.argmax(rew_vec)
-            action_prob = np.zeros(self.action_num, np.float32)
+            action_prob = np.zeros(len(self.actions), np.float32)
             action_prob[optimal_action] = 1.0
 
             return action_prob
@@ -92,10 +66,11 @@ class LinearBandit:
             ), "The policy is invalid."
 
             action_mat.append(action_prob)
-            feature_mat = [
-                self.feature_func(state, act_index)
-                for act_index in range(self.action_num)
-            ]
+            feature_mat = np.array(
+            [
+                self.feature_func(state, action)  
+                for action in self.actions
+            ],)
             feature_mat = np.stack(feature_mat, axis=0)
             feature_tensor.append(feature_mat)
 
@@ -111,21 +86,15 @@ class LinearBandit:
         return rew
 
 
-def ret_feature_func(num_action: int, state_dim: int, is_flip: bool = False):
+def ret_feature_func(state_dim: int, is_flip: bool = False):
     """
     return the feature function for an arbitrary number of actions and any state dimension.
     """
 
     def feature_func(state: np.ndarray, action: int) -> np.ndarray:
-        assert action in range(num_action), "The input action is invalid."
-
+        
         dim = 2 * state_dim
         feature = np.zeros(dim)
-        # if not is_flip:
-        #     for idx in range(state_dim):
-        #         feature[2 * idx] = (action + 1) * np.cos(state[idx] * np.pi)
-        #         feature[2 * idx + 1] = (1.0 / (action + 1)) * np.sin(state[idx] * np.pi)
-        # else:
         for idx in range(state_dim):
             feature[2 * idx] = (action + 1) * np.sin(state[idx] * np.pi)
             feature[2 * idx + 1] = (1.0 / (action + 1)) * np.cos(state[idx] * np.pi)

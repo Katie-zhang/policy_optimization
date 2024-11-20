@@ -15,7 +15,7 @@ class PolicyGradient:
         reward_func,
         ref_policy,
         feature_dim: int,
-        action_num: int,
+        actions: np.ndarray,
         reg_coef: float,
         step_size: float,
         num_iters: int,
@@ -29,7 +29,7 @@ class PolicyGradient:
         self.ref_policy = ref_policy
 
         self.feature_dim = feature_dim
-        self.action_num = action_num
+        self.actions = actions
         self.reg_coef = reg_coef
         self.step_size = step_size
         self.num_iters = num_iters
@@ -50,11 +50,12 @@ class PolicyGradient:
         """
         action_prob = np.array(
             [
-                np.dot(self.policy_param, self.feature_func(state, action_idx))
-                for action_idx in range(self.action_num)
+               np.dot(self.policy_param, self.feature_func(state, action))
+               for action in self.actions  
             ],
             dtype=np.float32,
         )
+        
         action_prob = np.exp(action_prob)
         action_prob = action_prob / np.sum(action_prob)
         return action_prob
@@ -64,15 +65,15 @@ class PolicyGradient:
         return self.policy_param
 
     def ret_policy(self):
-        action_num = self.action_num
+        actions = self.actions
         feature_func = copy.deepcopy(self.feature_func)
         param = self.policy_param
 
         def policy(state: np.ndarray) -> np.ndarray:
-            arr = np.zeros(action_num, np.float32)
-            for action_idx in range(action_num):
-                feature = feature_func(state, action_idx)
-                arr[action_idx] = np.dot(feature, param)
+            arr = np.zeros(len(actions), np.float32)
+            for idx, action in enumerate(actions):
+                feature = feature_func(state, action)
+                arr[idx] = np.dot(feature, param)
             prob = softmax(arr)
 
             return prob
@@ -82,11 +83,12 @@ class PolicyGradient:
     def update_once(self, dataset: List[Transition]) -> (float, float):
         rl_data = pref_to_rl(dataset)
         grad = np.zeros_like(self.policy_param, np.float32)
-        for state in rl_data:
+        for state in rl_data:    
             rews = [
-                self.reward_func(state, action_idx)
-                for action_idx in range(self.action_num)
-            ]
+                self.reward_func(state, action)  
+                for action in self.actions
+                    ]
+
             rews = np.array(rews, np.float32)
             cur_policy_action_prob = self.ret_action_prob(state)
             ref_policy_action_prob = self.ref_policy(state)
@@ -119,22 +121,30 @@ class PolicyGradient:
         score_list = []
         feature_mat = np.stack(
             [
-                self.feature_func(state, action_idx)
-                for action_idx in range(self.action_num)
+                self.feature_func(state, action)  
+                for action in self.actions
             ],
             axis=0,
         )
+
         act_prob = self.ret_action_prob(state)
         avg_feature = np.matmul(feature_mat.T, act_prob)
         assert avg_feature.shape == (
             self.feature_dim,
         ), "The average feature is invalid."
-        for action_idx in range(self.action_num):
-            score_list.append(self.feature_func(state, action_idx) - avg_feature)
+        # for action_idx in range(self.action_num):
+        #     score_list.append(self.feature_func(state, action_idx) - avg_feature)
 
-        score_mat = np.stack(score_list, axis=0)
-        # print()
-        assert score_mat.shape == (self.action_num, self.feature_dim)
+        # score_mat = np.stack(score_list, axis=0)
+        # # print()
+        # assert score_mat.shape == (self.action_num, self.feature_dim)
+        score_list = []
+        for action in self.actions:
+            score_list.append(self.feature_func(state, action) - avg_feature)
+
+            score_mat = np.stack(score_list, axis=0)
+        assert score_mat.shape == (len(self.actions), self.feature_dim)
+
         return score_mat
 
     def evaluate_loss(self, dataset: List[Transition]) -> float:
@@ -142,9 +152,9 @@ class PolicyGradient:
         loss = 0.0
         for state in rl_data:
             rews = [
-                self.reward_func(state, action_idx)
-                for action_idx in range(self.action_num)
-            ]
+                self.reward_func(state, action)  
+                for action in self.actions
+                ]
             rews = np.array(rews, np.float32)
             cur_act_prob = self.ret_action_prob(state)
             avg_rew = np.dot(rews, cur_act_prob)
@@ -177,7 +187,7 @@ class PolicyGradient:
                 self.logger.info(
                     f"Iteration: {step: d}, step size: {step_size: .2f}, gradient norm: {grad_norm: .4f}, loss: {loss: .4f}, fake reward: {fake_rew: .4f}, reward: {rew: .4f}."
                 )
-        accuracy = compare_pref_with_policy(self.ret_action_prob, dataset)
+        accuracy = compare_pref_with_policy(env,self.ret_action_prob, dataset)
         self.logger.info(f"RMB-PO Preference accuracy: {accuracy:.4f}")
         rew = self.evaluate_reward(env)
         return rew, accuracy

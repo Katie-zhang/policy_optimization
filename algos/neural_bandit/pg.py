@@ -9,7 +9,7 @@ class PolicyModel(nn.Module):
     def __init__(
         self,
         state_dim: int,
-        action_num: int,
+        actions: np.ndarray,
         hidden_dim: int = 128,
         num_layers: int = 2,
         device: str = "cpu",
@@ -17,7 +17,7 @@ class PolicyModel(nn.Module):
         super().__init__()
 
         self.state_dim = state_dim
-        self.action_num = action_num
+        self.action_num = len(actions)
 
         self.device = torch.device(device)
 
@@ -25,7 +25,7 @@ class PolicyModel(nn.Module):
         for _ in range(num_layers - 1):
             network.append(nn.Linear(hidden_dim, hidden_dim))
             network.append(nn.ReLU())
-        network.append(nn.Linear(hidden_dim, action_num))
+        network.append(nn.Linear(hidden_dim, self.action_num))
 
         self.network = nn.Sequential(*network)
 

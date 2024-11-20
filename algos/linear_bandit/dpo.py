@@ -12,7 +12,7 @@ class DirectPolicyOptimization:
     def __init__(
         self,
         state_dim: int,
-        action_num: int,
+        actions: np.ndarray,
         feature_dim: int,
         feature_func,
         ref_policy,
@@ -24,7 +24,7 @@ class DirectPolicyOptimization:
         logger: Logger = None,
     ) -> None:
         self.state_dim = state_dim
-        self.action_num = action_num
+        self.actions = actions
         self.feature_dim = feature_dim
         self.feature_func = feature_func
         self.step_size = step_size
@@ -40,33 +40,33 @@ class DirectPolicyOptimization:
         self.param = np.random.uniform(0, 1, self.feature_dim)
 
     def ret_action_prob(self, state: np.ndarray) -> np.ndarray:
-        arr = np.zeros(self.action_num, np.float32)
-        for action_idx in range(self.action_num):
-            feature = self.feature_func(state, action_idx)
-            arr[action_idx] = np.dot(feature, self.param)
+        arr = np.zeros(len(self.actions), np.float32)  
+        for idx, action in enumerate(self.actions):
+            feature = self.feature_func(state, action)
+            arr[idx] = np.dot(feature, self.param)
         prob = softmax(arr)
         return prob
 
     def ret_policy(self):
-        action_num = self.action_num
         feature_func = copy.deepcopy(self.feature_func)
         param = self.param
 
         def policy(state: np.ndarray) -> np.ndarray:
-            arr = np.zeros(action_num, np.float32)
-            for action_idx in range(action_num):
-                feature = feature_func(state, action_idx)
-                arr[action_idx] = np.dot(feature, param)
+            arr = np.zeros(len(self.actions), np.float32)
+            for idx, action in enumerate(self.actions):
+                feature = feature_func(state, action)
+                arr[idx] = np.dot(feature, param)
             prob = softmax(arr)
 
             return prob
 
         return policy
+        
 
-    def sample_action(self, state: np.ndarray) -> int:
-        prob = self.ret_action_prob(state)
-        sampled_act = np.random.choice(a=self.action_num, size=1, replace=True, p=prob)
-        return sampled_act
+    # def sample_action(self, state: np.ndarray) -> int:
+    #     prob = self.ret_action_prob(state)
+    #     sampled_act = np.random.choice(a=self.action_num, size=1, replace=True, p=prob)
+    #     return sampled_act
 
     def update_once(self, dataset: List[Transition]) -> float:
         grad = np.zeros_like(self.param)
@@ -80,18 +80,21 @@ class DirectPolicyOptimization:
             pref_act = action_two if pref == 1 else action_one
             non_pref_act = action_two if pref == 0 else action_one
 
+            pref_act_idx = self.actions.index(pref_act)
+            non_pref_act_idx = self.actions.index(non_pref_act)
+            
             feat_pref_act, feat_non_pref_act = (
-                self.feature_func(state, pref_act),
-                self.feature_func(state, non_pref_act),
+                self.feature_func(state, pref_act_idx),
+                self.feature_func(state, non_pref_act_idx),
             )
             cur_policy_act_prob = self.ret_action_prob(state)
             ref_policy_act_prob = self.ref_policy(state)
 
             log_ratio_diff = self.reg_coef * (
-                np.log(cur_policy_act_prob[pref_act] + 1e-6)
-                - np.log(ref_policy_act_prob[pref_act] + 1e-6)
-                - np.log(cur_policy_act_prob[non_pref_act] + 1e-6)
-                + np.log(ref_policy_act_prob[non_pref_act] + 1e-6)
+                np.log(cur_policy_act_prob[pref_act_idx] + 1e-6)
+                - np.log(ref_policy_act_prob[pref_act_idx] + 1e-6)
+                - np.log(cur_policy_act_prob[non_pref_act_idx] + 1e-6)
+                + np.log(ref_policy_act_prob[non_pref_act_idx] + 1e-6)
             )
             coef = sigmoid(-log_ratio_diff)
             neg_cur_data_grad = (
@@ -126,14 +129,17 @@ class DirectPolicyOptimization:
             pref_act = action_two if pref == 1 else action_one
             non_pref_act = action_two if pref == 0 else action_one
 
+            pref_act_idx = self.actions.index(pref_act)
+            non_pref_act_idx = self.actions.index(non_pref_act)
+            
             eval_policy_act_prob = policy(state)
             ref_policy_act_prob = self.ref_policy(state)
             
             log_ratio_diff = self.reg_coef * (
-                np.log(eval_policy_act_prob[pref_act] + 1e-6)
-                - np.log(ref_policy_act_prob[pref_act] + 1e-6)
-                - np.log(eval_policy_act_prob[non_pref_act] + 1e-6)
-                + np.log(ref_policy_act_prob[non_pref_act] + 1e-6)
+                np.log(eval_policy_act_prob[pref_act_idx] + 1e-6)
+                - np.log(ref_policy_act_prob[pref_act_idx] + 1e-6)
+                - np.log(eval_policy_act_prob[non_pref_act_idx] + 1e-6)
+                + np.log(ref_policy_act_prob[non_pref_act_idx] + 1e-6)
             )
 
             loss -= np.log(sigmoid(log_ratio_diff))
@@ -154,7 +160,7 @@ class DirectPolicyOptimization:
                     print(
                         f"Iteration: {step: d}, loss: {loss: .4f}, grad_norm :{grad_norm:.4f}, reward: {rew: .4f}."
                     )
-        accuracy = compare_pref_with_policy(self.ret_action_prob, dataset)
+        accuracy = compare_pref_with_policy(env,self.ret_action_prob, dataset)
         self.logger.info(f"DPO Preference accuracy: {accuracy:.4f}")
         rew = self.evaluate_reward(env)
         rew = float(rew)

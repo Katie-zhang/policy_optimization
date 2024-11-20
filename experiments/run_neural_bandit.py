@@ -1,6 +1,12 @@
 import argparse
+import collections
+from typing import List
 import numpy as np
+import math
 import torch.cuda
+import torch
+import torch.nn as nn
+from utils.collect_data import collect_preference_data
 from torch.utils.tensorboard import SummaryWriter
 import os
 
@@ -18,11 +24,12 @@ from utils.io_utils import save_code, save_config, create_log_dir
 from utils.logger import Logger
 
 
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--env", type=str, default="neural_bandit")
-    parser.add_argument("--state_dim", type=int, default=50)
-    parser.add_argument("--action_num", type=int, default=10)
+    parser.add_argument("--state_dim", type=int, default=1)
+    parser.add_argument("--actions", type=np.ndarray, default=[-10, 0, 10])
 
     parser.add_argument("--agent", type=str, default="pg")
     parser.add_argument("--seed", type=int, default=2023)
@@ -36,25 +43,6 @@ def parse_args():
     parser.add_argument("--pg_num_iters", type=int, default=50)
 
     return parser.parse_args()
-
-
-def collect_preference_data(env, num_pref_data):
-    datasets = []
-    for i in range(num_pref_data):
-        state = env.sample_states(n=1)
-        action0, action1 = np.random.choice(env.action_num, size=2, replace=False)
-        action0 = torch.tensor([int(action0)])
-        action1 = torch.tensor([int(action1)])
-
-        rew0 = env.get_state_action_reward(state, action0)[0]
-        rew1 = env.get_state_action_reward(state, action1)[0]
-        prob = torch.exp(rew0) / (torch.exp(rew0) + torch.exp(rew1))
-        prob = prob.item()
-        if np.random.random() < prob:
-            datasets.append([state, action0, action1])
-        else:
-            datasets.append([state, action1, action0])
-    return datasets
 
 
 def main(args=parse_args()):
@@ -72,55 +60,62 @@ def main(args=parse_args()):
         device = "cuda"
 
     state_dim = args.state_dim
-    action_num = args.action_num
+    actions = args.actions
 
-    true_reward_model = RewardModel(
-        state_dim,
-        action_num,
-        is_target=True,
-        hidden_dim=64,
-        num_layers=1,
-        activation="tanh",
-        device=device,
-    )
+    
     env = NeuralBandit(
         state_dim,
-        action_num,
-        true_reward_model,
+        actions,     
         device=device,
         num_trials_for_eval=5000,
     )
 
-    opt_policy = env.get_opt_policy()
-    opt_rew = env.evaluate_policy(opt_policy)
-    uniform_policy = UniformPolicyModel(action_num, device)
-    uniform_policy_rew = env.evaluate_policy(uniform_policy)
-    logger.info(
-        f"Optimal reward: {opt_rew:.4f} uniform policy rew: {uniform_policy_rew:.4f}"
-    )
+    # opt_policy = env.get_opt_policy()
+    uniform_policy = UniformPolicyModel(len(actions), device)
+    
     # Collect preference data
-    pref_dataset = collect_preference_data(env, args.pref_data_num)
+    pref_dataset, p_list = collect_preference_data(env)
 
+    logger.info(f"Preference data: ")
+    for i, transition in enumerate(pref_dataset):
+        logger.info(
+            f"Transition {i+1}: state={transition.state}, action_0={transition.action_0}, action_1={transition.action_1}, "
+            f" pref={transition.pref}, "
+            f"chosen_probs={transition.chosen_probs:.4f}"
+        )
+    logger.info(f"P: ")
+    logger.info(p_list)
+    
     learned_reward_model = RewardModel(
         state_dim,
-        action_num,
+        actions,
         is_target=False,
         hidden_dim=64,
         num_layers=2,
-        activation="relu",
         device=device,
     )
 
     mle_learner = MaximumLikelihoodEstimator(
-        action_num,
+        actions,
         learned_reward_model,
         learning_rate=1e-3,
         batch_size=64,
         logger=logger,
     )
-    states = torch.cat([x[0] for x in pref_dataset], dim=0)
-    positive_actions = torch.cat([x[1] for x in pref_dataset], dim=0)
-    negative_actions = torch.cat([x[2] for x in pref_dataset], dim=0)
+
+    action_to_index = {-10: 0, 0: 1, 10: 2}
+
+    states = torch.cat([torch.tensor(x.state) for x in pref_dataset], dim=0)
+    
+    positive_actions = torch.cat(
+        [torch.tensor(action_to_index[x.action_1] if x.pref == 1 else action_to_index[x.action_0]).unsqueeze(0) for x in pref_dataset],
+        dim=0
+    )
+    
+    negative_actions = torch.cat(
+        [torch.tensor(action_to_index[x.action_0] if x.pref == 1 else action_to_index[x.action_1]).unsqueeze(0) for x in pref_dataset],
+        dim=0
+    )
 
     mle_learner.optimize(
         states, positive_actions, negative_actions, num_epochs=args.mle_num_iters
@@ -130,7 +125,7 @@ def main(args=parse_args()):
     logger.info("========Train on preference data [DPO]===========")
     policy = PolicyModel(
         state_dim,
-        action_num,
+        actions,
         hidden_dim=64,
         num_layers=2,
         device=device,
@@ -142,8 +137,7 @@ def main(args=parse_args()):
 
     learned_env = NeuralBandit(
         state_dim,
-        action_num,
-        learned_reward_model,
+        actions,
         num_trials_for_eval=5000,
         device=device,
     )
@@ -158,18 +152,24 @@ def main(args=parse_args()):
         beta=args.reg_coef,
         logger=logger,
     )
-    states = torch.cat([x[0] for x in pref_dataset], dim=0)
-    positive_actions = torch.cat([x[1] for x in pref_dataset], dim=0)
-    negative_actions = torch.cat([x[2] for x in pref_dataset], dim=0)
+    
+    states = torch.cat([torch.tensor(x.state) for x in pref_dataset], dim=0).to(device)
+    positive_actions = torch.cat(
+        [torch.tensor(action_to_index[x.action_1] if x.pref == 1 else action_to_index[x.action_0]).unsqueeze(0) for x in pref_dataset],
+        dim=0
+    ).to(device)
+    negative_actions = torch.cat(
+        [torch.tensor(action_to_index[x.action_0] if x.pref == 1 else action_to_index[x.action_1]).unsqueeze(0) for x in pref_dataset],
+        dim=0
+    ).to(device)
+
     dpo.optimize(
         states,
         positive_actions,
         negative_actions,
         num_epochs=args.pg_num_iters,
-        optimal_rew=opt_rew.item(),
     )
-    dpo_reward = env.evaluate_policy(policy)
-    logger.info("DPO reward error: {:.4f}".format(opt_rew - dpo_reward))
+   
 
     # RMB-PO
     logger.info("========Train on preference data [RMB-PO]===========")
@@ -188,32 +188,9 @@ def main(args=parse_args()):
         positive_actions,
         negative_actions,
         num_epochs=args.pg_num_iters,
-        optimal_rew=opt_rew.item(),
     )
-    rmb_po_reward = env.evaluate_policy(policy2)
-    logger.info("RMB PO reward error: {:.4f}".format(opt_rew - rmb_po_reward))
 
-    # Train policy on additional RL data
-    logger.info(
-        f"========Train on {args.rl_data_ratio + 1}x RL data [RMB-PO+]==========="
-    )
-    pg2 = PolicyGradientOptimizer(
-        policy3,
-        ref_policy=uniform_policy,
-        env=env,
-        learned_env=learned_env,
-        learning_rate=1e-3,
-        batch_size=64,
-        beta=args.reg_coef,
-        logger=logger,
-    )
-    rl_states = env.sample_states(n=int(args.rl_data_ratio * args.pref_data_num))
-    rl_states = torch.cat([rl_states, states], dim=0)
 
-    pg2.optimize(rl_states, num_epochs=args.pg_num_iters, optimal_rew=opt_rew.item())
-
-    rmb_po_plus_reward = env.evaluate_policy(policy3)
-    logger.info("RMB PO+ reward error: {:.4f}".format(opt_rew - rmb_po_plus_reward))
 
 
 if __name__ == "__main__":

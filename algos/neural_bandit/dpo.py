@@ -94,15 +94,9 @@ class DirectPreferenceOptimizer:
         positive_actions: torch.tensor = None,
         negative_actions: torch.tensor = None,
         num_epochs: int = 10,
-        optimal_rew: float = 0.0,
     ):
         eval_epoch_interval = 5
         for epoch in range(num_epochs):
-            if epoch % eval_epoch_interval == 0:
-                true_reward = self.env.evaluate_policy(self.policy).item()
-                fake_reward = self.learned_env.evaluate_policy(self.policy).item()
-                gap = np.abs(optimal_rew - true_reward)
-
             loss, gradient_norm = self.optimize_one_epoch(
                 states, positive_actions, negative_actions
             )
@@ -110,5 +104,4 @@ class DirectPreferenceOptimizer:
                 if self.logger:
                     self.logger.info(
                         f"[Policy] Epoch: {epoch} loss: {loss:.4f} grad norm: {gradient_norm:.4f} "
-                        f"true reward: {true_reward:.4f} fake reward: {fake_reward:.4f} gap: {gap:.4f}"
                     )

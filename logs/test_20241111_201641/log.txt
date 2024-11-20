@@ -1,0 +1,100 @@
+2024-11-11 20:16:41,167 - /tmp/ipykernel_3177568/1717690416.py[line:114] - INFO: [Reward] Epoch 0 loss: 0.6915 acc: 0.52
+2024-11-11 20:16:41,182 - /tmp/ipykernel_3177568/1717690416.py[line:114] - INFO: [Reward] Epoch 2 loss: 0.6910 acc: 0.52
+2024-11-11 20:16:41,197 - /tmp/ipykernel_3177568/1717690416.py[line:114] - INFO: [Reward] Epoch 4 loss: 0.6905 acc: 0.52
+2024-11-11 20:16:41,212 - /tmp/ipykernel_3177568/1717690416.py[line:114] - INFO: [Reward] Epoch 6 loss: 0.6902 acc: 0.52
+2024-11-11 20:16:41,227 - /tmp/ipykernel_3177568/1717690416.py[line:114] - INFO: [Reward] Epoch 8 loss: 0.6898 acc: 0.55
+2024-11-11 20:16:41,243 - /tmp/ipykernel_3177568/1717690416.py[line:114] - INFO: [Reward] Epoch 10 loss: 0.6896 acc: 0.55
+2024-11-11 20:16:41,259 - /tmp/ipykernel_3177568/1717690416.py[line:114] - INFO: [Reward] Epoch 12 loss: 0.6894 acc: 0.55
+2024-11-11 20:16:41,276 - /tmp/ipykernel_3177568/1717690416.py[line:114] - INFO: [Reward] Epoch 14 loss: 0.6892 acc: 0.55
+2024-11-11 20:16:41,292 - /tmp/ipykernel_3177568/1717690416.py[line:114] - INFO: [Reward] Epoch 16 loss: 0.6891 acc: 0.55
+2024-11-11 20:16:41,309 - /tmp/ipykernel_3177568/1717690416.py[line:114] - INFO: [Reward] Epoch 18 loss: 0.6890 acc: 0.55
+2024-11-11 20:16:41,403 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 0 loss: -0.2002 reward: 0.2002 ref_reward: 0.1991 improvement: 0.54%
+2024-11-11 20:16:41,440 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 2 loss: -0.2038 reward: 0.2038 ref_reward: 0.1991 improvement: 2.34%
+2024-11-11 20:16:41,476 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 4 loss: -0.2074 reward: 0.2074 ref_reward: 0.1991 improvement: 4.15%
+2024-11-11 20:16:41,511 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 6 loss: -0.2109 reward: 0.2109 ref_reward: 0.1991 improvement: 5.91%
+2024-11-11 20:16:41,547 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 8 loss: -0.2145 reward: 0.2145 ref_reward: 0.1991 improvement: 7.72%
+2024-11-11 20:16:41,582 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 10 loss: -0.2182 reward: 0.2182 ref_reward: 0.1991 improvement: 9.58%
+2024-11-11 20:16:41,617 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 12 loss: -0.2220 reward: 0.2220 ref_reward: 0.1991 improvement: 11.50%
+2024-11-11 20:16:41,652 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 14 loss: -0.2260 reward: 0.2260 ref_reward: 0.1991 improvement: 13.49%
+2024-11-11 20:16:41,687 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 16 loss: -0.2300 reward: 0.2300 ref_reward: 0.1991 improvement: 15.50%
+2024-11-11 20:16:41,723 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 18 loss: -0.2342 reward: 0.2342 ref_reward: 0.1991 improvement: 17.60%
+2024-11-11 20:16:41,759 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 20 loss: -0.2385 reward: 0.2385 ref_reward: 0.1991 improvement: 19.77%
+2024-11-11 20:16:41,795 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 22 loss: -0.2430 reward: 0.2430 ref_reward: 0.1991 improvement: 22.00%
+2024-11-11 20:16:41,831 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 24 loss: -0.2475 reward: 0.2475 ref_reward: 0.1991 improvement: 24.29%
+2024-11-11 20:16:41,866 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 26 loss: -0.2522 reward: 0.2522 ref_reward: 0.1991 improvement: 26.62%
+2024-11-11 20:16:41,903 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 28 loss: -0.2568 reward: 0.2568 ref_reward: 0.1991 improvement: 28.96%
+2024-11-11 20:16:41,943 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 30 loss: -0.2615 reward: 0.2615 ref_reward: 0.1991 improvement: 31.29%
+2024-11-11 20:16:41,981 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 32 loss: -0.2660 reward: 0.2660 ref_reward: 0.1991 improvement: 33.59%
+2024-11-11 20:16:42,015 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 34 loss: -0.2704 reward: 0.2704 ref_reward: 0.1991 improvement: 35.81%
+2024-11-11 20:16:42,050 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 36 loss: -0.2747 reward: 0.2747 ref_reward: 0.1991 improvement: 37.92%
+2024-11-11 20:16:42,085 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 38 loss: -0.2786 reward: 0.2786 ref_reward: 0.1991 improvement: 39.91%
+2024-11-11 20:16:42,119 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 40 loss: -0.2823 reward: 0.2823 ref_reward: 0.1991 improvement: 41.74%
+2024-11-11 20:16:42,154 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 42 loss: -0.2856 reward: 0.2856 ref_reward: 0.1991 improvement: 43.42%
+2024-11-11 20:16:42,189 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 44 loss: -0.2886 reward: 0.2886 ref_reward: 0.1991 improvement: 44.93%
+2024-11-11 20:16:42,223 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 46 loss: -0.2913 reward: 0.2913 ref_reward: 0.1991 improvement: 46.27%
+2024-11-11 20:16:42,258 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 48 loss: -0.2936 reward: 0.2936 ref_reward: 0.1991 improvement: 47.45%
+2024-11-11 20:16:42,293 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 50 loss: -0.2957 reward: 0.2957 ref_reward: 0.1991 improvement: 48.47%
+2024-11-11 20:16:42,314 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 52 loss: -0.2974 reward: 0.2974 ref_reward: 0.1991 improvement: 49.35%
+2024-11-11 20:16:42,329 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 54 loss: -0.2989 reward: 0.2989 ref_reward: 0.1991 improvement: 50.10%
+2024-11-11 20:16:42,342 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 56 loss: -0.3002 reward: 0.3002 ref_reward: 0.1991 improvement: 50.74%
+2024-11-11 20:16:42,377 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 58 loss: -0.3013 reward: 0.3013 ref_reward: 0.1991 improvement: 51.28%
+2024-11-11 20:16:42,412 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 60 loss: -0.3022 reward: 0.3022 ref_reward: 0.1991 improvement: 51.74%
+2024-11-11 20:16:42,446 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 62 loss: -0.3030 reward: 0.3030 ref_reward: 0.1991 improvement: 52.13%
+2024-11-11 20:16:42,480 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 64 loss: -0.3036 reward: 0.3036 ref_reward: 0.1991 improvement: 52.46%
+2024-11-11 20:16:42,515 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 66 loss: -0.3042 reward: 0.3042 ref_reward: 0.1991 improvement: 52.74%
+2024-11-11 20:16:42,548 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 68 loss: -0.3046 reward: 0.3046 ref_reward: 0.1991 improvement: 52.98%
+2024-11-11 20:16:42,582 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 70 loss: -0.3050 reward: 0.3050 ref_reward: 0.1991 improvement: 53.18%
+2024-11-11 20:16:42,618 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 72 loss: -0.3054 reward: 0.3054 ref_reward: 0.1991 improvement: 53.36%
+2024-11-11 20:16:42,653 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 74 loss: -0.3057 reward: 0.3057 ref_reward: 0.1991 improvement: 53.51%
+2024-11-11 20:16:42,688 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 76 loss: -0.3060 reward: 0.3060 ref_reward: 0.1991 improvement: 53.64%
+2024-11-11 20:16:42,723 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 78 loss: -0.3062 reward: 0.3062 ref_reward: 0.1991 improvement: 53.75%
+2024-11-11 20:16:42,758 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 80 loss: -0.3064 reward: 0.3064 ref_reward: 0.1991 improvement: 53.85%
+2024-11-11 20:16:42,793 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 82 loss: -0.3066 reward: 0.3066 ref_reward: 0.1991 improvement: 53.94%
+2024-11-11 20:16:42,829 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 84 loss: -0.3067 reward: 0.3067 ref_reward: 0.1991 improvement: 54.01%
+2024-11-11 20:16:42,865 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 86 loss: -0.3068 reward: 0.3068 ref_reward: 0.1991 improvement: 54.08%
+2024-11-11 20:16:42,901 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 88 loss: -0.3070 reward: 0.3070 ref_reward: 0.1991 improvement: 54.14%
+2024-11-11 20:16:42,937 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 90 loss: -0.3071 reward: 0.3071 ref_reward: 0.1991 improvement: 54.19%
+2024-11-11 20:16:42,974 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 92 loss: -0.3072 reward: 0.3072 ref_reward: 0.1991 improvement: 54.24%
+2024-11-11 20:16:43,010 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 94 loss: -0.3073 reward: 0.3073 ref_reward: 0.1991 improvement: 54.29%
+2024-11-11 20:16:43,046 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 96 loss: -0.3073 reward: 0.3073 ref_reward: 0.1991 improvement: 54.33%
+2024-11-11 20:16:43,081 - /tmp/ipykernel_3177568/201659581.py[line:51] - INFO: [Policy] Epoch 98 loss: -0.3074 reward: 0.3074 ref_reward: 0.1991 improvement: 54.36%
+2024-11-11 20:16:43,204 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 0 loss: 0.6914 grad norm: 0.0225 
+2024-11-11 20:16:43,415 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 5 loss: 0.6898 grad norm: 0.0145 
+2024-11-11 20:16:43,625 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 10 loss: 0.6891 grad norm: 0.0079 
+2024-11-11 20:16:43,833 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 15 loss: 0.6888 grad norm: 0.0024 
+2024-11-11 20:16:43,927 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 20 loss: 0.6889 grad norm: 0.0040 
+2024-11-11 20:16:44,066 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 25 loss: 0.6889 grad norm: 0.0044 
+2024-11-11 20:16:44,274 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 30 loss: 0.6889 grad norm: 0.0031 
+2024-11-11 20:16:44,485 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 35 loss: 0.6888 grad norm: 0.0020 
+2024-11-11 20:16:44,695 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 40 loss: 0.6888 grad norm: 0.0008 
+2024-11-11 20:16:44,905 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 45 loss: 0.6888 grad norm: 0.0007 
+2024-11-11 20:16:45,115 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 50 loss: 0.6888 grad norm: 0.0011 
+2024-11-11 20:16:45,324 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 55 loss: 0.6888 grad norm: 0.0008 
+2024-11-11 20:16:45,505 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 60 loss: 0.6888 grad norm: 0.0003 
+2024-11-11 20:16:45,528 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 65 loss: 0.6888 grad norm: 0.0003 
+2024-11-11 20:16:45,736 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 70 loss: 0.6888 grad norm: 0.0004 
+2024-11-11 20:16:45,946 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 75 loss: 0.6888 grad norm: 0.0003 
+2024-11-11 20:16:46,159 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 80 loss: 0.6888 grad norm: 0.0002 
+2024-11-11 20:16:46,371 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 85 loss: 0.6888 grad norm: 0.0001 
+2024-11-11 20:16:46,586 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 90 loss: 0.6888 grad norm: 0.0002 
+2024-11-11 20:16:46,798 - /tmp/ipykernel_3177568/3444343116.py[line:100] - INFO: [Policy] Epoch: 95 loss: 0.6888 grad norm: 0.0001 
+2024-11-11 20:16:47,062 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 0 loss: 0.0001 grad norm: 0.0093 
+2024-11-11 20:16:47,135 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 5 loss: 0.0000 grad norm: 0.0066 
+2024-11-11 20:16:47,265 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 10 loss: 0.0000 grad norm: 0.0049 
+2024-11-11 20:16:47,473 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 15 loss: 0.0000 grad norm: 0.0036 
+2024-11-11 20:16:47,685 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 20 loss: 0.0000 grad norm: 0.0027 
+2024-11-11 20:16:47,901 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 25 loss: 0.0000 grad norm: 0.0019 
+2024-11-11 20:16:48,115 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 30 loss: 0.0000 grad norm: 0.0012 
+2024-11-11 20:16:48,330 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 35 loss: 0.0000 grad norm: 0.0006 
+2024-11-11 20:16:48,539 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 40 loss: 0.0000 grad norm: 0.0001 
+2024-11-11 20:16:48,735 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 45 loss: 0.0000 grad norm: 0.0004 
+2024-11-11 20:16:48,755 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 50 loss: 0.0000 grad norm: 0.0006 
+2024-11-11 20:16:48,942 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 55 loss: 0.0000 grad norm: 0.0005 
+2024-11-11 20:16:49,150 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 60 loss: 0.0000 grad norm: 0.0002 
+2024-11-11 20:16:49,364 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 65 loss: 0.0000 grad norm: 0.0001 
+2024-11-11 20:16:49,576 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 70 loss: 0.0000 grad norm: 0.0002 
+2024-11-11 20:16:49,787 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 75 loss: 0.0000 grad norm: 0.0001 
+2024-11-11 20:16:49,997 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 80 loss: 0.0000 grad norm: 0.0000 
+2024-11-11 20:16:50,206 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 85 loss: 0.0000 grad norm: 0.0001 
+2024-11-11 20:16:50,370 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 90 loss: 0.0000 grad norm: 0.0000 
+2024-11-11 20:16:50,392 - /tmp/ipykernel_3177568/718610915.py[line:100] - INFO: [Policy] Epoch: 95 loss: 0.0000 grad norm: 0.0001 

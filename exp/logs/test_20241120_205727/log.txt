@@ -1,0 +1,680 @@
+2024-11-20 20:57:27,903 - /home/hanwen/policy_optimization/exp/algorithm.py[line:124] - INFO: [Reward] Epoch 0 loss: 0.6915 acc: 0.52
+2024-11-20 20:57:27,909 - /home/hanwen/policy_optimization/exp/algorithm.py[line:124] - INFO: [Reward] Epoch 2 loss: 0.6910 acc: 0.52
+2024-11-20 20:57:27,915 - /home/hanwen/policy_optimization/exp/algorithm.py[line:124] - INFO: [Reward] Epoch 4 loss: 0.6905 acc: 0.52
+2024-11-20 20:57:27,920 - /home/hanwen/policy_optimization/exp/algorithm.py[line:124] - INFO: [Reward] Epoch 6 loss: 0.6902 acc: 0.52
+2024-11-20 20:57:27,926 - /home/hanwen/policy_optimization/exp/algorithm.py[line:124] - INFO: [Reward] Epoch 8 loss: 0.6898 acc: 0.55
+2024-11-20 20:57:27,933 - /home/hanwen/policy_optimization/exp/algorithm.py[line:124] - INFO: [Reward] Epoch 10 loss: 0.6896 acc: 0.55
+2024-11-20 20:57:27,939 - /home/hanwen/policy_optimization/exp/algorithm.py[line:124] - INFO: [Reward] Epoch 12 loss: 0.6894 acc: 0.55
+2024-11-20 20:57:27,944 - /home/hanwen/policy_optimization/exp/algorithm.py[line:124] - INFO: [Reward] Epoch 14 loss: 0.6892 acc: 0.55
+2024-11-20 20:57:27,950 - /home/hanwen/policy_optimization/exp/algorithm.py[line:124] - INFO: [Reward] Epoch 16 loss: 0.6891 acc: 0.55
+2024-11-20 20:57:27,956 - /home/hanwen/policy_optimization/exp/algorithm.py[line:124] - INFO: [Reward] Epoch 18 loss: 0.6890 acc: 0.55
+2024-11-20 20:57:28,000 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 0 loss: -0.2029 reward: 0.2029 ref_reward: 0.1991 improvement: 1.89%
+2024-11-20 20:57:28,007 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 2 loss: -0.2075 reward: 0.2075 ref_reward: 0.1991 improvement: 4.18%
+2024-11-20 20:57:28,014 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 4 loss: -0.2120 reward: 0.2120 ref_reward: 0.1991 improvement: 6.46%
+2024-11-20 20:57:28,021 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 6 loss: -0.2165 reward: 0.2165 ref_reward: 0.1991 improvement: 8.71%
+2024-11-20 20:57:28,028 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 8 loss: -0.2210 reward: 0.2210 ref_reward: 0.1991 improvement: 10.98%
+2024-11-20 20:57:28,035 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 10 loss: -0.2255 reward: 0.2255 ref_reward: 0.1991 improvement: 13.22%
+2024-11-20 20:57:28,041 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 12 loss: -0.2301 reward: 0.2301 ref_reward: 0.1991 improvement: 15.52%
+2024-11-20 20:57:28,048 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 14 loss: -0.2348 reward: 0.2348 ref_reward: 0.1991 improvement: 17.89%
+2024-11-20 20:57:28,055 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 16 loss: -0.2396 reward: 0.2396 ref_reward: 0.1991 improvement: 20.32%
+2024-11-20 20:57:28,062 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 18 loss: -0.2446 reward: 0.2446 ref_reward: 0.1991 improvement: 22.82%
+2024-11-20 20:57:28,069 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 20 loss: -0.2497 reward: 0.2497 ref_reward: 0.1991 improvement: 25.39%
+2024-11-20 20:57:28,076 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 22 loss: -0.2549 reward: 0.2549 ref_reward: 0.1991 improvement: 28.00%
+2024-11-20 20:57:28,083 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 24 loss: -0.2600 reward: 0.2600 ref_reward: 0.1991 improvement: 30.55%
+2024-11-20 20:57:28,091 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 26 loss: -0.2650 reward: 0.2650 ref_reward: 0.1991 improvement: 33.05%
+2024-11-20 20:57:28,099 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 28 loss: -0.2698 reward: 0.2698 ref_reward: 0.1991 improvement: 35.48%
+2024-11-20 20:57:28,106 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 30 loss: -0.2744 reward: 0.2744 ref_reward: 0.1991 improvement: 37.80%
+2024-11-20 20:57:28,113 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 32 loss: -0.2788 reward: 0.2788 ref_reward: 0.1991 improvement: 39.98%
+2024-11-20 20:57:28,120 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 34 loss: -0.2827 reward: 0.2827 ref_reward: 0.1991 improvement: 41.98%
+2024-11-20 20:57:28,127 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 36 loss: -0.2863 reward: 0.2863 ref_reward: 0.1991 improvement: 43.79%
+2024-11-20 20:57:28,133 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 38 loss: -0.2895 reward: 0.2895 ref_reward: 0.1991 improvement: 45.39%
+2024-11-20 20:57:28,140 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 40 loss: -0.2923 reward: 0.2923 ref_reward: 0.1991 improvement: 46.79%
+2024-11-20 20:57:28,147 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 42 loss: -0.2947 reward: 0.2947 ref_reward: 0.1991 improvement: 48.00%
+2024-11-20 20:57:28,154 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 44 loss: -0.2968 reward: 0.2968 ref_reward: 0.1991 improvement: 49.04%
+2024-11-20 20:57:28,160 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 46 loss: -0.2985 reward: 0.2985 ref_reward: 0.1991 improvement: 49.91%
+2024-11-20 20:57:28,167 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 48 loss: -0.3000 reward: 0.3000 ref_reward: 0.1991 improvement: 50.64%
+2024-11-20 20:57:28,174 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 50 loss: -0.3012 reward: 0.3012 ref_reward: 0.1991 improvement: 51.25%
+2024-11-20 20:57:28,180 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 52 loss: -0.3022 reward: 0.3022 ref_reward: 0.1991 improvement: 51.76%
+2024-11-20 20:57:28,187 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 54 loss: -0.3031 reward: 0.3031 ref_reward: 0.1991 improvement: 52.18%
+2024-11-20 20:57:28,194 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 56 loss: -0.3038 reward: 0.3038 ref_reward: 0.1991 improvement: 52.54%
+2024-11-20 20:57:28,201 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 58 loss: -0.3044 reward: 0.3044 ref_reward: 0.1991 improvement: 52.84%
+2024-11-20 20:57:28,209 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 60 loss: -0.3049 reward: 0.3049 ref_reward: 0.1991 improvement: 53.08%
+2024-11-20 20:57:28,216 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 62 loss: -0.3053 reward: 0.3053 ref_reward: 0.1991 improvement: 53.29%
+2024-11-20 20:57:28,224 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 64 loss: -0.3056 reward: 0.3056 ref_reward: 0.1991 improvement: 53.47%
+2024-11-20 20:57:28,231 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 66 loss: -0.3059 reward: 0.3059 ref_reward: 0.1991 improvement: 53.62%
+2024-11-20 20:57:28,238 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 68 loss: -0.3062 reward: 0.3062 ref_reward: 0.1991 improvement: 53.75%
+2024-11-20 20:57:28,246 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 70 loss: -0.3064 reward: 0.3064 ref_reward: 0.1991 improvement: 53.86%
+2024-11-20 20:57:28,253 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 72 loss: -0.3066 reward: 0.3066 ref_reward: 0.1991 improvement: 53.95%
+2024-11-20 20:57:28,261 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 74 loss: -0.3068 reward: 0.3068 ref_reward: 0.1991 improvement: 54.04%
+2024-11-20 20:57:28,268 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 76 loss: -0.3069 reward: 0.3069 ref_reward: 0.1991 improvement: 54.11%
+2024-11-20 20:57:28,275 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 78 loss: -0.3070 reward: 0.3070 ref_reward: 0.1991 improvement: 54.17%
+2024-11-20 20:57:28,281 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 80 loss: -0.3071 reward: 0.3071 ref_reward: 0.1991 improvement: 54.23%
+2024-11-20 20:57:28,288 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 82 loss: -0.3072 reward: 0.3072 ref_reward: 0.1991 improvement: 54.28%
+2024-11-20 20:57:28,295 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 84 loss: -0.3073 reward: 0.3073 ref_reward: 0.1991 improvement: 54.33%
+2024-11-20 20:57:28,301 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 86 loss: -0.3074 reward: 0.3074 ref_reward: 0.1991 improvement: 54.37%
+2024-11-20 20:57:28,308 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 88 loss: -0.3075 reward: 0.3075 ref_reward: 0.1991 improvement: 54.41%
+2024-11-20 20:57:28,314 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 90 loss: -0.3076 reward: 0.3076 ref_reward: 0.1991 improvement: 54.44%
+2024-11-20 20:57:28,321 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 92 loss: -0.3076 reward: 0.3076 ref_reward: 0.1991 improvement: 54.48%
+2024-11-20 20:57:28,328 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 94 loss: -0.3077 reward: 0.3077 ref_reward: 0.1991 improvement: 54.51%
+2024-11-20 20:57:28,335 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 96 loss: -0.3077 reward: 0.3077 ref_reward: 0.1991 improvement: 54.54%
+2024-11-20 20:57:28,343 - /home/hanwen/policy_optimization/exp/algorithm.py[line:193] - INFO: [Policy] Epoch 98 loss: -0.3078 reward: 0.3078 ref_reward: 0.1991 improvement: 54.56%
+2024-11-20 20:57:28,570 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 0 loss: 0.6948 grad norm: 0.0368 
+2024-11-20 20:57:28,585 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 5 loss: 0.6925 grad norm: 0.0280 
+2024-11-20 20:57:28,600 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 10 loss: 0.6907 grad norm: 0.0211 
+2024-11-20 20:57:28,614 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 15 loss: 0.6895 grad norm: 0.0132 
+2024-11-20 20:57:28,629 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 20 loss: 0.6890 grad norm: 0.0056 
+2024-11-20 20:57:28,644 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 25 loss: 0.6889 grad norm: 0.0041 
+2024-11-20 20:57:28,658 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 30 loss: 0.6889 grad norm: 0.0044 
+2024-11-20 20:57:28,673 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 35 loss: 0.6889 grad norm: 0.0035 
+2024-11-20 20:57:28,687 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 40 loss: 0.6889 grad norm: 0.0034 
+2024-11-20 20:57:28,702 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 45 loss: 0.6889 grad norm: 0.0029 
+2024-11-20 20:57:28,716 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 50 loss: 0.6888 grad norm: 0.0016 
+2024-11-20 20:57:28,731 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 55 loss: 0.6888 grad norm: 0.0004 
+2024-11-20 20:57:28,745 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 60 loss: 0.6888 grad norm: 0.0007 
+2024-11-20 20:57:28,762 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 65 loss: 0.6888 grad norm: 0.0008 
+2024-11-20 20:57:28,778 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 70 loss: 0.6888 grad norm: 0.0007 
+2024-11-20 20:57:28,795 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 75 loss: 0.6888 grad norm: 0.0006 
+2024-11-20 20:57:28,811 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 80 loss: 0.6888 grad norm: 0.0003 
+2024-11-20 20:57:28,827 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 85 loss: 0.6888 grad norm: 0.0001 
+2024-11-20 20:57:28,842 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 90 loss: 0.6888 grad norm: 0.0002 
+2024-11-20 20:57:28,859 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 95 loss: 0.6888 grad norm: 0.0002 
+2024-11-20 20:57:29,030 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 0 loss: 0.7386 grad norm: 0.1085 
+2024-11-20 20:57:29,047 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 5 loss: 0.7279 grad norm: 0.1042 
+2024-11-20 20:57:29,065 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 10 loss: 0.7191 grad norm: 0.1016 
+2024-11-20 20:57:29,081 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 15 loss: 0.7114 grad norm: 0.0984 
+2024-11-20 20:57:29,098 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 20 loss: 0.7044 grad norm: 0.0916 
+2024-11-20 20:57:29,115 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 25 loss: 0.6984 grad norm: 0.0782 
+2024-11-20 20:57:29,132 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 30 loss: 0.6938 grad norm: 0.0584 
+2024-11-20 20:57:29,148 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 35 loss: 0.6910 grad norm: 0.0370 
+2024-11-20 20:57:29,165 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 40 loss: 0.6896 grad norm: 0.0196 
+2024-11-20 20:57:29,181 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 45 loss: 0.6891 grad norm: 0.0084 
+2024-11-20 20:57:29,198 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 50 loss: 0.6890 grad norm: 0.0032 
+2024-11-20 20:57:29,215 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 55 loss: 0.6890 grad norm: 0.0037 
+2024-11-20 20:57:29,231 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 60 loss: 0.6890 grad norm: 0.0048 
+2024-11-20 20:57:29,246 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 65 loss: 0.6890 grad norm: 0.0052 
+2024-11-20 20:57:29,261 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 70 loss: 0.6890 grad norm: 0.0051 
+2024-11-20 20:57:29,276 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 75 loss: 0.6890 grad norm: 0.0046 
+2024-11-20 20:57:29,291 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 80 loss: 0.6889 grad norm: 0.0039 
+2024-11-20 20:57:29,306 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 85 loss: 0.6889 grad norm: 0.0031 
+2024-11-20 20:57:29,321 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 90 loss: 0.6889 grad norm: 0.0024 
+2024-11-20 20:57:29,337 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 95 loss: 0.6889 grad norm: 0.0020 
+2024-11-20 20:57:29,513 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 0 loss: 0.7983 grad norm: 0.1655 
+2024-11-20 20:57:29,529 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 5 loss: 0.7831 grad norm: 0.1668 
+2024-11-20 20:57:29,544 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 10 loss: 0.7684 grad norm: 0.1738 
+2024-11-20 20:57:29,559 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 15 loss: 0.7542 grad norm: 0.1761 
+2024-11-20 20:57:29,576 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 20 loss: 0.7402 grad norm: 0.1718 
+2024-11-20 20:57:29,593 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 25 loss: 0.7272 grad norm: 0.1529 
+2024-11-20 20:57:29,608 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 30 loss: 0.7164 grad norm: 0.1244 
+2024-11-20 20:57:29,624 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 35 loss: 0.7086 grad norm: 0.0943 
+2024-11-20 20:57:29,641 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 40 loss: 0.7035 grad norm: 0.0692 
+2024-11-20 20:57:29,657 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 45 loss: 0.7002 grad norm: 0.0504 
+2024-11-20 20:57:29,673 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 50 loss: 0.6982 grad norm: 0.0375 
+2024-11-20 20:57:29,689 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 55 loss: 0.6969 grad norm: 0.0288 
+2024-11-20 20:57:29,705 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 60 loss: 0.6961 grad norm: 0.0230 
+2024-11-20 20:57:29,722 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 65 loss: 0.6955 grad norm: 0.0190 
+2024-11-20 20:57:29,739 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 70 loss: 0.6951 grad norm: 0.0161 
+2024-11-20 20:57:29,755 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 75 loss: 0.6949 grad norm: 0.0140 
+2024-11-20 20:57:29,772 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 80 loss: 0.6946 grad norm: 0.0124 
+2024-11-20 20:57:29,790 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 85 loss: 0.6945 grad norm: 0.0111 
+2024-11-20 20:57:29,808 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 90 loss: 0.6943 grad norm: 0.0101 
+2024-11-20 20:57:29,825 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 95 loss: 0.6942 grad norm: 0.0093 
+2024-11-20 20:57:30,002 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 0 loss: 0.7013 grad norm: 0.0510 
+2024-11-20 20:57:30,019 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 5 loss: 0.6972 grad norm: 0.0428 
+2024-11-20 20:57:30,035 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 10 loss: 0.6938 grad norm: 0.0367 
+2024-11-20 20:57:30,051 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 15 loss: 0.6912 grad norm: 0.0285 
+2024-11-20 20:57:30,068 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 20 loss: 0.6895 grad norm: 0.0170 
+2024-11-20 20:57:30,086 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 25 loss: 0.6888 grad norm: 0.0033 
+2024-11-20 20:57:30,103 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 30 loss: 0.6890 grad norm: 0.0086 
+2024-11-20 20:57:30,120 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 35 loss: 0.6891 grad norm: 0.0125 
+2024-11-20 20:57:30,137 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 40 loss: 0.6890 grad norm: 0.0098 
+2024-11-20 20:57:30,154 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 45 loss: 0.6888 grad norm: 0.0043 
+2024-11-20 20:57:30,171 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 50 loss: 0.6888 grad norm: 0.0007 
+2024-11-20 20:57:30,187 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 55 loss: 0.6888 grad norm: 0.0032 
+2024-11-20 20:57:30,204 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 60 loss: 0.6888 grad norm: 0.0035 
+2024-11-20 20:57:30,223 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 65 loss: 0.6888 grad norm: 0.0022 
+2024-11-20 20:57:30,241 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 70 loss: 0.6888 grad norm: 0.0005 
+2024-11-20 20:57:30,259 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 75 loss: 0.6888 grad norm: 0.0008 
+2024-11-20 20:57:30,276 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 80 loss: 0.6888 grad norm: 0.0012 
+2024-11-20 20:57:30,293 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 85 loss: 0.6888 grad norm: 0.0009 
+2024-11-20 20:57:30,309 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 90 loss: 0.6888 grad norm: 0.0002 
+2024-11-20 20:57:30,326 - /home/hanwen/policy_optimization/exp/algorithm.py[line:315] - INFO: [Policy] Epoch: 95 loss: 0.6888 grad norm: 0.0003 
+2024-11-20 20:57:30,588 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 0 loss: 0.0004 grad norm: 0.0276 
+2024-11-20 20:57:30,611 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 5 loss: 0.0021 grad norm: 0.0475 
+2024-11-20 20:57:30,633 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 10 loss: 0.0008 grad norm: 0.0336 
+2024-11-20 20:57:30,655 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 15 loss: 0.0002 grad norm: 0.0145 
+2024-11-20 20:57:30,676 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 20 loss: 0.0001 grad norm: 0.0168 
+2024-11-20 20:57:30,698 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 25 loss: 0.0001 grad norm: 0.0110 
+2024-11-20 20:57:30,720 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 30 loss: 0.0002 grad norm: 0.0128 
+2024-11-20 20:57:30,743 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 35 loss: 0.0000 grad norm: 0.0028 
+2024-11-20 20:57:30,764 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 40 loss: 0.0000 grad norm: 0.0044 
+2024-11-20 20:57:30,786 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 45 loss: 0.0000 grad norm: 0.0010 
+2024-11-20 20:57:30,809 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 50 loss: 0.0000 grad norm: 0.0023 
+2024-11-20 20:57:30,833 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 55 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:30,855 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 60 loss: 0.0000 grad norm: 0.0014 
+2024-11-20 20:57:30,878 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 65 loss: 0.0000 grad norm: 0.0008 
+2024-11-20 20:57:30,900 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 70 loss: 0.0000 grad norm: 0.0004 
+2024-11-20 20:57:30,921 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 75 loss: 0.0000 grad norm: 0.0005 
+2024-11-20 20:57:30,943 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 80 loss: 0.0000 grad norm: 0.0004 
+2024-11-20 20:57:30,965 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 85 loss: 0.0000 grad norm: 0.0002 
+2024-11-20 20:57:30,987 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 90 loss: 0.0000 grad norm: 0.0002 
+2024-11-20 20:57:31,009 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 95 loss: 0.0000 grad norm: 0.0002 
+2024-11-20 20:57:31,031 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 100 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:31,054 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 105 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,076 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 110 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,098 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 115 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,120 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 120 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,143 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 125 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:31,167 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 130 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,191 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 135 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,215 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 140 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,237 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 145 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,259 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 150 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,281 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 155 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,304 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 160 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,329 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 165 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,356 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 170 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,379 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 175 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,402 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 180 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,426 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 185 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,448 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 190 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,473 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 195 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,498 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 200 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,522 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 205 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,547 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 210 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,570 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 215 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,592 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 220 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,614 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 225 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,636 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 230 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,660 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 235 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,684 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 240 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,708 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 245 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,732 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 250 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,756 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 255 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,779 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 260 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,802 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 265 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,826 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 270 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,850 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 275 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,873 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 280 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,896 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 285 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,918 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 290 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:31,941 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 295 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,127 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 0 loss: 0.1557 grad norm: 0.4427 
+2024-11-20 20:57:32,150 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 5 loss: 0.0033 grad norm: 0.0745 
+2024-11-20 20:57:32,171 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 10 loss: 0.0008 grad norm: 0.0243 
+2024-11-20 20:57:32,190 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 15 loss: 0.0014 grad norm: 0.0273 
+2024-11-20 20:57:32,209 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 20 loss: 0.0004 grad norm: 0.0165 
+2024-11-20 20:57:32,228 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 25 loss: 0.0001 grad norm: 0.0067 
+2024-11-20 20:57:32,247 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 30 loss: 0.0003 grad norm: 0.0170 
+2024-11-20 20:57:32,267 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 35 loss: 0.0000 grad norm: 0.0040 
+2024-11-20 20:57:32,287 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 40 loss: 0.0000 grad norm: 0.0024 
+2024-11-20 20:57:32,308 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 45 loss: 0.0000 grad norm: 0.0017 
+2024-11-20 20:57:32,330 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 50 loss: 0.0000 grad norm: 0.0019 
+2024-11-20 20:57:32,351 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 55 loss: 0.0000 grad norm: 0.0008 
+2024-11-20 20:57:32,372 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 60 loss: 0.0000 grad norm: 0.0013 
+2024-11-20 20:57:32,395 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 65 loss: 0.0000 grad norm: 0.0005 
+2024-11-20 20:57:32,416 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 70 loss: 0.0000 grad norm: 0.0002 
+2024-11-20 20:57:32,437 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 75 loss: 0.0000 grad norm: 0.0003 
+2024-11-20 20:57:32,458 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 80 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:32,480 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 85 loss: 0.0000 grad norm: 0.0002 
+2024-11-20 20:57:32,501 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 90 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:32,522 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 95 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:32,541 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 100 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,560 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 105 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:32,579 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 110 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,598 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 115 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,617 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 120 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,639 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 125 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,661 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 130 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,682 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 135 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,703 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 140 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,724 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 145 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,745 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 150 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,767 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 155 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,789 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 160 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,810 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 165 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,831 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 170 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,851 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 175 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,870 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 180 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,890 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 185 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,909 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 190 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,928 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 195 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,948 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 200 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,969 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 205 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:32,991 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 210 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,012 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 215 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,033 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 220 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,055 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 225 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,076 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 230 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,097 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 235 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,118 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 240 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,140 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 245 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,161 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 250 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,185 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 255 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,207 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 260 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,229 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 265 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,251 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 270 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,275 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 275 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,298 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 280 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,320 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 285 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,343 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 290 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,366 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 295 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:33,574 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 0 loss: 0.4681 grad norm: 0.8031 
+2024-11-20 20:57:33,597 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 5 loss: 0.0114 grad norm: 0.1700 
+2024-11-20 20:57:33,617 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 10 loss: 0.0013 grad norm: 0.0412 
+2024-11-20 20:57:33,638 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 15 loss: 0.0038 grad norm: 0.0611 
+2024-11-20 20:57:33,659 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 20 loss: 0.0008 grad norm: 0.0312 
+2024-11-20 20:57:33,680 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 25 loss: 0.0004 grad norm: 0.0248 
+2024-11-20 20:57:33,702 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 30 loss: 0.0007 grad norm: 0.0329 
+2024-11-20 20:57:33,724 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 35 loss: 0.0002 grad norm: 0.0151 
+2024-11-20 20:57:33,745 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 40 loss: 0.0001 grad norm: 0.0089 
+2024-11-20 20:57:33,767 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 45 loss: 0.0000 grad norm: 0.0073 
+2024-11-20 20:57:33,789 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 50 loss: 0.0000 grad norm: 0.0066 
+2024-11-20 20:57:33,813 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 55 loss: 0.0000 grad norm: 0.0038 
+2024-11-20 20:57:33,838 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 60 loss: 0.0000 grad norm: 0.0041 
+2024-11-20 20:57:33,862 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 65 loss: 0.0000 grad norm: 0.0030 
+2024-11-20 20:57:33,886 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 70 loss: 0.0000 grad norm: 0.0006 
+2024-11-20 20:57:33,910 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 75 loss: 0.0000 grad norm: 0.0018 
+2024-11-20 20:57:33,935 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 80 loss: 0.0000 grad norm: 0.0002 
+2024-11-20 20:57:33,958 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 85 loss: 0.0000 grad norm: 0.0011 
+2024-11-20 20:57:33,982 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 90 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:34,008 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 95 loss: 0.0000 grad norm: 0.0006 
+2024-11-20 20:57:34,032 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 100 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,055 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 105 loss: 0.0000 grad norm: 0.0003 
+2024-11-20 20:57:34,080 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 110 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:34,104 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 115 loss: 0.0000 grad norm: 0.0002 
+2024-11-20 20:57:34,128 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 120 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:34,152 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 125 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,176 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 130 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,198 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 135 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,220 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 140 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,241 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 145 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,264 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 150 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,290 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 155 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,313 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 160 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,335 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 165 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,358 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 170 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,379 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 175 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,401 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 180 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,426 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 185 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,450 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 190 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,474 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 195 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,498 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 200 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,522 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 205 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,546 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 210 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,575 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 215 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,598 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 220 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,620 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 225 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,642 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 230 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,665 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 235 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,689 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 240 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,714 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 245 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,736 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 250 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,757 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 255 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,779 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 260 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,801 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 265 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,824 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 270 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,846 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 275 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,868 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 280 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,890 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 285 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,913 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 290 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:34,937 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 295 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,119 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 0 loss: 0.0536 grad norm: 0.3026 
+2024-11-20 20:57:35,142 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 5 loss: 0.0049 grad norm: 0.0699 
+2024-11-20 20:57:35,164 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 10 loss: 0.0009 grad norm: 0.0348 
+2024-11-20 20:57:35,187 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 15 loss: 0.0004 grad norm: 0.0209 
+2024-11-20 20:57:35,209 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 20 loss: 0.0004 grad norm: 0.0169 
+2024-11-20 20:57:35,231 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 25 loss: 0.0002 grad norm: 0.0135 
+2024-11-20 20:57:35,253 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 30 loss: 0.0001 grad norm: 0.0090 
+2024-11-20 20:57:35,277 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 35 loss: 0.0000 grad norm: 0.0052 
+2024-11-20 20:57:35,300 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 40 loss: 0.0000 grad norm: 0.0023 
+2024-11-20 20:57:35,323 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 45 loss: 0.0000 grad norm: 0.0026 
+2024-11-20 20:57:35,346 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 50 loss: 0.0000 grad norm: 0.0018 
+2024-11-20 20:57:35,371 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 55 loss: 0.0000 grad norm: 0.0015 
+2024-11-20 20:57:35,396 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 60 loss: 0.0000 grad norm: 0.0011 
+2024-11-20 20:57:35,422 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 65 loss: 0.0000 grad norm: 0.0010 
+2024-11-20 20:57:35,447 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 70 loss: 0.0000 grad norm: 0.0002 
+2024-11-20 20:57:35,472 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 75 loss: 0.0000 grad norm: 0.0006 
+2024-11-20 20:57:35,498 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 80 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:35,521 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 85 loss: 0.0000 grad norm: 0.0004 
+2024-11-20 20:57:35,543 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 90 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:35,566 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 95 loss: 0.0000 grad norm: 0.0002 
+2024-11-20 20:57:35,590 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 100 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,615 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 105 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 20:57:35,638 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 110 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,662 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 115 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,685 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 120 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,710 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 125 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,734 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 130 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,757 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 135 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,780 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 140 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,801 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 145 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,822 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 150 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,844 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 155 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,865 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 160 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,888 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 165 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,909 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 170 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,929 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 175 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,949 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 180 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,970 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 185 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:35,992 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 190 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,012 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 195 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,032 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 200 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,052 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 205 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,072 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 210 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,093 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 215 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,115 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 220 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,136 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 225 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,159 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 230 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,181 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 235 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,202 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 240 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,225 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 245 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,247 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 250 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,270 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 255 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,291 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 260 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,313 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 265 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,335 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 270 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,358 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 275 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,380 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 280 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,402 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 285 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,424 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 290 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,445 - /home/hanwen/policy_optimization/exp/algorithm.py[line:433] - INFO: [Policy] Epoch: 295 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 20:57:36,694 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 0: ref_distribution = tensor([0.3333, 0.3333, 0.3333], device='cuda:0'), new_distribution = tensor([0.3338, 0.3332, 0.3330], device='cuda:0')
+2024-11-20 20:57:36,698 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 1: ref_distribution = tensor([0.3338, 0.3332, 0.3330], device='cuda:0'), new_distribution = tensor([0.3338, 0.3332, 0.3330], device='cuda:0')
+2024-11-20 20:57:36,702 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 2: ref_distribution = tensor([0.3338, 0.3332, 0.3330], device='cuda:0'), new_distribution = tensor([0.3343, 0.3345, 0.3312], device='cuda:0')
+2024-11-20 20:57:36,706 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 3: ref_distribution = tensor([0.3343, 0.3345, 0.3312], device='cuda:0'), new_distribution = tensor([0.3346, 0.3355, 0.3299], device='cuda:0')
+2024-11-20 20:57:36,710 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 4: ref_distribution = tensor([0.3346, 0.3355, 0.3299], device='cuda:0'), new_distribution = tensor([0.3350, 0.3360, 0.3289], device='cuda:0')
+2024-11-20 20:57:36,714 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 5: ref_distribution = tensor([0.3350, 0.3360, 0.3289], device='cuda:0'), new_distribution = tensor([0.3372, 0.3361, 0.3267], device='cuda:0')
+2024-11-20 20:57:36,718 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 6: ref_distribution = tensor([0.3372, 0.3361, 0.3267], device='cuda:0'), new_distribution = tensor([0.3377, 0.3366, 0.3256], device='cuda:0')
+2024-11-20 20:57:36,722 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 7: ref_distribution = tensor([0.3377, 0.3366, 0.3256], device='cuda:0'), new_distribution = tensor([0.3382, 0.3378, 0.3239], device='cuda:0')
+2024-11-20 20:57:36,727 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 8: ref_distribution = tensor([0.3382, 0.3378, 0.3239], device='cuda:0'), new_distribution = tensor([0.3397, 0.3386, 0.3217], device='cuda:0')
+2024-11-20 20:57:36,731 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 9: ref_distribution = tensor([0.3397, 0.3386, 0.3217], device='cuda:0'), new_distribution = tensor([0.3405, 0.3386, 0.3209], device='cuda:0')
+2024-11-20 20:57:36,735 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 10: ref_distribution = tensor([0.3405, 0.3386, 0.3209], device='cuda:0'), new_distribution = tensor([0.3410, 0.3391, 0.3199], device='cuda:0')
+2024-11-20 20:57:36,739 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 11: ref_distribution = tensor([0.3410, 0.3391, 0.3199], device='cuda:0'), new_distribution = tensor([0.3413, 0.3393, 0.3194], device='cuda:0')
+2024-11-20 20:57:36,743 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 12: ref_distribution = tensor([0.3413, 0.3393, 0.3194], device='cuda:0'), new_distribution = tensor([0.3418, 0.3383, 0.3198], device='cuda:0')
+2024-11-20 20:57:36,747 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 13: ref_distribution = tensor([0.3418, 0.3383, 0.3198], device='cuda:0'), new_distribution = tensor([0.3433, 0.3383, 0.3183], device='cuda:0')
+2024-11-20 20:57:36,751 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 14: ref_distribution = tensor([0.3433, 0.3383, 0.3183], device='cuda:0'), new_distribution = tensor([0.3439, 0.3381, 0.3180], device='cuda:0')
+2024-11-20 20:57:36,755 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 15: ref_distribution = tensor([0.3439, 0.3381, 0.3180], device='cuda:0'), new_distribution = tensor([0.3449, 0.3376, 0.3175], device='cuda:0')
+2024-11-20 20:57:36,759 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 16: ref_distribution = tensor([0.3449, 0.3376, 0.3175], device='cuda:0'), new_distribution = tensor([0.3462, 0.3373, 0.3165], device='cuda:0')
+2024-11-20 20:57:36,763 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 17: ref_distribution = tensor([0.3462, 0.3373, 0.3165], device='cuda:0'), new_distribution = tensor([0.3477, 0.3373, 0.3150], device='cuda:0')
+2024-11-20 20:57:36,767 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 18: ref_distribution = tensor([0.3477, 0.3373, 0.3150], device='cuda:0'), new_distribution = tensor([0.3475, 0.3385, 0.3141], device='cuda:0')
+2024-11-20 20:57:36,771 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 19: ref_distribution = tensor([0.3475, 0.3385, 0.3141], device='cuda:0'), new_distribution = tensor([0.3485, 0.3394, 0.3122], device='cuda:0')
+2024-11-20 20:57:36,775 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 20: ref_distribution = tensor([0.3485, 0.3394, 0.3122], device='cuda:0'), new_distribution = tensor([0.3485, 0.3400, 0.3114], device='cuda:0')
+2024-11-20 20:57:36,779 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 21: ref_distribution = tensor([0.3485, 0.3400, 0.3114], device='cuda:0'), new_distribution = tensor([0.3486, 0.3400, 0.3114], device='cuda:0')
+2024-11-20 20:57:36,783 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 22: ref_distribution = tensor([0.3486, 0.3400, 0.3114], device='cuda:0'), new_distribution = tensor([0.3499, 0.3397, 0.3104], device='cuda:0')
+2024-11-20 20:57:36,787 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 23: ref_distribution = tensor([0.3499, 0.3397, 0.3104], device='cuda:0'), new_distribution = tensor([0.3509, 0.3399, 0.3092], device='cuda:0')
+2024-11-20 20:57:36,791 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 24: ref_distribution = tensor([0.3509, 0.3399, 0.3092], device='cuda:0'), new_distribution = tensor([0.3515, 0.3396, 0.3089], device='cuda:0')
+2024-11-20 20:57:36,795 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 25: ref_distribution = tensor([0.3515, 0.3396, 0.3089], device='cuda:0'), new_distribution = tensor([0.3533, 0.3390, 0.3077], device='cuda:0')
+2024-11-20 20:57:36,799 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 26: ref_distribution = tensor([0.3533, 0.3390, 0.3077], device='cuda:0'), new_distribution = tensor([0.3526, 0.3404, 0.3070], device='cuda:0')
+2024-11-20 20:57:36,803 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 27: ref_distribution = tensor([0.3526, 0.3404, 0.3070], device='cuda:0'), new_distribution = tensor([0.3527, 0.3410, 0.3063], device='cuda:0')
+2024-11-20 20:57:36,807 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 28: ref_distribution = tensor([0.3527, 0.3410, 0.3063], device='cuda:0'), new_distribution = tensor([0.3540, 0.3407, 0.3053], device='cuda:0')
+2024-11-20 20:57:36,811 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 29: ref_distribution = tensor([0.3540, 0.3407, 0.3053], device='cuda:0'), new_distribution = tensor([0.3548, 0.3406, 0.3046], device='cuda:0')
+2024-11-20 20:57:36,815 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 30: ref_distribution = tensor([0.3548, 0.3406, 0.3046], device='cuda:0'), new_distribution = tensor([0.3568, 0.3402, 0.3029], device='cuda:0')
+2024-11-20 20:57:36,819 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 31: ref_distribution = tensor([0.3568, 0.3402, 0.3029], device='cuda:0'), new_distribution = tensor([0.3577, 0.3401, 0.3022], device='cuda:0')
+2024-11-20 20:57:36,823 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 32: ref_distribution = tensor([0.3577, 0.3401, 0.3022], device='cuda:0'), new_distribution = tensor([0.3592, 0.3393, 0.3015], device='cuda:0')
+2024-11-20 20:57:36,827 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 33: ref_distribution = tensor([0.3592, 0.3393, 0.3015], device='cuda:0'), new_distribution = tensor([0.3603, 0.3387, 0.3010], device='cuda:0')
+2024-11-20 20:57:36,831 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 34: ref_distribution = tensor([0.3603, 0.3387, 0.3010], device='cuda:0'), new_distribution = tensor([0.3609, 0.3398, 0.2994], device='cuda:0')
+2024-11-20 20:57:36,835 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 35: ref_distribution = tensor([0.3609, 0.3398, 0.2994], device='cuda:0'), new_distribution = tensor([0.3622, 0.3394, 0.2984], device='cuda:0')
+2024-11-20 20:57:36,839 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 36: ref_distribution = tensor([0.3622, 0.3394, 0.2984], device='cuda:0'), new_distribution = tensor([0.3628, 0.3390, 0.2982], device='cuda:0')
+2024-11-20 20:57:36,843 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 37: ref_distribution = tensor([0.3628, 0.3390, 0.2982], device='cuda:0'), new_distribution = tensor([0.3639, 0.3391, 0.2970], device='cuda:0')
+2024-11-20 20:57:36,847 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 38: ref_distribution = tensor([0.3639, 0.3391, 0.2970], device='cuda:0'), new_distribution = tensor([0.3652, 0.3394, 0.2954], device='cuda:0')
+2024-11-20 20:57:36,851 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 39: ref_distribution = tensor([0.3652, 0.3394, 0.2954], device='cuda:0'), new_distribution = tensor([0.3665, 0.3390, 0.2944], device='cuda:0')
+2024-11-20 20:57:36,855 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 40: ref_distribution = tensor([0.3665, 0.3390, 0.2944], device='cuda:0'), new_distribution = tensor([0.3674, 0.3381, 0.2944], device='cuda:0')
+2024-11-20 20:57:36,859 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 41: ref_distribution = tensor([0.3674, 0.3381, 0.2944], device='cuda:0'), new_distribution = tensor([0.3688, 0.3377, 0.2935], device='cuda:0')
+2024-11-20 20:57:36,863 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 42: ref_distribution = tensor([0.3688, 0.3377, 0.2935], device='cuda:0'), new_distribution = tensor([0.3696, 0.3383, 0.2922], device='cuda:0')
+2024-11-20 20:57:36,867 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 43: ref_distribution = tensor([0.3696, 0.3383, 0.2922], device='cuda:0'), new_distribution = tensor([0.3714, 0.3376, 0.2910], device='cuda:0')
+2024-11-20 20:57:36,871 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 44: ref_distribution = tensor([0.3714, 0.3376, 0.2910], device='cuda:0'), new_distribution = tensor([0.3733, 0.3369, 0.2898], device='cuda:0')
+2024-11-20 20:57:36,875 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 45: ref_distribution = tensor([0.3733, 0.3369, 0.2898], device='cuda:0'), new_distribution = tensor([0.3756, 0.3360, 0.2884], device='cuda:0')
+2024-11-20 20:57:36,879 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 46: ref_distribution = tensor([0.3756, 0.3360, 0.2884], device='cuda:0'), new_distribution = tensor([0.3772, 0.3351, 0.2877], device='cuda:0')
+2024-11-20 20:57:36,883 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 47: ref_distribution = tensor([0.3772, 0.3351, 0.2877], device='cuda:0'), new_distribution = tensor([0.3788, 0.3349, 0.2864], device='cuda:0')
+2024-11-20 20:57:36,887 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 48: ref_distribution = tensor([0.3788, 0.3349, 0.2864], device='cuda:0'), new_distribution = tensor([0.3794, 0.3344, 0.2862], device='cuda:0')
+2024-11-20 20:57:36,892 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 49: ref_distribution = tensor([0.3794, 0.3344, 0.2862], device='cuda:0'), new_distribution = tensor([0.3803, 0.3349, 0.2849], device='cuda:0')
+2024-11-20 20:57:36,896 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 50: ref_distribution = tensor([0.3803, 0.3349, 0.2849], device='cuda:0'), new_distribution = tensor([0.3817, 0.3344, 0.2840], device='cuda:0')
+2024-11-20 20:57:36,901 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 51: ref_distribution = tensor([0.3817, 0.3344, 0.2840], device='cuda:0'), new_distribution = tensor([0.3828, 0.3329, 0.2842], device='cuda:0')
+2024-11-20 20:57:36,905 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 52: ref_distribution = tensor([0.3828, 0.3329, 0.2842], device='cuda:0'), new_distribution = tensor([0.3842, 0.3332, 0.2827], device='cuda:0')
+2024-11-20 20:57:36,909 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 53: ref_distribution = tensor([0.3842, 0.3332, 0.2827], device='cuda:0'), new_distribution = tensor([0.3855, 0.3341, 0.2805], device='cuda:0')
+2024-11-20 20:57:36,914 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 54: ref_distribution = tensor([0.3855, 0.3341, 0.2805], device='cuda:0'), new_distribution = tensor([0.3873, 0.3333, 0.2793], device='cuda:0')
+2024-11-20 20:57:36,918 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 55: ref_distribution = tensor([0.3873, 0.3333, 0.2793], device='cuda:0'), new_distribution = tensor([0.3880, 0.3335, 0.2785], device='cuda:0')
+2024-11-20 20:57:36,922 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 56: ref_distribution = tensor([0.3880, 0.3335, 0.2785], device='cuda:0'), new_distribution = tensor([0.3893, 0.3337, 0.2770], device='cuda:0')
+2024-11-20 20:57:36,927 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 57: ref_distribution = tensor([0.3893, 0.3337, 0.2770], device='cuda:0'), new_distribution = tensor([0.3904, 0.3336, 0.2759], device='cuda:0')
+2024-11-20 20:57:36,931 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 58: ref_distribution = tensor([0.3904, 0.3336, 0.2759], device='cuda:0'), new_distribution = tensor([0.3913, 0.3333, 0.2753], device='cuda:0')
+2024-11-20 20:57:36,936 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 59: ref_distribution = tensor([0.3913, 0.3333, 0.2753], device='cuda:0'), new_distribution = tensor([0.3922, 0.3337, 0.2741], device='cuda:0')
+2024-11-20 20:57:36,940 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 60: ref_distribution = tensor([0.3922, 0.3337, 0.2741], device='cuda:0'), new_distribution = tensor([0.3933, 0.3336, 0.2730], device='cuda:0')
+2024-11-20 20:57:36,945 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 61: ref_distribution = tensor([0.3933, 0.3336, 0.2730], device='cuda:0'), new_distribution = tensor([0.3948, 0.3324, 0.2728], device='cuda:0')
+2024-11-20 20:57:36,949 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 62: ref_distribution = tensor([0.3948, 0.3324, 0.2728], device='cuda:0'), new_distribution = tensor([0.3959, 0.3323, 0.2718], device='cuda:0')
+2024-11-20 20:57:36,954 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 63: ref_distribution = tensor([0.3959, 0.3323, 0.2718], device='cuda:0'), new_distribution = tensor([0.3969, 0.3319, 0.2712], device='cuda:0')
+2024-11-20 20:57:36,958 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 64: ref_distribution = tensor([0.3969, 0.3319, 0.2712], device='cuda:0'), new_distribution = tensor([0.3987, 0.3311, 0.2701], device='cuda:0')
+2024-11-20 20:57:36,962 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 65: ref_distribution = tensor([0.3987, 0.3311, 0.2701], device='cuda:0'), new_distribution = tensor([0.3999, 0.3310, 0.2691], device='cuda:0')
+2024-11-20 20:57:36,966 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 66: ref_distribution = tensor([0.3999, 0.3310, 0.2691], device='cuda:0'), new_distribution = tensor([0.4011, 0.3295, 0.2694], device='cuda:0')
+2024-11-20 20:57:36,971 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 67: ref_distribution = tensor([0.4011, 0.3295, 0.2694], device='cuda:0'), new_distribution = tensor([0.4035, 0.3284, 0.2681], device='cuda:0')
+2024-11-20 20:57:36,975 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 68: ref_distribution = tensor([0.4035, 0.3284, 0.2681], device='cuda:0'), new_distribution = tensor([0.4044, 0.3288, 0.2668], device='cuda:0')
+2024-11-20 20:57:36,979 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 69: ref_distribution = tensor([0.4044, 0.3288, 0.2668], device='cuda:0'), new_distribution = tensor([0.4058, 0.3282, 0.2660], device='cuda:0')
+2024-11-20 20:57:36,983 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 70: ref_distribution = tensor([0.4058, 0.3282, 0.2660], device='cuda:0'), new_distribution = tensor([0.4067, 0.3285, 0.2648], device='cuda:0')
+2024-11-20 20:57:36,988 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 71: ref_distribution = tensor([0.4067, 0.3285, 0.2648], device='cuda:0'), new_distribution = tensor([0.4086, 0.3276, 0.2638], device='cuda:0')
+2024-11-20 20:57:36,992 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 72: ref_distribution = tensor([0.4086, 0.3276, 0.2638], device='cuda:0'), new_distribution = tensor([0.4100, 0.3270, 0.2630], device='cuda:0')
+2024-11-20 20:57:36,996 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 73: ref_distribution = tensor([0.4100, 0.3270, 0.2630], device='cuda:0'), new_distribution = tensor([0.4122, 0.3256, 0.2622], device='cuda:0')
+2024-11-20 20:57:37,000 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 74: ref_distribution = tensor([0.4122, 0.3256, 0.2622], device='cuda:0'), new_distribution = tensor([0.4134, 0.3255, 0.2612], device='cuda:0')
+2024-11-20 20:57:37,005 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 75: ref_distribution = tensor([0.4134, 0.3255, 0.2612], device='cuda:0'), new_distribution = tensor([0.4146, 0.3246, 0.2608], device='cuda:0')
+2024-11-20 20:57:37,009 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 76: ref_distribution = tensor([0.4146, 0.3246, 0.2608], device='cuda:0'), new_distribution = tensor([0.4150, 0.3251, 0.2599], device='cuda:0')
+2024-11-20 20:57:37,013 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 77: ref_distribution = tensor([0.4150, 0.3251, 0.2599], device='cuda:0'), new_distribution = tensor([0.4164, 0.3244, 0.2592], device='cuda:0')
+2024-11-20 20:57:37,018 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 78: ref_distribution = tensor([0.4164, 0.3244, 0.2592], device='cuda:0'), new_distribution = tensor([0.4187, 0.3240, 0.2573], device='cuda:0')
+2024-11-20 20:57:37,022 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 79: ref_distribution = tensor([0.4187, 0.3240, 0.2573], device='cuda:0'), new_distribution = tensor([0.4204, 0.3235, 0.2561], device='cuda:0')
+2024-11-20 20:57:37,026 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 80: ref_distribution = tensor([0.4204, 0.3235, 0.2561], device='cuda:0'), new_distribution = tensor([0.4204, 0.3236, 0.2560], device='cuda:0')
+2024-11-20 20:57:37,030 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 81: ref_distribution = tensor([0.4204, 0.3236, 0.2560], device='cuda:0'), new_distribution = tensor([0.4215, 0.3217, 0.2568], device='cuda:0')
+2024-11-20 20:57:37,035 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 82: ref_distribution = tensor([0.4215, 0.3217, 0.2568], device='cuda:0'), new_distribution = tensor([0.4222, 0.3217, 0.2561], device='cuda:0')
+2024-11-20 20:57:37,040 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 83: ref_distribution = tensor([0.4222, 0.3217, 0.2561], device='cuda:0'), new_distribution = tensor([0.4229, 0.3217, 0.2554], device='cuda:0')
+2024-11-20 20:57:37,045 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 84: ref_distribution = tensor([0.4229, 0.3217, 0.2554], device='cuda:0'), new_distribution = tensor([0.4244, 0.3203, 0.2553], device='cuda:0')
+2024-11-20 20:57:37,049 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 85: ref_distribution = tensor([0.4244, 0.3203, 0.2553], device='cuda:0'), new_distribution = tensor([0.4256, 0.3201, 0.2543], device='cuda:0')
+2024-11-20 20:57:37,054 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 86: ref_distribution = tensor([0.4256, 0.3201, 0.2543], device='cuda:0'), new_distribution = tensor([0.4263, 0.3201, 0.2536], device='cuda:0')
+2024-11-20 20:57:37,058 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 87: ref_distribution = tensor([0.4263, 0.3201, 0.2536], device='cuda:0'), new_distribution = tensor([0.4267, 0.3205, 0.2528], device='cuda:0')
+2024-11-20 20:57:37,062 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 88: ref_distribution = tensor([0.4267, 0.3205, 0.2528], device='cuda:0'), new_distribution = tensor([0.4273, 0.3196, 0.2531], device='cuda:0')
+2024-11-20 20:57:37,067 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 89: ref_distribution = tensor([0.4273, 0.3196, 0.2531], device='cuda:0'), new_distribution = tensor([0.4287, 0.3196, 0.2518], device='cuda:0')
+2024-11-20 20:57:37,071 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 90: ref_distribution = tensor([0.4287, 0.3196, 0.2518], device='cuda:0'), new_distribution = tensor([0.4302, 0.3198, 0.2500], device='cuda:0')
+2024-11-20 20:57:37,075 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 91: ref_distribution = tensor([0.4302, 0.3198, 0.2500], device='cuda:0'), new_distribution = tensor([0.4307, 0.3195, 0.2498], device='cuda:0')
+2024-11-20 20:57:37,080 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 92: ref_distribution = tensor([0.4307, 0.3195, 0.2498], device='cuda:0'), new_distribution = tensor([0.4306, 0.3209, 0.2485], device='cuda:0')
+2024-11-20 20:57:37,084 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 93: ref_distribution = tensor([0.4306, 0.3209, 0.2485], device='cuda:0'), new_distribution = tensor([0.4316, 0.3203, 0.2480], device='cuda:0')
+2024-11-20 20:57:37,088 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 94: ref_distribution = tensor([0.4316, 0.3203, 0.2480], device='cuda:0'), new_distribution = tensor([0.4337, 0.3196, 0.2467], device='cuda:0')
+2024-11-20 20:57:37,092 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 95: ref_distribution = tensor([0.4337, 0.3196, 0.2467], device='cuda:0'), new_distribution = tensor([0.4349, 0.3193, 0.2458], device='cuda:0')
+2024-11-20 20:57:37,096 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 96: ref_distribution = tensor([0.4349, 0.3193, 0.2458], device='cuda:0'), new_distribution = tensor([0.4352, 0.3195, 0.2453], device='cuda:0')
+2024-11-20 20:57:37,100 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 97: ref_distribution = tensor([0.4352, 0.3195, 0.2453], device='cuda:0'), new_distribution = tensor([0.4369, 0.3183, 0.2448], device='cuda:0')
+2024-11-20 20:57:37,104 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 98: ref_distribution = tensor([0.4369, 0.3183, 0.2448], device='cuda:0'), new_distribution = tensor([0.4384, 0.3175, 0.2441], device='cuda:0')
+2024-11-20 20:57:37,108 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 99: ref_distribution = tensor([0.4384, 0.3175, 0.2441], device='cuda:0'), new_distribution = tensor([0.4400, 0.3170, 0.2430], device='cuda:0')
+2024-11-20 20:57:37,112 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 100: ref_distribution = tensor([0.4400, 0.3170, 0.2430], device='cuda:0'), new_distribution = tensor([0.4406, 0.3166, 0.2428], device='cuda:0')
+2024-11-20 20:57:37,116 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 101: ref_distribution = tensor([0.4406, 0.3166, 0.2428], device='cuda:0'), new_distribution = tensor([0.4413, 0.3166, 0.2421], device='cuda:0')
+2024-11-20 20:57:37,120 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 102: ref_distribution = tensor([0.4413, 0.3166, 0.2421], device='cuda:0'), new_distribution = tensor([0.4419, 0.3155, 0.2425], device='cuda:0')
+2024-11-20 20:57:37,124 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 103: ref_distribution = tensor([0.4419, 0.3155, 0.2425], device='cuda:0'), new_distribution = tensor([0.4430, 0.3159, 0.2411], device='cuda:0')
+2024-11-20 20:57:37,128 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 104: ref_distribution = tensor([0.4430, 0.3159, 0.2411], device='cuda:0'), new_distribution = tensor([0.4447, 0.3153, 0.2400], device='cuda:0')
+2024-11-20 20:57:37,132 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 105: ref_distribution = tensor([0.4447, 0.3153, 0.2400], device='cuda:0'), new_distribution = tensor([0.4471, 0.3141, 0.2388], device='cuda:0')
+2024-11-20 20:57:37,136 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 106: ref_distribution = tensor([0.4471, 0.3141, 0.2388], device='cuda:0'), new_distribution = tensor([0.4491, 0.3124, 0.2385], device='cuda:0')
+2024-11-20 20:57:37,140 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 107: ref_distribution = tensor([0.4491, 0.3124, 0.2385], device='cuda:0'), new_distribution = tensor([0.4501, 0.3109, 0.2391], device='cuda:0')
+2024-11-20 20:57:37,144 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 108: ref_distribution = tensor([0.4501, 0.3109, 0.2391], device='cuda:0'), new_distribution = tensor([0.4513, 0.3105, 0.2382], device='cuda:0')
+2024-11-20 20:57:37,148 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 109: ref_distribution = tensor([0.4513, 0.3105, 0.2382], device='cuda:0'), new_distribution = tensor([0.4527, 0.3097, 0.2376], device='cuda:0')
+2024-11-20 20:57:37,152 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 110: ref_distribution = tensor([0.4527, 0.3097, 0.2376], device='cuda:0'), new_distribution = tensor([0.4537, 0.3091, 0.2371], device='cuda:0')
+2024-11-20 20:57:37,156 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 111: ref_distribution = tensor([0.4537, 0.3091, 0.2371], device='cuda:0'), new_distribution = tensor([0.4556, 0.3088, 0.2357], device='cuda:0')
+2024-11-20 20:57:37,160 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 112: ref_distribution = tensor([0.4556, 0.3088, 0.2357], device='cuda:0'), new_distribution = tensor([0.4565, 0.3072, 0.2362], device='cuda:0')
+2024-11-20 20:57:37,164 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 113: ref_distribution = tensor([0.4565, 0.3072, 0.2362], device='cuda:0'), new_distribution = tensor([0.4581, 0.3057, 0.2362], device='cuda:0')
+2024-11-20 20:57:37,168 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 114: ref_distribution = tensor([0.4581, 0.3057, 0.2362], device='cuda:0'), new_distribution = tensor([0.4587, 0.3053, 0.2360], device='cuda:0')
+2024-11-20 20:57:37,172 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 115: ref_distribution = tensor([0.4587, 0.3053, 0.2360], device='cuda:0'), new_distribution = tensor([0.4600, 0.3052, 0.2348], device='cuda:0')
+2024-11-20 20:57:37,176 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 116: ref_distribution = tensor([0.4600, 0.3052, 0.2348], device='cuda:0'), new_distribution = tensor([0.4610, 0.3046, 0.2344], device='cuda:0')
+2024-11-20 20:57:37,180 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 117: ref_distribution = tensor([0.4610, 0.3046, 0.2344], device='cuda:0'), new_distribution = tensor([0.4618, 0.3044, 0.2338], device='cuda:0')
+2024-11-20 20:57:37,185 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 118: ref_distribution = tensor([0.4618, 0.3044, 0.2338], device='cuda:0'), new_distribution = tensor([0.4622, 0.3038, 0.2340], device='cuda:0')
+2024-11-20 20:57:37,189 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 119: ref_distribution = tensor([0.4622, 0.3038, 0.2340], device='cuda:0'), new_distribution = tensor([0.4634, 0.3034, 0.2332], device='cuda:0')
+2024-11-20 20:57:37,193 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 120: ref_distribution = tensor([0.4634, 0.3034, 0.2332], device='cuda:0'), new_distribution = tensor([0.4653, 0.3023, 0.2324], device='cuda:0')
+2024-11-20 20:57:37,197 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 121: ref_distribution = tensor([0.4653, 0.3023, 0.2324], device='cuda:0'), new_distribution = tensor([0.4671, 0.3003, 0.2325], device='cuda:0')
+2024-11-20 20:57:37,201 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 122: ref_distribution = tensor([0.4671, 0.3003, 0.2325], device='cuda:0'), new_distribution = tensor([0.4682, 0.2997, 0.2321], device='cuda:0')
+2024-11-20 20:57:37,205 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 123: ref_distribution = tensor([0.4682, 0.2997, 0.2321], device='cuda:0'), new_distribution = tensor([0.4698, 0.2991, 0.2311], device='cuda:0')
+2024-11-20 20:57:37,209 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 124: ref_distribution = tensor([0.4698, 0.2991, 0.2311], device='cuda:0'), new_distribution = tensor([0.4718, 0.2973, 0.2309], device='cuda:0')
+2024-11-20 20:57:37,213 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 125: ref_distribution = tensor([0.4718, 0.2973, 0.2309], device='cuda:0'), new_distribution = tensor([0.4730, 0.2969, 0.2301], device='cuda:0')
+2024-11-20 20:57:37,217 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 126: ref_distribution = tensor([0.4730, 0.2969, 0.2301], device='cuda:0'), new_distribution = tensor([0.4745, 0.2960, 0.2295], device='cuda:0')
+2024-11-20 20:57:37,221 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 127: ref_distribution = tensor([0.4745, 0.2960, 0.2295], device='cuda:0'), new_distribution = tensor([0.4758, 0.2949, 0.2293], device='cuda:0')
+2024-11-20 20:57:37,225 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 128: ref_distribution = tensor([0.4758, 0.2949, 0.2293], device='cuda:0'), new_distribution = tensor([0.4777, 0.2938, 0.2285], device='cuda:0')
+2024-11-20 20:57:37,229 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 129: ref_distribution = tensor([0.4777, 0.2938, 0.2285], device='cuda:0'), new_distribution = tensor([0.4784, 0.2936, 0.2280], device='cuda:0')
+2024-11-20 20:57:37,233 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 130: ref_distribution = tensor([0.4784, 0.2936, 0.2280], device='cuda:0'), new_distribution = tensor([0.4791, 0.2934, 0.2275], device='cuda:0')
+2024-11-20 20:57:37,237 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 131: ref_distribution = tensor([0.4791, 0.2934, 0.2275], device='cuda:0'), new_distribution = tensor([0.4803, 0.2929, 0.2267], device='cuda:0')
+2024-11-20 20:57:37,241 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 132: ref_distribution = tensor([0.4803, 0.2929, 0.2267], device='cuda:0'), new_distribution = tensor([0.4806, 0.2929, 0.2264], device='cuda:0')
+2024-11-20 20:57:37,245 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 133: ref_distribution = tensor([0.4806, 0.2929, 0.2264], device='cuda:0'), new_distribution = tensor([0.4814, 0.2927, 0.2259], device='cuda:0')
+2024-11-20 20:57:37,249 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 134: ref_distribution = tensor([0.4814, 0.2927, 0.2259], device='cuda:0'), new_distribution = tensor([0.4830, 0.2911, 0.2259], device='cuda:0')
+2024-11-20 20:57:37,253 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 135: ref_distribution = tensor([0.4830, 0.2911, 0.2259], device='cuda:0'), new_distribution = tensor([0.4840, 0.2895, 0.2265], device='cuda:0')
+2024-11-20 20:57:37,257 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 136: ref_distribution = tensor([0.4840, 0.2895, 0.2265], device='cuda:0'), new_distribution = tensor([0.4853, 0.2884, 0.2263], device='cuda:0')
+2024-11-20 20:57:37,261 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 137: ref_distribution = tensor([0.4853, 0.2884, 0.2263], device='cuda:0'), new_distribution = tensor([0.4863, 0.2877, 0.2260], device='cuda:0')
+2024-11-20 20:57:37,265 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 138: ref_distribution = tensor([0.4863, 0.2877, 0.2260], device='cuda:0'), new_distribution = tensor([0.4881, 0.2857, 0.2261], device='cuda:0')
+2024-11-20 20:57:37,269 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 139: ref_distribution = tensor([0.4881, 0.2857, 0.2261], device='cuda:0'), new_distribution = tensor([0.4896, 0.2839, 0.2265], device='cuda:0')
+2024-11-20 20:57:37,273 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 140: ref_distribution = tensor([0.4896, 0.2839, 0.2265], device='cuda:0'), new_distribution = tensor([0.4911, 0.2823, 0.2265], device='cuda:0')
+2024-11-20 20:57:37,277 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 141: ref_distribution = tensor([0.4911, 0.2823, 0.2265], device='cuda:0'), new_distribution = tensor([0.4916, 0.2816, 0.2268], device='cuda:0')
+2024-11-20 20:57:37,281 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 142: ref_distribution = tensor([0.4916, 0.2816, 0.2268], device='cuda:0'), new_distribution = tensor([0.4920, 0.2809, 0.2271], device='cuda:0')
+2024-11-20 20:57:37,285 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 143: ref_distribution = tensor([0.4920, 0.2809, 0.2271], device='cuda:0'), new_distribution = tensor([0.4920, 0.2804, 0.2276], device='cuda:0')
+2024-11-20 20:57:37,290 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 144: ref_distribution = tensor([0.4920, 0.2804, 0.2276], device='cuda:0'), new_distribution = tensor([0.4927, 0.2793, 0.2280], device='cuda:0')
+2024-11-20 20:57:37,294 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 145: ref_distribution = tensor([0.4927, 0.2793, 0.2280], device='cuda:0'), new_distribution = tensor([0.4937, 0.2786, 0.2277], device='cuda:0')
+2024-11-20 20:57:37,298 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 146: ref_distribution = tensor([0.4937, 0.2786, 0.2277], device='cuda:0'), new_distribution = tensor([0.4946, 0.2777, 0.2277], device='cuda:0')
+2024-11-20 20:57:37,302 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 147: ref_distribution = tensor([0.4946, 0.2777, 0.2277], device='cuda:0'), new_distribution = tensor([0.4954, 0.2768, 0.2278], device='cuda:0')
+2024-11-20 20:57:37,307 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 148: ref_distribution = tensor([0.4954, 0.2768, 0.2278], device='cuda:0'), new_distribution = tensor([0.4961, 0.2765, 0.2273], device='cuda:0')
+2024-11-20 20:57:37,311 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 149: ref_distribution = tensor([0.4961, 0.2765, 0.2273], device='cuda:0'), new_distribution = tensor([0.4978, 0.2752, 0.2270], device='cuda:0')
+2024-11-20 20:57:37,315 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 150: ref_distribution = tensor([0.4978, 0.2752, 0.2270], device='cuda:0'), new_distribution = tensor([0.4987, 0.2752, 0.2261], device='cuda:0')
+2024-11-20 20:57:37,319 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 151: ref_distribution = tensor([0.4987, 0.2752, 0.2261], device='cuda:0'), new_distribution = tensor([0.4997, 0.2745, 0.2258], device='cuda:0')
+2024-11-20 20:57:37,324 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 152: ref_distribution = tensor([0.4997, 0.2745, 0.2258], device='cuda:0'), new_distribution = tensor([0.5009, 0.2734, 0.2257], device='cuda:0')
+2024-11-20 20:57:37,328 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 153: ref_distribution = tensor([0.5009, 0.2734, 0.2257], device='cuda:0'), new_distribution = tensor([0.5012, 0.2733, 0.2254], device='cuda:0')
+2024-11-20 20:57:37,332 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 154: ref_distribution = tensor([0.5012, 0.2733, 0.2254], device='cuda:0'), new_distribution = tensor([0.5021, 0.2715, 0.2264], device='cuda:0')
+2024-11-20 20:57:37,336 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 155: ref_distribution = tensor([0.5021, 0.2715, 0.2264], device='cuda:0'), new_distribution = tensor([0.5027, 0.2701, 0.2272], device='cuda:0')
+2024-11-20 20:57:37,341 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 156: ref_distribution = tensor([0.5027, 0.2701, 0.2272], device='cuda:0'), new_distribution = tensor([0.5032, 0.2687, 0.2281], device='cuda:0')
+2024-11-20 20:57:37,345 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 157: ref_distribution = tensor([0.5032, 0.2687, 0.2281], device='cuda:0'), new_distribution = tensor([0.5038, 0.2673, 0.2289], device='cuda:0')
+2024-11-20 20:57:37,349 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 158: ref_distribution = tensor([0.5038, 0.2673, 0.2289], device='cuda:0'), new_distribution = tensor([0.5057, 0.2665, 0.2278], device='cuda:0')
+2024-11-20 20:57:37,353 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 159: ref_distribution = tensor([0.5057, 0.2665, 0.2278], device='cuda:0'), new_distribution = tensor([0.5063, 0.2651, 0.2286], device='cuda:0')
+2024-11-20 20:57:37,357 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 160: ref_distribution = tensor([0.5063, 0.2651, 0.2286], device='cuda:0'), new_distribution = tensor([0.5079, 0.2629, 0.2292], device='cuda:0')
+2024-11-20 20:57:37,361 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 161: ref_distribution = tensor([0.5079, 0.2629, 0.2292], device='cuda:0'), new_distribution = tensor([0.5092, 0.2609, 0.2300], device='cuda:0')
+2024-11-20 20:57:37,365 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 162: ref_distribution = tensor([0.5092, 0.2609, 0.2300], device='cuda:0'), new_distribution = tensor([0.5100, 0.2591, 0.2310], device='cuda:0')
+2024-11-20 20:57:37,369 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 163: ref_distribution = tensor([0.5100, 0.2591, 0.2310], device='cuda:0'), new_distribution = tensor([0.5109, 0.2575, 0.2316], device='cuda:0')
+2024-11-20 20:57:37,373 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 164: ref_distribution = tensor([0.5109, 0.2575, 0.2316], device='cuda:0'), new_distribution = tensor([0.5125, 0.2553, 0.2322], device='cuda:0')
+2024-11-20 20:57:37,377 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 165: ref_distribution = tensor([0.5125, 0.2553, 0.2322], device='cuda:0'), new_distribution = tensor([0.5137, 0.2542, 0.2321], device='cuda:0')
+2024-11-20 20:57:37,381 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 166: ref_distribution = tensor([0.5137, 0.2542, 0.2321], device='cuda:0'), new_distribution = tensor([0.5137, 0.2546, 0.2317], device='cuda:0')
+2024-11-20 20:57:37,385 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 167: ref_distribution = tensor([0.5137, 0.2546, 0.2317], device='cuda:0'), new_distribution = tensor([0.5150, 0.2537, 0.2312], device='cuda:0')
+2024-11-20 20:57:37,389 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 168: ref_distribution = tensor([0.5150, 0.2537, 0.2312], device='cuda:0'), new_distribution = tensor([0.5152, 0.2535, 0.2314], device='cuda:0')
+2024-11-20 20:57:37,393 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 169: ref_distribution = tensor([0.5152, 0.2535, 0.2314], device='cuda:0'), new_distribution = tensor([0.5168, 0.2522, 0.2311], device='cuda:0')
+2024-11-20 20:57:37,397 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 170: ref_distribution = tensor([0.5168, 0.2522, 0.2311], device='cuda:0'), new_distribution = tensor([0.5180, 0.2510, 0.2310], device='cuda:0')
+2024-11-20 20:57:37,401 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 171: ref_distribution = tensor([0.5180, 0.2510, 0.2310], device='cuda:0'), new_distribution = tensor([0.5193, 0.2493, 0.2314], device='cuda:0')
+2024-11-20 20:57:37,405 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 172: ref_distribution = tensor([0.5193, 0.2493, 0.2314], device='cuda:0'), new_distribution = tensor([0.5191, 0.2494, 0.2314], device='cuda:0')
+2024-11-20 20:57:37,409 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 173: ref_distribution = tensor([0.5191, 0.2494, 0.2314], device='cuda:0'), new_distribution = tensor([0.5194, 0.2494, 0.2312], device='cuda:0')
+2024-11-20 20:57:37,413 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 174: ref_distribution = tensor([0.5194, 0.2494, 0.2312], device='cuda:0'), new_distribution = tensor([0.5203, 0.2478, 0.2318], device='cuda:0')
+2024-11-20 20:57:37,417 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 175: ref_distribution = tensor([0.5203, 0.2478, 0.2318], device='cuda:0'), new_distribution = tensor([0.5222, 0.2461, 0.2317], device='cuda:0')
+2024-11-20 20:57:37,421 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 176: ref_distribution = tensor([0.5222, 0.2461, 0.2317], device='cuda:0'), new_distribution = tensor([0.5231, 0.2455, 0.2315], device='cuda:0')
+2024-11-20 20:57:37,425 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 177: ref_distribution = tensor([0.5231, 0.2455, 0.2315], device='cuda:0'), new_distribution = tensor([0.5248, 0.2435, 0.2317], device='cuda:0')
+2024-11-20 20:57:37,429 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 178: ref_distribution = tensor([0.5248, 0.2435, 0.2317], device='cuda:0'), new_distribution = tensor([0.5250, 0.2426, 0.2324], device='cuda:0')
+2024-11-20 20:57:37,433 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 179: ref_distribution = tensor([0.5250, 0.2426, 0.2324], device='cuda:0'), new_distribution = tensor([0.5259, 0.2410, 0.2330], device='cuda:0')
+2024-11-20 20:57:37,437 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 180: ref_distribution = tensor([0.5259, 0.2410, 0.2330], device='cuda:0'), new_distribution = tensor([0.5267, 0.2401, 0.2332], device='cuda:0')
+2024-11-20 20:57:37,441 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 181: ref_distribution = tensor([0.5267, 0.2401, 0.2332], device='cuda:0'), new_distribution = tensor([0.5277, 0.2388, 0.2335], device='cuda:0')
+2024-11-20 20:57:37,445 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 182: ref_distribution = tensor([0.5277, 0.2388, 0.2335], device='cuda:0'), new_distribution = tensor([0.5291, 0.2373, 0.2336], device='cuda:0')
+2024-11-20 20:57:37,450 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 183: ref_distribution = tensor([0.5291, 0.2373, 0.2336], device='cuda:0'), new_distribution = tensor([0.5303, 0.2354, 0.2344], device='cuda:0')
+2024-11-20 20:57:37,454 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 184: ref_distribution = tensor([0.5303, 0.2354, 0.2344], device='cuda:0'), new_distribution = tensor([0.5317, 0.2339, 0.2345], device='cuda:0')
+2024-11-20 20:57:37,458 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 185: ref_distribution = tensor([0.5317, 0.2339, 0.2345], device='cuda:0'), new_distribution = tensor([0.5329, 0.2321, 0.2349], device='cuda:0')
+2024-11-20 20:57:37,463 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 186: ref_distribution = tensor([0.5329, 0.2321, 0.2349], device='cuda:0'), new_distribution = tensor([0.5341, 0.2311, 0.2349], device='cuda:0')
+2024-11-20 20:57:37,467 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 187: ref_distribution = tensor([0.5341, 0.2311, 0.2349], device='cuda:0'), new_distribution = tensor([0.5354, 0.2296, 0.2350], device='cuda:0')
+2024-11-20 20:57:37,472 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 188: ref_distribution = tensor([0.5354, 0.2296, 0.2350], device='cuda:0'), new_distribution = tensor([0.5360, 0.2285, 0.2355], device='cuda:0')
+2024-11-20 20:57:37,476 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 189: ref_distribution = tensor([0.5360, 0.2285, 0.2355], device='cuda:0'), new_distribution = tensor([0.5375, 0.2272, 0.2352], device='cuda:0')
+2024-11-20 20:57:37,481 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 190: ref_distribution = tensor([0.5375, 0.2272, 0.2352], device='cuda:0'), new_distribution = tensor([0.5382, 0.2264, 0.2354], device='cuda:0')
+2024-11-20 20:57:37,485 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 191: ref_distribution = tensor([0.5382, 0.2264, 0.2354], device='cuda:0'), new_distribution = tensor([0.5389, 0.2253, 0.2359], device='cuda:0')
+2024-11-20 20:57:37,489 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 192: ref_distribution = tensor([0.5389, 0.2253, 0.2359], device='cuda:0'), new_distribution = tensor([0.5395, 0.2242, 0.2364], device='cuda:0')
+2024-11-20 20:57:37,494 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 193: ref_distribution = tensor([0.5395, 0.2242, 0.2364], device='cuda:0'), new_distribution = tensor([0.5404, 0.2229, 0.2367], device='cuda:0')
+2024-11-20 20:57:37,498 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 194: ref_distribution = tensor([0.5404, 0.2229, 0.2367], device='cuda:0'), new_distribution = tensor([0.5415, 0.2210, 0.2375], device='cuda:0')
+2024-11-20 20:57:37,502 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 195: ref_distribution = tensor([0.5415, 0.2210, 0.2375], device='cuda:0'), new_distribution = tensor([0.5424, 0.2206, 0.2370], device='cuda:0')
+2024-11-20 20:57:37,507 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 196: ref_distribution = tensor([0.5424, 0.2206, 0.2370], device='cuda:0'), new_distribution = tensor([0.5438, 0.2191, 0.2371], device='cuda:0')
+2024-11-20 20:57:37,511 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 197: ref_distribution = tensor([0.5438, 0.2191, 0.2371], device='cuda:0'), new_distribution = tensor([0.5450, 0.2174, 0.2376], device='cuda:0')
+2024-11-20 20:57:37,515 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 198: ref_distribution = tensor([0.5450, 0.2174, 0.2376], device='cuda:0'), new_distribution = tensor([0.5466, 0.2158, 0.2376], device='cuda:0')
+2024-11-20 20:57:37,520 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 199: ref_distribution = tensor([0.5466, 0.2158, 0.2376], device='cuda:0'), new_distribution = tensor([0.5474, 0.2152, 0.2374], device='cuda:0')
+2024-11-20 20:57:37,524 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 200: ref_distribution = tensor([0.5474, 0.2152, 0.2374], device='cuda:0'), new_distribution = tensor([0.5482, 0.2145, 0.2372], device='cuda:0')
+2024-11-20 20:57:37,529 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 201: ref_distribution = tensor([0.5482, 0.2145, 0.2372], device='cuda:0'), new_distribution = tensor([0.5483, 0.2143, 0.2374], device='cuda:0')
+2024-11-20 20:57:37,533 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 202: ref_distribution = tensor([0.5483, 0.2143, 0.2374], device='cuda:0'), new_distribution = tensor([0.5485, 0.2134, 0.2381], device='cuda:0')
+2024-11-20 20:57:37,537 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 203: ref_distribution = tensor([0.5485, 0.2134, 0.2381], device='cuda:0'), new_distribution = tensor([0.5492, 0.2125, 0.2383], device='cuda:0')
+2024-11-20 20:57:37,542 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 204: ref_distribution = tensor([0.5492, 0.2125, 0.2383], device='cuda:0'), new_distribution = tensor([0.5502, 0.2115, 0.2383], device='cuda:0')
+2024-11-20 20:57:37,546 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 205: ref_distribution = tensor([0.5502, 0.2115, 0.2383], device='cuda:0'), new_distribution = tensor([0.5505, 0.2117, 0.2378], device='cuda:0')
+2024-11-20 20:57:37,550 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 206: ref_distribution = tensor([0.5505, 0.2117, 0.2378], device='cuda:0'), new_distribution = tensor([0.5516, 0.2098, 0.2387], device='cuda:0')
+2024-11-20 20:57:37,555 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 207: ref_distribution = tensor([0.5516, 0.2098, 0.2387], device='cuda:0'), new_distribution = tensor([0.5523, 0.2092, 0.2385], device='cuda:0')
+2024-11-20 20:57:37,559 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 208: ref_distribution = tensor([0.5523, 0.2092, 0.2385], device='cuda:0'), new_distribution = tensor([0.5535, 0.2075, 0.2390], device='cuda:0')
+2024-11-20 20:57:37,563 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 209: ref_distribution = tensor([0.5535, 0.2075, 0.2390], device='cuda:0'), new_distribution = tensor([0.5543, 0.2069, 0.2388], device='cuda:0')
+2024-11-20 20:57:37,567 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 210: ref_distribution = tensor([0.5543, 0.2069, 0.2388], device='cuda:0'), new_distribution = tensor([0.5555, 0.2063, 0.2382], device='cuda:0')
+2024-11-20 20:57:37,571 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 211: ref_distribution = tensor([0.5555, 0.2063, 0.2382], device='cuda:0'), new_distribution = tensor([0.5568, 0.2051, 0.2380], device='cuda:0')
+2024-11-20 20:57:37,575 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 212: ref_distribution = tensor([0.5568, 0.2051, 0.2380], device='cuda:0'), new_distribution = tensor([0.5575, 0.2034, 0.2390], device='cuda:0')
+2024-11-20 20:57:37,579 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 213: ref_distribution = tensor([0.5575, 0.2034, 0.2390], device='cuda:0'), new_distribution = tensor([0.5587, 0.2018, 0.2395], device='cuda:0')
+2024-11-20 20:57:37,583 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 214: ref_distribution = tensor([0.5587, 0.2018, 0.2395], device='cuda:0'), new_distribution = tensor([0.5592, 0.2008, 0.2400], device='cuda:0')
+2024-11-20 20:57:37,587 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 215: ref_distribution = tensor([0.5592, 0.2008, 0.2400], device='cuda:0'), new_distribution = tensor([0.5599, 0.1991, 0.2410], device='cuda:0')
+2024-11-20 20:57:37,592 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 216: ref_distribution = tensor([0.5599, 0.1991, 0.2410], device='cuda:0'), new_distribution = tensor([0.5607, 0.1979, 0.2414], device='cuda:0')
+2024-11-20 20:57:37,596 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 217: ref_distribution = tensor([0.5607, 0.1979, 0.2414], device='cuda:0'), new_distribution = tensor([0.5613, 0.1968, 0.2419], device='cuda:0')
+2024-11-20 20:57:37,600 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 218: ref_distribution = tensor([0.5613, 0.1968, 0.2419], device='cuda:0'), new_distribution = tensor([0.5614, 0.1968, 0.2418], device='cuda:0')
+2024-11-20 20:57:37,604 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 219: ref_distribution = tensor([0.5614, 0.1968, 0.2418], device='cuda:0'), new_distribution = tensor([0.5621, 0.1962, 0.2417], device='cuda:0')
+2024-11-20 20:57:37,608 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 220: ref_distribution = tensor([0.5621, 0.1962, 0.2417], device='cuda:0'), new_distribution = tensor([0.5634, 0.1950, 0.2416], device='cuda:0')
+2024-11-20 20:57:37,612 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 221: ref_distribution = tensor([0.5634, 0.1950, 0.2416], device='cuda:0'), new_distribution = tensor([0.5642, 0.1936, 0.2422], device='cuda:0')
+2024-11-20 20:57:37,617 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 222: ref_distribution = tensor([0.5642, 0.1936, 0.2422], device='cuda:0'), new_distribution = tensor([0.5649, 0.1922, 0.2429], device='cuda:0')
+2024-11-20 20:57:37,621 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 223: ref_distribution = tensor([0.5649, 0.1922, 0.2429], device='cuda:0'), new_distribution = tensor([0.5661, 0.1908, 0.2431], device='cuda:0')
+2024-11-20 20:57:37,625 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 224: ref_distribution = tensor([0.5661, 0.1908, 0.2431], device='cuda:0'), new_distribution = tensor([0.5672, 0.1895, 0.2433], device='cuda:0')
+2024-11-20 20:57:37,629 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 225: ref_distribution = tensor([0.5672, 0.1895, 0.2433], device='cuda:0'), new_distribution = tensor([0.5684, 0.1881, 0.2435], device='cuda:0')
+2024-11-20 20:57:37,633 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 226: ref_distribution = tensor([0.5684, 0.1881, 0.2435], device='cuda:0'), new_distribution = tensor([0.5692, 0.1870, 0.2438], device='cuda:0')
+2024-11-20 20:57:37,637 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 227: ref_distribution = tensor([0.5692, 0.1870, 0.2438], device='cuda:0'), new_distribution = tensor([0.5699, 0.1856, 0.2445], device='cuda:0')
+2024-11-20 20:57:37,641 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 228: ref_distribution = tensor([0.5699, 0.1856, 0.2445], device='cuda:0'), new_distribution = tensor([0.5704, 0.1846, 0.2451], device='cuda:0')
+2024-11-20 20:57:37,645 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 229: ref_distribution = tensor([0.5704, 0.1846, 0.2451], device='cuda:0'), new_distribution = tensor([0.5708, 0.1836, 0.2456], device='cuda:0')
+2024-11-20 20:57:37,649 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 230: ref_distribution = tensor([0.5708, 0.1836, 0.2456], device='cuda:0'), new_distribution = tensor([0.5716, 0.1824, 0.2460], device='cuda:0')
+2024-11-20 20:57:37,653 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 231: ref_distribution = tensor([0.5716, 0.1824, 0.2460], device='cuda:0'), new_distribution = tensor([0.5719, 0.1818, 0.2463], device='cuda:0')
+2024-11-20 20:57:37,657 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 232: ref_distribution = tensor([0.5719, 0.1818, 0.2463], device='cuda:0'), new_distribution = tensor([0.5725, 0.1804, 0.2470], device='cuda:0')
+2024-11-20 20:57:37,661 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 233: ref_distribution = tensor([0.5725, 0.1804, 0.2470], device='cuda:0'), new_distribution = tensor([0.5737, 0.1801, 0.2462], device='cuda:0')
+2024-11-20 20:57:37,665 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 234: ref_distribution = tensor([0.5737, 0.1801, 0.2462], device='cuda:0'), new_distribution = tensor([0.5743, 0.1793, 0.2464], device='cuda:0')
+2024-11-20 20:57:37,669 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 235: ref_distribution = tensor([0.5743, 0.1793, 0.2464], device='cuda:0'), new_distribution = tensor([0.5745, 0.1787, 0.2468], device='cuda:0')
+2024-11-20 20:57:37,673 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 236: ref_distribution = tensor([0.5745, 0.1787, 0.2468], device='cuda:0'), new_distribution = tensor([0.5751, 0.1774, 0.2475], device='cuda:0')
+2024-11-20 20:57:37,677 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 237: ref_distribution = tensor([0.5751, 0.1774, 0.2475], device='cuda:0'), new_distribution = tensor([0.5761, 0.1759, 0.2480], device='cuda:0')
+2024-11-20 20:57:37,681 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 238: ref_distribution = tensor([0.5761, 0.1759, 0.2480], device='cuda:0'), new_distribution = tensor([0.5771, 0.1744, 0.2485], device='cuda:0')
+2024-11-20 20:57:37,685 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 239: ref_distribution = tensor([0.5771, 0.1744, 0.2485], device='cuda:0'), new_distribution = tensor([0.5781, 0.1721, 0.2498], device='cuda:0')
+2024-11-20 20:57:37,689 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 240: ref_distribution = tensor([0.5781, 0.1721, 0.2498], device='cuda:0'), new_distribution = tensor([0.5789, 0.1712, 0.2499], device='cuda:0')
+2024-11-20 20:57:37,693 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 241: ref_distribution = tensor([0.5789, 0.1712, 0.2499], device='cuda:0'), new_distribution = tensor([0.5800, 0.1692, 0.2509], device='cuda:0')
+2024-11-20 20:57:37,697 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 242: ref_distribution = tensor([0.5800, 0.1692, 0.2509], device='cuda:0'), new_distribution = tensor([0.5805, 0.1686, 0.2508], device='cuda:0')
+2024-11-20 20:57:37,701 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 243: ref_distribution = tensor([0.5805, 0.1686, 0.2508], device='cuda:0'), new_distribution = tensor([0.5812, 0.1673, 0.2515], device='cuda:0')
+2024-11-20 20:57:37,705 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 244: ref_distribution = tensor([0.5812, 0.1673, 0.2515], device='cuda:0'), new_distribution = tensor([0.5813, 0.1668, 0.2519], device='cuda:0')
+2024-11-20 20:57:37,709 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 245: ref_distribution = tensor([0.5813, 0.1668, 0.2519], device='cuda:0'), new_distribution = tensor([0.5815, 0.1662, 0.2523], device='cuda:0')
+2024-11-20 20:57:37,713 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 246: ref_distribution = tensor([0.5815, 0.1662, 0.2523], device='cuda:0'), new_distribution = tensor([0.5824, 0.1655, 0.2521], device='cuda:0')
+2024-11-20 20:57:37,717 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 247: ref_distribution = tensor([0.5824, 0.1655, 0.2521], device='cuda:0'), new_distribution = tensor([0.5826, 0.1649, 0.2525], device='cuda:0')
+2024-11-20 20:57:37,721 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 248: ref_distribution = tensor([0.5826, 0.1649, 0.2525], device='cuda:0'), new_distribution = tensor([0.5835, 0.1637, 0.2528], device='cuda:0')
+2024-11-20 20:57:37,726 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 249: ref_distribution = tensor([0.5835, 0.1637, 0.2528], device='cuda:0'), new_distribution = tensor([0.5838, 0.1625, 0.2536], device='cuda:0')
+2024-11-20 20:57:37,730 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 250: ref_distribution = tensor([0.5838, 0.1625, 0.2536], device='cuda:0'), new_distribution = tensor([0.5843, 0.1611, 0.2546], device='cuda:0')
+2024-11-20 20:57:37,734 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 251: ref_distribution = tensor([0.5843, 0.1611, 0.2546], device='cuda:0'), new_distribution = tensor([0.5851, 0.1602, 0.2547], device='cuda:0')
+2024-11-20 20:57:37,739 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 252: ref_distribution = tensor([0.5851, 0.1602, 0.2547], device='cuda:0'), new_distribution = tensor([0.5853, 0.1591, 0.2556], device='cuda:0')
+2024-11-20 20:57:37,743 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 253: ref_distribution = tensor([0.5853, 0.1591, 0.2556], device='cuda:0'), new_distribution = tensor([0.5859, 0.1579, 0.2563], device='cuda:0')
+2024-11-20 20:57:37,747 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 254: ref_distribution = tensor([0.5859, 0.1579, 0.2563], device='cuda:0'), new_distribution = tensor([0.5865, 0.1568, 0.2567], device='cuda:0')
+2024-11-20 20:57:37,751 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 255: ref_distribution = tensor([0.5865, 0.1568, 0.2567], device='cuda:0'), new_distribution = tensor([0.5872, 0.1558, 0.2571], device='cuda:0')
+2024-11-20 20:57:37,755 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 256: ref_distribution = tensor([0.5872, 0.1558, 0.2571], device='cuda:0'), new_distribution = tensor([0.5878, 0.1547, 0.2575], device='cuda:0')
+2024-11-20 20:57:37,759 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 257: ref_distribution = tensor([0.5878, 0.1547, 0.2575], device='cuda:0'), new_distribution = tensor([0.5880, 0.1537, 0.2583], device='cuda:0')
+2024-11-20 20:57:37,763 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 258: ref_distribution = tensor([0.5880, 0.1537, 0.2583], device='cuda:0'), new_distribution = tensor([0.5882, 0.1533, 0.2585], device='cuda:0')
+2024-11-20 20:57:37,767 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 259: ref_distribution = tensor([0.5882, 0.1533, 0.2585], device='cuda:0'), new_distribution = tensor([0.5888, 0.1530, 0.2582], device='cuda:0')
+2024-11-20 20:57:37,771 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 260: ref_distribution = tensor([0.5888, 0.1530, 0.2582], device='cuda:0'), new_distribution = tensor([0.5894, 0.1520, 0.2586], device='cuda:0')
+2024-11-20 20:57:37,775 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 261: ref_distribution = tensor([0.5894, 0.1520, 0.2586], device='cuda:0'), new_distribution = tensor([0.5904, 0.1503, 0.2593], device='cuda:0')
+2024-11-20 20:57:37,779 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 262: ref_distribution = tensor([0.5904, 0.1503, 0.2593], device='cuda:0'), new_distribution = tensor([0.5911, 0.1488, 0.2601], device='cuda:0')
+2024-11-20 20:57:37,783 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 263: ref_distribution = tensor([0.5911, 0.1488, 0.2601], device='cuda:0'), new_distribution = tensor([0.5915, 0.1474, 0.2611], device='cuda:0')
+2024-11-20 20:57:37,787 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 264: ref_distribution = tensor([0.5915, 0.1474, 0.2611], device='cuda:0'), new_distribution = tensor([0.5922, 0.1466, 0.2612], device='cuda:0')
+2024-11-20 20:57:37,791 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 265: ref_distribution = tensor([0.5922, 0.1466, 0.2612], device='cuda:0'), new_distribution = tensor([0.5926, 0.1452, 0.2622], device='cuda:0')
+2024-11-20 20:57:37,795 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 266: ref_distribution = tensor([0.5926, 0.1452, 0.2622], device='cuda:0'), new_distribution = tensor([0.5931, 0.1442, 0.2626], device='cuda:0')
+2024-11-20 20:57:37,799 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 267: ref_distribution = tensor([0.5931, 0.1442, 0.2626], device='cuda:0'), new_distribution = tensor([0.5937, 0.1426, 0.2638], device='cuda:0')
+2024-11-20 20:57:37,803 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 268: ref_distribution = tensor([0.5937, 0.1426, 0.2638], device='cuda:0'), new_distribution = tensor([0.5943, 0.1411, 0.2646], device='cuda:0')
+2024-11-20 20:57:37,807 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 269: ref_distribution = tensor([0.5943, 0.1411, 0.2646], device='cuda:0'), new_distribution = tensor([0.5948, 0.1401, 0.2650], device='cuda:0')
+2024-11-20 20:57:37,811 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 270: ref_distribution = tensor([0.5948, 0.1401, 0.2650], device='cuda:0'), new_distribution = tensor([0.5954, 0.1392, 0.2654], device='cuda:0')
+2024-11-20 20:57:37,815 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 271: ref_distribution = tensor([0.5954, 0.1392, 0.2654], device='cuda:0'), new_distribution = tensor([0.5956, 0.1384, 0.2660], device='cuda:0')
+2024-11-20 20:57:37,819 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 272: ref_distribution = tensor([0.5956, 0.1384, 0.2660], device='cuda:0'), new_distribution = tensor([0.5962, 0.1376, 0.2662], device='cuda:0')
+2024-11-20 20:57:37,823 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 273: ref_distribution = tensor([0.5962, 0.1376, 0.2662], device='cuda:0'), new_distribution = tensor([0.5966, 0.1372, 0.2662], device='cuda:0')
+2024-11-20 20:57:37,827 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 274: ref_distribution = tensor([0.5966, 0.1372, 0.2662], device='cuda:0'), new_distribution = tensor([0.5976, 0.1358, 0.2666], device='cuda:0')
+2024-11-20 20:57:37,831 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 275: ref_distribution = tensor([0.5976, 0.1358, 0.2666], device='cuda:0'), new_distribution = tensor([0.5974, 0.1361, 0.2666], device='cuda:0')
+2024-11-20 20:57:37,835 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 276: ref_distribution = tensor([0.5974, 0.1361, 0.2666], device='cuda:0'), new_distribution = tensor([0.5977, 0.1348, 0.2675], device='cuda:0')
+2024-11-20 20:57:37,840 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 277: ref_distribution = tensor([0.5977, 0.1348, 0.2675], device='cuda:0'), new_distribution = tensor([0.5979, 0.1340, 0.2681], device='cuda:0')
+2024-11-20 20:57:37,844 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 278: ref_distribution = tensor([0.5979, 0.1340, 0.2681], device='cuda:0'), new_distribution = tensor([0.5981, 0.1332, 0.2687], device='cuda:0')
+2024-11-20 20:57:37,848 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 279: ref_distribution = tensor([0.5981, 0.1332, 0.2687], device='cuda:0'), new_distribution = tensor([0.5977, 0.1332, 0.2691], device='cuda:0')
+2024-11-20 20:57:37,853 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 280: ref_distribution = tensor([0.5977, 0.1332, 0.2691], device='cuda:0'), new_distribution = tensor([0.5983, 0.1318, 0.2700], device='cuda:0')
+2024-11-20 20:57:37,857 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 281: ref_distribution = tensor([0.5983, 0.1318, 0.2700], device='cuda:0'), new_distribution = tensor([0.5984, 0.1315, 0.2702], device='cuda:0')
+2024-11-20 20:57:37,861 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 282: ref_distribution = tensor([0.5984, 0.1315, 0.2702], device='cuda:0'), new_distribution = tensor([0.5985, 0.1305, 0.2710], device='cuda:0')
+2024-11-20 20:57:37,866 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 283: ref_distribution = tensor([0.5985, 0.1305, 0.2710], device='cuda:0'), new_distribution = tensor([0.5994, 0.1298, 0.2708], device='cuda:0')
+2024-11-20 20:57:37,870 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 284: ref_distribution = tensor([0.5994, 0.1298, 0.2708], device='cuda:0'), new_distribution = tensor([0.5995, 0.1289, 0.2716], device='cuda:0')
+2024-11-20 20:57:37,875 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 285: ref_distribution = tensor([0.5995, 0.1289, 0.2716], device='cuda:0'), new_distribution = tensor([0.6001, 0.1277, 0.2722], device='cuda:0')
+2024-11-20 20:57:37,879 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 286: ref_distribution = tensor([0.6001, 0.1277, 0.2722], device='cuda:0'), new_distribution = tensor([0.6003, 0.1276, 0.2721], device='cuda:0')
+2024-11-20 20:57:37,883 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 287: ref_distribution = tensor([0.6003, 0.1276, 0.2721], device='cuda:0'), new_distribution = tensor([0.5997, 0.1278, 0.2725], device='cuda:0')
+2024-11-20 20:57:37,888 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 288: ref_distribution = tensor([0.5997, 0.1278, 0.2725], device='cuda:0'), new_distribution = tensor([0.5995, 0.1275, 0.2731], device='cuda:0')
+2024-11-20 20:57:37,892 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 289: ref_distribution = tensor([0.5995, 0.1275, 0.2731], device='cuda:0'), new_distribution = tensor([0.5996, 0.1272, 0.2732], device='cuda:0')
+2024-11-20 20:57:37,897 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 290: ref_distribution = tensor([0.5996, 0.1272, 0.2732], device='cuda:0'), new_distribution = tensor([0.5996, 0.1269, 0.2734], device='cuda:0')
+2024-11-20 20:57:37,901 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 291: ref_distribution = tensor([0.5996, 0.1269, 0.2734], device='cuda:0'), new_distribution = tensor([0.6004, 0.1261, 0.2735], device='cuda:0')
+2024-11-20 20:57:37,905 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 292: ref_distribution = tensor([0.6004, 0.1261, 0.2735], device='cuda:0'), new_distribution = tensor([0.6003, 0.1255, 0.2742], device='cuda:0')
+2024-11-20 20:57:37,910 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 293: ref_distribution = tensor([0.6003, 0.1255, 0.2742], device='cuda:0'), new_distribution = tensor([0.6008, 0.1246, 0.2747], device='cuda:0')
+2024-11-20 20:57:37,914 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 294: ref_distribution = tensor([0.6008, 0.1246, 0.2747], device='cuda:0'), new_distribution = tensor([0.6008, 0.1237, 0.2755], device='cuda:0')
+2024-11-20 20:57:37,918 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 295: ref_distribution = tensor([0.6008, 0.1237, 0.2755], device='cuda:0'), new_distribution = tensor([0.6011, 0.1231, 0.2758], device='cuda:0')
+2024-11-20 20:57:37,923 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 296: ref_distribution = tensor([0.6011, 0.1231, 0.2758], device='cuda:0'), new_distribution = tensor([0.6010, 0.1225, 0.2766], device='cuda:0')
+2024-11-20 20:57:37,927 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 297: ref_distribution = tensor([0.6010, 0.1225, 0.2766], device='cuda:0'), new_distribution = tensor([0.6013, 0.1210, 0.2776], device='cuda:0')
+2024-11-20 20:57:37,931 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 298: ref_distribution = tensor([0.6013, 0.1210, 0.2776], device='cuda:0'), new_distribution = tensor([0.6021, 0.1198, 0.2781], device='cuda:0')
+2024-11-20 20:57:37,936 - /home/hanwen/policy_optimization/exp/algorithm.py[line:509] - INFO: Iteration 299: ref_distribution = tensor([0.6021, 0.1198, 0.2781], device='cuda:0'), new_distribution = tensor([0.6022, 0.1189, 0.2789], device='cuda:0')

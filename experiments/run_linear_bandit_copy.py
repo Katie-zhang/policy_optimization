@@ -23,7 +23,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--env", type=str, default="linear_bandit")
     parser.add_argument("--state_dim", type=int, default=1)
-    parser.add_argument("--action_num", type=int, default=4)
+    parser.add_argument("--actions", type=np.array, default=[-10,0,10])
 
     parser.add_argument("--agent", type=str, default="pg")
     parser.add_argument("--seed", type=int, default=2023)
@@ -77,29 +77,27 @@ def main(args):
     writer = SummaryWriter(log_dir)
 
     state_dim = args.state_dim
-    action_num = args.action_num
+    actions = args.actions
 
     feature_dim = 2 * args.state_dim
     num_trials_for_eval = 10000
-    feature_func = ret_feature_func(num_action=action_num, state_dim=state_dim)
+    feature_func = ret_feature_func(state_dim=state_dim)
 
     reward_param = np.array([1.0, 2.0], np.float32)
     
-    score_param = np.array([1.0, 2.0, 1.0, 2.0], np.float32)
     env = LinearBandit(
         state_dim,
-        action_num,
+        actions,
         reward_param,
-        score_param,
         feature_func,
         num_trials_for_eval=num_trials_for_eval,
     )
     opt_policy = env.get_opt_policy()
     opt_reward = env.evaluate_reward(policy=opt_policy)
 
-    uniform_policy = ret_uniform_policy(action_num)
+    uniform_policy = ret_uniform_policy(actions)
     unif_policy_rew = env.evaluate_reward(policy=uniform_policy)
-    pref_data,P = collect_preference_data(args.pref_data_num, env, uniform_policy)
+    pref_data,P = collect_preference_data(env)
     logger.info(f"Preference data: ")
     for i, transition in enumerate(pref_data):
         logger.info(
@@ -135,16 +133,15 @@ def main(args):
 
     learned_env = LinearBandit(
         state_dim,
-        action_num,
+        actions,
         learned_reward_param,
-        score_param,
         feature_func,
         num_trials_for_eval=num_trials_for_eval,
     )
 
     # learn the policy
     policy_feature_func = ret_feature_func(
-        num_action=action_num, state_dim=state_dim, is_flip=args.flip_feature
+        state_dim=state_dim, is_flip=args.flip_feature
     )
     
     # RMB-PO
@@ -156,7 +153,7 @@ def main(args):
         learned_reward_func,
         uniform_policy,
         feature_dim,
-        action_num,
+        actions,
         args.reg_coef,
         args.pg_step_size,
         args.pg_num_iters,
@@ -185,7 +182,7 @@ def main(args):
      # Train the RL on the preference data
     agent = DirectPolicyOptimization(
         state_dim=state_dim,
-        action_num=action_num,
+        actions=actions,
         feature_dim=feature_dim,
         feature_func=policy_feature_func,
         ref_policy=uniform_policy,
@@ -217,7 +214,7 @@ def main(args):
     #SPPO
     agent = SelfPlayPreferenceOptimization(
         state_dim=state_dim,
-        action_num=action_num,
+        actions=actions,
         feature_dim=feature_dim,
         feature_func=policy_feature_func,
         beta=args.beta,

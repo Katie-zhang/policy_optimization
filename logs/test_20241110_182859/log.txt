@@ -1,0 +1,10 @@
+2024-11-10 18:29:00,957 - /tmp/ipykernel_2539222/1717690416.py[line:114] - INFO: [Reward] Epoch 0 loss: 0.6915 acc: 0.52
+2024-11-10 18:29:00,966 - /tmp/ipykernel_2539222/1717690416.py[line:114] - INFO: [Reward] Epoch 2 loss: 0.6910 acc: 0.52
+2024-11-10 18:29:00,973 - /tmp/ipykernel_2539222/1717690416.py[line:114] - INFO: [Reward] Epoch 4 loss: 0.6905 acc: 0.52
+2024-11-10 18:29:00,979 - /tmp/ipykernel_2539222/1717690416.py[line:114] - INFO: [Reward] Epoch 6 loss: 0.6902 acc: 0.52
+2024-11-10 18:29:00,985 - /tmp/ipykernel_2539222/1717690416.py[line:114] - INFO: [Reward] Epoch 8 loss: 0.6898 acc: 0.55
+2024-11-10 18:29:00,991 - /tmp/ipykernel_2539222/1717690416.py[line:114] - INFO: [Reward] Epoch 10 loss: 0.6896 acc: 0.55
+2024-11-10 18:29:00,997 - /tmp/ipykernel_2539222/1717690416.py[line:114] - INFO: [Reward] Epoch 12 loss: 0.6894 acc: 0.55
+2024-11-10 18:29:01,003 - /tmp/ipykernel_2539222/1717690416.py[line:114] - INFO: [Reward] Epoch 14 loss: 0.6892 acc: 0.55
+2024-11-10 18:29:01,009 - /tmp/ipykernel_2539222/1717690416.py[line:114] - INFO: [Reward] Epoch 16 loss: 0.6891 acc: 0.55
+2024-11-10 18:29:01,014 - /tmp/ipykernel_2539222/1717690416.py[line:114] - INFO: [Reward] Epoch 18 loss: 0.6890 acc: 0.55
