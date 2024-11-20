@@ -1,0 +1,100 @@
+2024-11-20 10:43:17,423 - /home/hanwen/policy_optimization/exp/algorithm.py[line:127] - INFO: [Reward] Epoch 0 loss: 0.6915 acc: 0.52
+2024-11-20 10:43:17,431 - /home/hanwen/policy_optimization/exp/algorithm.py[line:127] - INFO: [Reward] Epoch 2 loss: 0.6910 acc: 0.52
+2024-11-20 10:43:17,447 - /home/hanwen/policy_optimization/exp/algorithm.py[line:127] - INFO: [Reward] Epoch 4 loss: 0.6905 acc: 0.52
+2024-11-20 10:43:17,462 - /home/hanwen/policy_optimization/exp/algorithm.py[line:127] - INFO: [Reward] Epoch 6 loss: 0.6902 acc: 0.52
+2024-11-20 10:43:17,477 - /home/hanwen/policy_optimization/exp/algorithm.py[line:127] - INFO: [Reward] Epoch 8 loss: 0.6898 acc: 0.55
+2024-11-20 10:43:17,492 - /home/hanwen/policy_optimization/exp/algorithm.py[line:127] - INFO: [Reward] Epoch 10 loss: 0.6896 acc: 0.55
+2024-11-20 10:43:17,507 - /home/hanwen/policy_optimization/exp/algorithm.py[line:127] - INFO: [Reward] Epoch 12 loss: 0.6894 acc: 0.55
+2024-11-20 10:43:17,523 - /home/hanwen/policy_optimization/exp/algorithm.py[line:127] - INFO: [Reward] Epoch 14 loss: 0.6892 acc: 0.55
+2024-11-20 10:43:17,538 - /home/hanwen/policy_optimization/exp/algorithm.py[line:127] - INFO: [Reward] Epoch 16 loss: 0.6891 acc: 0.55
+2024-11-20 10:43:17,553 - /home/hanwen/policy_optimization/exp/algorithm.py[line:127] - INFO: [Reward] Epoch 18 loss: 0.6890 acc: 0.55
+2024-11-20 10:43:17,636 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 0 loss: -0.2045 reward: 0.2045 ref_reward: 0.1991 improvement: 2.70%
+2024-11-20 10:43:17,658 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 2 loss: -0.2116 reward: 0.2116 ref_reward: 0.1991 improvement: 6.24%
+2024-11-20 10:43:17,679 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 4 loss: -0.2184 reward: 0.2184 ref_reward: 0.1991 improvement: 9.68%
+2024-11-20 10:43:17,687 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 6 loss: -0.2252 reward: 0.2252 ref_reward: 0.1991 improvement: 13.10%
+2024-11-20 10:43:17,693 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 8 loss: -0.2318 reward: 0.2318 ref_reward: 0.1991 improvement: 16.38%
+2024-11-20 10:43:17,700 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 10 loss: -0.2378 reward: 0.2378 ref_reward: 0.1991 improvement: 19.43%
+2024-11-20 10:43:17,710 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 12 loss: -0.2436 reward: 0.2436 ref_reward: 0.1991 improvement: 22.34%
+2024-11-20 10:43:17,721 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 14 loss: -0.2492 reward: 0.2492 ref_reward: 0.1991 improvement: 25.15%
+2024-11-20 10:43:17,731 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 16 loss: -0.2547 reward: 0.2547 ref_reward: 0.1991 improvement: 27.92%
+2024-11-20 10:43:17,742 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 18 loss: -0.2602 reward: 0.2602 ref_reward: 0.1991 improvement: 30.64%
+2024-11-20 10:43:17,753 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 20 loss: -0.2654 reward: 0.2654 ref_reward: 0.1991 improvement: 33.28%
+2024-11-20 10:43:17,764 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 22 loss: -0.2705 reward: 0.2705 ref_reward: 0.1991 improvement: 35.82%
+2024-11-20 10:43:17,775 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 24 loss: -0.2752 reward: 0.2752 ref_reward: 0.1991 improvement: 38.20%
+2024-11-20 10:43:17,796 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 26 loss: -0.2796 reward: 0.2796 ref_reward: 0.1991 improvement: 40.40%
+2024-11-20 10:43:17,807 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 28 loss: -0.2836 reward: 0.2836 ref_reward: 0.1991 improvement: 42.41%
+2024-11-20 10:43:17,819 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 30 loss: -0.2872 reward: 0.2872 ref_reward: 0.1991 improvement: 44.20%
+2024-11-20 10:43:17,830 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 32 loss: -0.2903 reward: 0.2903 ref_reward: 0.1991 improvement: 45.78%
+2024-11-20 10:43:17,840 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 34 loss: -0.2930 reward: 0.2930 ref_reward: 0.1991 improvement: 47.15%
+2024-11-20 10:43:17,851 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 36 loss: -0.2954 reward: 0.2954 ref_reward: 0.1991 improvement: 48.32%
+2024-11-20 10:43:17,862 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 38 loss: -0.2973 reward: 0.2973 ref_reward: 0.1991 improvement: 49.32%
+2024-11-20 10:43:17,873 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 40 loss: -0.2990 reward: 0.2990 ref_reward: 0.1991 improvement: 50.15%
+2024-11-20 10:43:17,884 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 42 loss: -0.3004 reward: 0.3004 ref_reward: 0.1991 improvement: 50.85%
+2024-11-20 10:43:17,896 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 44 loss: -0.3016 reward: 0.3016 ref_reward: 0.1991 improvement: 51.44%
+2024-11-20 10:43:17,907 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 46 loss: -0.3026 reward: 0.3026 ref_reward: 0.1991 improvement: 51.93%
+2024-11-20 10:43:17,918 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 48 loss: -0.3034 reward: 0.3034 ref_reward: 0.1991 improvement: 52.33%
+2024-11-20 10:43:17,929 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 50 loss: -0.3040 reward: 0.3040 ref_reward: 0.1991 improvement: 52.67%
+2024-11-20 10:43:17,940 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 52 loss: -0.3046 reward: 0.3046 ref_reward: 0.1991 improvement: 52.95%
+2024-11-20 10:43:17,950 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 54 loss: -0.3051 reward: 0.3051 ref_reward: 0.1991 improvement: 53.19%
+2024-11-20 10:43:17,961 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 56 loss: -0.3055 reward: 0.3055 ref_reward: 0.1991 improvement: 53.39%
+2024-11-20 10:43:17,972 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 58 loss: -0.3058 reward: 0.3058 ref_reward: 0.1991 improvement: 53.55%
+2024-11-20 10:43:17,983 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 60 loss: -0.3061 reward: 0.3061 ref_reward: 0.1991 improvement: 53.70%
+2024-11-20 10:43:17,994 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 62 loss: -0.3063 reward: 0.3063 ref_reward: 0.1991 improvement: 53.82%
+2024-11-20 10:43:18,004 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 64 loss: -0.3065 reward: 0.3065 ref_reward: 0.1991 improvement: 53.92%
+2024-11-20 10:43:18,011 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 66 loss: -0.3067 reward: 0.3067 ref_reward: 0.1991 improvement: 54.01%
+2024-11-20 10:43:18,018 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 68 loss: -0.3069 reward: 0.3069 ref_reward: 0.1991 improvement: 54.09%
+2024-11-20 10:43:18,026 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 70 loss: -0.3070 reward: 0.3070 ref_reward: 0.1991 improvement: 54.16%
+2024-11-20 10:43:18,068 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 72 loss: -0.3071 reward: 0.3071 ref_reward: 0.1991 improvement: 54.22%
+2024-11-20 10:43:18,113 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 74 loss: -0.3072 reward: 0.3072 ref_reward: 0.1991 improvement: 54.28%
+2024-11-20 10:43:18,158 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 76 loss: -0.3073 reward: 0.3073 ref_reward: 0.1991 improvement: 54.32%
+2024-11-20 10:43:18,203 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 78 loss: -0.3074 reward: 0.3074 ref_reward: 0.1991 improvement: 54.37%
+2024-11-20 10:43:18,247 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 80 loss: -0.3075 reward: 0.3075 ref_reward: 0.1991 improvement: 54.40%
+2024-11-20 10:43:18,267 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 82 loss: -0.3076 reward: 0.3076 ref_reward: 0.1991 improvement: 54.44%
+2024-11-20 10:43:18,277 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 84 loss: -0.3076 reward: 0.3076 ref_reward: 0.1991 improvement: 54.47%
+2024-11-20 10:43:18,284 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 86 loss: -0.3077 reward: 0.3077 ref_reward: 0.1991 improvement: 54.50%
+2024-11-20 10:43:18,291 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 88 loss: -0.3077 reward: 0.3077 ref_reward: 0.1991 improvement: 54.52%
+2024-11-20 10:43:18,301 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 90 loss: -0.3078 reward: 0.3078 ref_reward: 0.1991 improvement: 54.55%
+2024-11-20 10:43:18,312 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 92 loss: -0.3078 reward: 0.3078 ref_reward: 0.1991 improvement: 54.57%
+2024-11-20 10:43:18,323 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 94 loss: -0.3079 reward: 0.3079 ref_reward: 0.1991 improvement: 54.59%
+2024-11-20 10:43:18,334 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 96 loss: -0.3079 reward: 0.3079 ref_reward: 0.1991 improvement: 54.61%
+2024-11-20 10:43:18,346 - /home/hanwen/policy_optimization/exp/algorithm.py[line:196] - INFO: [Policy] Epoch 98 loss: -0.3079 reward: 0.3079 ref_reward: 0.1991 improvement: 54.63%
+2024-11-20 10:43:18,742 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 0 loss: 0.6952 grad norm: 0.0362 
+2024-11-20 10:43:18,784 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 5 loss: 0.6921 grad norm: 0.0262 
+2024-11-20 10:43:18,829 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 10 loss: 0.6903 grad norm: 0.0182 
+2024-11-20 10:43:18,872 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 15 loss: 0.6892 grad norm: 0.0105 
+2024-11-20 10:43:18,917 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 20 loss: 0.6889 grad norm: 0.0031 
+2024-11-20 10:43:18,962 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 25 loss: 0.6889 grad norm: 0.0050 
+2024-11-20 10:43:19,007 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 30 loss: 0.6889 grad norm: 0.0070 
+2024-11-20 10:43:19,039 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 35 loss: 0.6889 grad norm: 0.0053 
+2024-11-20 10:43:19,192 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 40 loss: 0.6888 grad norm: 0.0025 
+2024-11-20 10:43:19,297 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 45 loss: 0.6888 grad norm: 0.0015 
+2024-11-20 10:43:19,331 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 50 loss: 0.6888 grad norm: 0.0019 
+2024-11-20 10:43:19,376 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 55 loss: 0.6888 grad norm: 0.0017 
+2024-11-20 10:43:19,420 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 60 loss: 0.6888 grad norm: 0.0010 
+2024-11-20 10:43:19,463 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 65 loss: 0.6888 grad norm: 0.0006 
+2024-11-20 10:43:19,507 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 70 loss: 0.6888 grad norm: 0.0007 
+2024-11-20 10:43:19,551 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 75 loss: 0.6888 grad norm: 0.0006 
+2024-11-20 10:43:19,570 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 80 loss: 0.6888 grad norm: 0.0003 
+2024-11-20 10:43:19,768 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 85 loss: 0.6888 grad norm: 0.0002 
+2024-11-20 10:43:19,852 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 90 loss: 0.6888 grad norm: 0.0003 
+2024-11-20 10:43:19,890 - /home/hanwen/policy_optimization/exp/algorithm.py[line:318] - INFO: [Policy] Epoch: 95 loss: 0.6888 grad norm: 0.0002 
+2024-11-20 10:43:20,235 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 0 loss: 0.0013 grad norm: 0.0394 
+2024-11-20 10:43:20,320 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 5 loss: 0.0001 grad norm: 0.0118 
+2024-11-20 10:43:20,347 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 10 loss: 0.0000 grad norm: 0.0014 
+2024-11-20 10:43:20,390 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 15 loss: 0.0000 grad norm: 0.0063 
+2024-11-20 10:43:20,435 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 20 loss: 0.0000 grad norm: 0.0006 
+2024-11-20 10:43:20,480 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 25 loss: 0.0000 grad norm: 0.0039 
+2024-11-20 10:43:20,528 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 30 loss: 0.0000 grad norm: 0.0006 
+2024-11-20 10:43:20,574 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 35 loss: 0.0000 grad norm: 0.0021 
+2024-11-20 10:43:20,618 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 40 loss: 0.0000 grad norm: 0.0004 
+2024-11-20 10:43:20,652 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 45 loss: 0.0000 grad norm: 0.0013 
+2024-11-20 10:43:20,698 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 50 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 10:43:20,863 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 55 loss: 0.0000 grad norm: 0.0008 
+2024-11-20 10:43:20,924 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 60 loss: 0.0000 grad norm: 0.0003 
+2024-11-20 10:43:20,957 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 65 loss: 0.0000 grad norm: 0.0003 
+2024-11-20 10:43:21,003 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 70 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 10:43:21,047 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 75 loss: 0.0000 grad norm: 0.0002 
+2024-11-20 10:43:21,097 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 80 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 10:43:21,148 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 85 loss: 0.0000 grad norm: 0.0000 
+2024-11-20 10:43:21,194 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 90 loss: 0.0000 grad norm: 0.0001 
+2024-11-20 10:43:21,236 - /home/hanwen/policy_optimization/exp/algorithm.py[line:419] - INFO: [Policy] Epoch: 95 loss: 0.0000 grad norm: 0.0000 
