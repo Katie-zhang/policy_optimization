@@ -53,10 +53,4 @@ def model_comparison(policy, ref_policy,feature_func, num_samples=100):
     return np.mean(scores)
         
   
-def distribution_comparison(distribution, ref_policy,feature_func, num_samples=100):
-    model_outputs = generate_outputs_from_distribution(distribution, num_samples)
-    ref_outputs = generate_outputs(ref_policy, num_samples)
-    scores = []
-    for i in range(num_samples):
-        scores.append(get_score(model_outputs[i], ref_outputs[i],feature_func))
-    return np.mean(scores)  
+  
