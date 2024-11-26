@@ -44,19 +44,20 @@ def generate_outputs_from_distribution(distribution:torch.tensor, num_samples=10
     return outputs
 
 
-def model_comparison(policy, ref_policy,feature_func, num_samples=100):
+def model_comparison(policy, ref_policy,p_list, num_samples=200):
     model_outputs = generate_outputs(policy, num_samples)
     ref_outputs = generate_outputs(ref_policy, num_samples)
     scores = []
     for i in range(num_samples):
-        scores.append(get_score(model_outputs[i], ref_outputs[i],feature_func))
-    return np.mean(scores)
+        for j in range(num_samples):
+            scores.append(get_score(model_outputs[i], ref_outputs[j],p_list))
+    return np.sum(scores) / (num_samples**2)
         
   
-def distribution_comparison(distribution, ref_policy,feature_func, num_samples=100):
+def distribution_comparison(distribution, ref_policy, p_list, num_samples=200):
     model_outputs = generate_outputs_from_distribution(distribution, num_samples)
     ref_outputs = generate_outputs(ref_policy, num_samples)
     scores = []
     for i in range(num_samples):
-        scores.append(get_score(model_outputs[i], ref_outputs[i],feature_func))
+        scores.append(get_score(model_outputs[i], ref_outputs[i],p_list))
     return np.mean(scores)  

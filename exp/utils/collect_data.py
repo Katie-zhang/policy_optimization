@@ -40,11 +40,8 @@ class NonMonotonicScalarToVectorNN(nn.Module):
         return x
         
 
-def get_score(action_one,action_two,feature_func):
-    feature_one = feature_func(torch.tensor([[action_one]], dtype=torch.float))[0].detach().numpy()
-    feature_two = feature_func(torch.tensor([[action_two]], dtype=torch.float))[0].detach().numpy()
-    score_param =  np.array([[0.0, -1.0],[1, 0]], np.float32) 
-    score = feature_one@score_param@feature_two
+def get_score(action_one,action_two, p_list):   
+    score = p_list[action_one][action_two]
     return score
 
 def get_p(action_one,action_two,feature_func):

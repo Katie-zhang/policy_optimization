@@ -80,4 +80,26 @@ def two_action_prob_plot(action_0, action_1,nash_point,algorithm):
     plt.xlim(0, 1)     
     plt.ylim(0, 1)         
     plt.show() 
-     
+
+# def plot_scores_from_model(model, ref_model, feature_func, num_samples=50):
+#     scores = []
+#     for _ in range(num_samples):
+#         scores.append(model_comparison(model, ref_model, feature_func))
+#     plt.figure(figsize=(8, 6))
+#     plt.hist(scores, bins=20, color='blue', alpha=0.7)
+#     plt.xlabel("Scores")
+#     plt.ylabel("Frequency")
+#     plt.title("Model Comparison Scores")
+#     plt.show()
+
+def plot_scores(scores, iter_num):
+    plt.figure(figsize=(8, 6))
+    plt.plot(range(1, iter_num+1), scores, color='blue')
+    plt.xlabel("Iteration")
+    plt.ylabel("Score")
+    plt.title("Scores over Iterations")
+    plt.show()
+    
+    
+    
+  
