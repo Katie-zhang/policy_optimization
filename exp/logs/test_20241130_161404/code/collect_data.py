@@ -80,7 +80,7 @@ def collect_preference_data(
         idx_one, idx_two = np.random.choice(len(actions), 2, replace=False)
         action_one = actions[idx_one]
         action_two = actions[idx_two]
-
+        
         bernoulli_param = p_list[idx_one][idx_two]
         
         if np.random.random() < bernoulli_param:  

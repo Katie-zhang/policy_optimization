@@ -22,8 +22,8 @@ class RewardModel(nn.Module):
         self,
         state_num,
         action_num,
-        state_feature_extractor: nn.Module,
-        action_feature_extractor: nn.Module,
+        state_feature_extractor: nn.Module = None,
+        action_feature_extractor: nn.Module = None,
         hidden_dim: int = 128,
         num_layers: int = 2,
         device: str = "cpu",
@@ -31,9 +31,20 @@ class RewardModel(nn.Module):
         super().__init__()
         self.device = torch.device(device)
 
+        if state_feature_extractor is None:
+            state_feature_extractor = [
+                nn.Linear(state_num, hidden_dim),
+                nn.Tanh(),
+            ]
+            for _ in range(num_layers - 1):
+                state_feature_extractor.append(nn.Linear(hidden_dim, hidden_dim))
+                state_feature_extractor.append(nn.Tanh())
+        self.state_feature_extractor = nn.Sequential(*state_feature_extractor).to(self.device)
+        
+        
         if action_feature_extractor is None:
             action_feature_extractor = [
-                nn.Linear(len(actions), hidden_dim),
+                nn.Linear(action_num, hidden_dim),
                 nn.Tanh(),
             ]
             for _ in range(num_layers - 1):
@@ -47,26 +58,29 @@ class RewardModel(nn.Module):
         assert len(state.shape) == len(action.shape)
         assert torch.all(action >= 0) and torch.all(action <= 1), f"{action}"
 
-        
+        state = torch.as_tensor(state, dtype=torch.float32, device=self.device)
         action = torch.as_tensor(action, dtype=torch.float32, device=self.device)
        
+        hs = self.state_feature_extractor(state)
         ha = self.action_feature_extractor(action)
-
-        rew = self.predict_layer(ha)
+        h = torch.cat([hs, ha], dim=1)
+        
+        rew = self.predict_layer(h)
        
         return rew
-    
+
+        
 class MaximumLikelihoodEstimator:
     def __init__(
         self,
-        actions: np.ndarray,
+        action_num: int,
         reward_model: nn.Module,
         learning_rate: float = 1e-3,
         weight_decay: float = 0.0,
         batch_size: int = 64,
         logger: Logger = None,
     ):
-        self.actions = actions
+        self.action_num = action_num
         self.reward_model = reward_model
         self.batch_size = batch_size
         self.logger = logger
@@ -88,10 +102,10 @@ class MaximumLikelihoodEstimator:
             _negative_actions = negative_actions[i : i + self.batch_size]
 
             _positive_actions = F.one_hot(
-                _positive_actions, num_classes=len(self.actions)
+                _positive_actions, num_classes=self.action_num
             )
             _negative_actions = F.one_hot(
-                _negative_actions, num_classes=len(self.actions)
+                _negative_actions, num_classes=self.action_num
             )
             
          

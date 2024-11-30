@@ -80,7 +80,7 @@ def collect_preference_data(
         idx_one, idx_two = np.random.choice(len(actions), 2, replace=False)
         action_one = actions[idx_one]
         action_two = actions[idx_two]
-
+        
         bernoulli_param = p_list[idx_one][idx_two]
         
         if np.random.random() < bernoulli_param:  
@@ -89,7 +89,7 @@ def collect_preference_data(
             )
         else:
             transition = Transition(
-                cur_state, action_one, action_two, 1, p_list[idx_two][idx_one]
+                cur_state, action_two, action_one, 1, p_list[idx_two][idx_one]
             )
         pref_dataset.append(transition)
 
