@@ -44,7 +44,7 @@ def generate_outputs_from_distribution(distribution:torch.tensor, num_samples=10
     return outputs
 
 
-def model_comparison(policy, ref_policy,p_list, num_samples=300):
+def model_comparison(policy, ref_policy,p_list, num_samples=200):
     model_outputs = generate_outputs(policy, num_samples)
     ref_outputs = generate_outputs(ref_policy, num_samples)
     scores = []
@@ -54,7 +54,7 @@ def model_comparison(policy, ref_policy,p_list, num_samples=300):
     return np.sum(scores) / (num_samples**2)
         
   
-def distribution_comparison(distribution, ref_policy, p_list, num_samples=300):
+def distribution_comparison(distribution, ref_policy, p_list, num_samples=200):
     model_outputs = generate_outputs_from_distribution(distribution, num_samples)
     ref_outputs = generate_outputs(ref_policy, num_samples)
     scores = []
