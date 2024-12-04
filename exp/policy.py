@@ -26,22 +26,22 @@ class PolicyModel(nn.Module):
         device: str = "cpu",
     ):
         super().__init__()
-
+        
         self.state_dim = state_dim
         self.action_num = len(actions)
-
         self.device = torch.device(device)
-
+        
         network = [nn.Linear(state_dim, hidden_dim), nn.ReLU()]
         for _ in range(num_layers - 1):
             network.append(nn.Linear(hidden_dim, hidden_dim))
             network.append(nn.ReLU())
         network.append(nn.Linear(hidden_dim, self.action_num))
-
+        
         self.network = nn.Sequential(*network)
+        
+  
 
     def forward(self, state: torch.tensor) -> torch.tensor:
-        state = torch.as_tensor(state, dtype=torch.float32, device=self.device)
         logits = self.network(state)
         return torch.softmax(logits, dim=-1)
 

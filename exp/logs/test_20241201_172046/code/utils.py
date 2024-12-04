@@ -59,6 +59,5 @@ def distribution_comparison(distribution, ref_policy, p_list, num_samples=300):
     ref_outputs = generate_outputs(ref_policy, num_samples)
     scores = []
     for i in range(num_samples):
-        for j in range(num_samples):
-            scores.append(get_score(model_outputs[i], ref_outputs[j],p_list))
-    return np.sum(scores) / (num_samples**2)
+        scores.append(get_score(model_outputs[i], ref_outputs[i],p_list))
+    return np.mean(scores)  

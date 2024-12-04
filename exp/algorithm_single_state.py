@@ -132,6 +132,7 @@ class PolicyGradientOptimizer:
         score_ref_policy: nn.Module,
         learning_rate: float = 1e-3,
         batch_size: int = 64,
+        beta: float = 1.0,
         logger: Logger = None,
         nash_point: List[float] = None,
     ):
@@ -141,6 +142,7 @@ class PolicyGradientOptimizer:
         self.score_ref_policy = score_ref_policy
         
         self.batch_size = batch_size
+        self.beta = beta
         self.logger = logger
         self.nash_point = nash_point
         
@@ -149,6 +151,9 @@ class PolicyGradientOptimizer:
         )
 
     def optimize_one_epoch(self, states):
+        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+      
+        
         total_loss = 0.0
         k = 0
         for i in range(0, len(states), self.batch_size):
@@ -159,9 +164,11 @@ class PolicyGradientOptimizer:
             distributions = self.policy(_states)
             ref_distributions = self.ref_policy(_states)        
             
+            
             rewards = self.reward_model(_states, distributions)
             ref_rewards = self.reward_model(_states, ref_distributions)
-            
+            kl_divergence = distributions * (torch.log(distributions + 1e-10) - torch.log(ref_distributions + 1e-10))
+            rewards = rewards - self.beta * kl_divergence.sum(dim=-1, keepdim=True)
             
             loss = -torch.sum(distributions * rewards, dim=-1).mean()
             loss.backward()
@@ -171,7 +178,6 @@ class PolicyGradientOptimizer:
             k += 1
             
             # record prob of choosing action 0 and action 1
-            device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
             test_state = torch.tensor([[0.0]], dtype=torch.float32).to(device) 
             with torch.no_grad():
                 action_probs = self.policy(test_state)
@@ -187,10 +193,12 @@ class PolicyGradientOptimizer:
         p_list:List[List[float]],
         num_epochs=100):
         
+            
         action_0_probs = []
         action_1_probs = []
         scores = []
         for epoch in range(num_epochs):
+        
             loss, reward, ref_reward, action_0_prob, action_1_prob  = self.optimize_one_epoch(states)
             action_0_probs.append(action_0_prob)
             action_1_probs.append(action_1_prob)
@@ -207,6 +215,7 @@ class PolicyGradientOptimizer:
                         f"ref_reward: {ref_reward:.4f} "
                         f"improvement: {(reward-ref_reward)/abs(ref_reward):.2%}"
                     )
+           
         two_action_prob_plot(action_0_probs, action_1_probs,self.nash_point,'RLHF')
         plot_scores(scores, num_epochs)
 ####################################################################################################
@@ -257,19 +266,19 @@ class DirectPreferenceOptimizer:
             _positive_actions = positive_actions[i : i + self.batch_size]
             _negative_actions = negative_actions[i : i + self.batch_size]
 
-            pi_positive_logprobs = distributions[
+            pi_positive_logprobs = torch.log(distributions[
                 np.arange(len(_states)), _positive_actions
-            ]
-            pi_negative_logprobs = distributions[
+            ] + 1e-10)
+            pi_negative_logprobs = torch.log(distributions[
                 np.arange(len(_states)), _negative_actions
-            ]
+            ] + 1e-10)
 
-            ref_positive_logprobs = ref_distributions[
+            ref_positive_logprobs = torch.log(ref_distributions[
                 np.arange(len(_states)), _positive_actions
-            ]
-            ref_negative_logprobs = ref_distributions[
+            ] + 1e-10)
+            ref_negative_logprobs = torch.log(ref_distributions[
                 np.arange(len(_states)), _negative_actions
-            ]
+            ] + 1e-10)
 
             pi_log_ratios = pi_positive_logprobs - pi_negative_logprobs
             ref_log_ratios = ref_positive_logprobs - ref_negative_logprobs
@@ -329,7 +338,7 @@ class DirectPreferenceOptimizer:
             if epoch % eval_epoch_interval == 0:
                 if self.logger:
                     self.logger.info(
-                        f"[Policy] Epoch: {epoch} loss: {loss:.4f} grad norm: {gradient_norm:.4f} "
+                        f"[Policy] Epoch: {epoch} loss: {loss:.4f} grad norm: {gradient_norm:.4f} policy: {action_0_prob:.4f} {action_1_prob:.4f}"
                     )
         two_action_prob_plot(action_0_probs, action_1_probs,self.nash_point,'DPO')
         plot_scores(scores, num_epochs)
@@ -383,19 +392,19 @@ class SelfPlayPreferenceOptimizer:
             _positive_actions = positive_actions[i : i + self.batch_size]
             _negative_actions = negative_actions[i : i + self.batch_size]
 
-            pi_positive_logprobs = distributions[
+            pi_positive_logprobs = torch.log(distributions[
                 np.arange(len(_states)), _positive_actions
-            ]
-            pi_negative_logprobs = distributions[
+            ] + 1e-10)
+            pi_negative_logprobs = torch.log(distributions[
                 np.arange(len(_states)), _negative_actions
-            ]
+            ] + 1e-10)
 
-            ref_positive_logprobs = ref_distributions[
+            ref_positive_logprobs = torch.log(ref_distributions[
                 np.arange(len(_states)), _positive_actions
-            ]
-            ref_negative_logprobs = ref_distributions[
+            ] + 1e-10)
+            ref_negative_logprobs = torch.log(ref_distributions[
                 np.arange(len(_states)), _negative_actions
-            ]
+            ] + 1e-10)
 
             
             square_log_w = ((pi_positive_logprobs - ref_positive_logprobs) - self.eta * (chsoen_probs - 1 /2))**2
