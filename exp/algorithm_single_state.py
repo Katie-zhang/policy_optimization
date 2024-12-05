@@ -153,8 +153,8 @@ class PolicyGradientOptimizer:
     def optimize_one_epoch(self, states):
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
       
-        
         total_loss = 0.0
+        total_gradient_norm = 0.0
         k = 0
         for i in range(0, len(states), self.batch_size):
             self.optimizer.zero_grad()
@@ -172,6 +172,14 @@ class PolicyGradientOptimizer:
             
             loss = -torch.sum(distributions * rewards, dim=-1).mean()
             loss.backward()
+            
+            gradient_norm = 0.0
+            for p in self.policy.parameters():
+                param_norm = p.grad.detach().data.norm(2)
+                gradient_norm += param_norm.item() ** 2
+            gradient_norm = gradient_norm**0.5
+            total_gradient_norm += gradient_norm
+            
             self.optimizer.step()
             
             total_loss += loss.item()
@@ -464,8 +472,9 @@ class SelfPlayPreferenceOptimizer:
                     self.logger.info(
                         f"[Policy] Epoch: {epoch} loss: {loss:.4f} grad norm: {gradient_norm:.4f} "
                     )
-            if epoch % 30 == 0:
+            if epoch % 30 == 0: # update ref_policy every 30 epochs
                 self.ref_policy = copy.deepcopy(self.policy)
+                
         two_action_prob_plot(action_0_probs, action_1_probs,self.nash_point,'SPPO')
         plot_scores(scores, num_epochs)
 ####################################################################################################

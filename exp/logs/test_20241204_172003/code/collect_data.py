@@ -97,33 +97,6 @@ def collect_preference_data(
     return pref_dataset,p_list
 
 
-def collect_preference_intransitive_data(
-    p_list:np.ndarray,
-    actions:np.ndarray,
-    sample_size: int,
-)-> List[Transition]:
-    pref_dataset = []
-    actions = actions
-    cur_state = np.array([0])   
-
-    for i in range(sample_size):
-        idx_one, idx_two = np.random.choice(len(actions), 2, replace=False)
-        action_one = actions[idx_one]
-        action_two = actions[idx_two] 
-          
-        bernoulli_param = p_list[idx_one][idx_two]
-        
-        if np.random.random() < bernoulli_param:
-            transition = Transition(
-                cur_state, action_one, action_two, 0, p_list[idx_one][idx_two]
-            )
-        else:
-            transition = Transition(
-                cur_state, action_one, action_two, 1, p_list[idx_two][idx_one]
-            )
-        pref_dataset.append(transition)
-    return pref_dataset
-
 def check_data_consistency(pref_dataset):
     consistent = 0
     total = len(pref_dataset)
