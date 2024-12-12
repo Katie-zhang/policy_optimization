@@ -131,7 +131,6 @@ def generate_dataset_from_policy(
             )
         pref_dataset.append(transition)
     states =  torch.cat([torch.tensor(x.state , dtype=torch.float32) for x in pref_dataset], dim=0).unsqueeze(1).to(device)
-   
     action_to_index = {-10: 0, 0: 1, 10: 2}
     
     positive_actions = torch.cat(

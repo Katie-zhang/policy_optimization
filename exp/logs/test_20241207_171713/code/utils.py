@@ -1,14 +1,9 @@
-import collections
 import numpy as np
 import torch
 from .collect_data import get_score
 
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
-Transition = collections.namedtuple(
-    "Transition", ["state", "action_0", "action_1", "pref", "chosen_probs"]
-)
 
 def softmax(arr: np.ndarray) -> np.ndarray:
     assert len(np.shape(arr)) == 1, "The input array is not 1-dim."

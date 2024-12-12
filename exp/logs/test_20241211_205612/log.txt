@@ -1,0 +1,1 @@
+2024-12-11 20:57:11,304 - /home/hanwen/policy_optimization/exp/algorithm_single_state.py[line:474] - INFO: [Policy] Epoch: 0 loss: 0.0214 grad norm: 0.5031 

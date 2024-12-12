@@ -14,6 +14,7 @@ import copy
 from utils.logger import Logger
 from utils.logger import Logger
 from utils.plot import plot_scores, two_action_prob_plot
+from utils.collect_data import generate_dataset_from_policy
 ####################################################################################################
 #                                      RLHF                                                        #
 ####################################################################################################
@@ -360,19 +361,23 @@ class SelfPlayPreferenceOptimizer:
         policy: nn.Module,
         ref_policy: nn.Module,
         score_ref_policy: nn.Module,
+        loss_type: str = "dpo",
         learning_rate: float = 1e-3,
         weight_decay: float = 0.0,
         batch_size: int = 64,
-        eta: float = 1e-4,
+        beta: float = 1e-4,
+        t: int = 1,
         logger: Logger = None,
         nash_point: List[float] = None
     ):
         self.policy = policy
         self.ref_policy = ref_policy
         self.score_ref_policy = score_ref_policy
+        self.loss_type = loss_type
         
         self.batch_size = batch_size
-        self.eta = eta
+        self.beta = beta
+        self.t = t
         self.logger = logger
         self.nash_point = nash_point
 
@@ -415,10 +420,26 @@ class SelfPlayPreferenceOptimizer:
             ] + 1e-10)
 
             
-            square_log_w = ((pi_positive_logprobs - ref_positive_logprobs) - self.eta * (chsoen_probs - 1 /2))**2
-            square_log_l = ((pi_negative_logprobs - ref_negative_logprobs) - self.eta * (1 - chsoen_probs - 1 /2))**2
-
-            loss = (square_log_w + square_log_l).mean()
+            
+            pi_log_ratios = pi_positive_logprobs - pi_negative_logprobs
+            ref_log_ratios = ref_positive_logprobs - ref_negative_logprobs
+            
+            if self.loss_type == "dpo":
+                log_ratios = pi_log_ratios - ref_log_ratios
+                loss = -F.logsigmoid(self.beta * log_ratios).mean()
+                
+            elif self.loss_type == "sppo":
+                square_log_w = ((pi_positive_logprobs - ref_positive_logprobs) - self.beta * (chsoen_probs - 1 /2))**2
+                square_log_l = ((pi_negative_logprobs - ref_negative_logprobs) - self.beta * (1 - chsoen_probs - 1 /2))**2
+                loss = (square_log_w + square_log_l).mean()
+                
+            elif self.loss_type == "ipo":
+                log_ratios = pi_log_ratios - ref_log_ratios
+                loss = (log_ratios - 1 / (2 * self.beta)) ** 2
+                loss = loss.mean()
+                
+            elif self.loss_type == "inpo":
+                
             total_loss += loss.item()
 
             loss.backward()
@@ -454,6 +475,8 @@ class SelfPlayPreferenceOptimizer:
         p_list:List[List[float]],
         num_epochs: int = 10,
     ):
+        update_ref_policy_interval = num_epochs // self.t
+        actions = [-10, 0, 10]
         eval_epoch_interval = 5
         action_0_probs = []
         action_1_probs = []
@@ -472,8 +495,10 @@ class SelfPlayPreferenceOptimizer:
                     self.logger.info(
                         f"[Policy] Epoch: {epoch} loss: {loss:.4f} grad norm: {gradient_norm:.4f} "
                     )
-            if epoch % 30 == 0: # update ref_policy every 30 epochs
+                    
+            if epoch % update_ref_policy_interval == 0: # update ref_policy t times
                 self.ref_policy = copy.deepcopy(self.policy)
+                _, states, positive_actions, negative_actions, chosen_probs = generate_dataset_from_policy(actions, p_list, self.ref_policy)
                 
         two_action_prob_plot(action_0_probs, action_1_probs,self.nash_point,'SPPO')
         plot_scores(scores, num_epochs)

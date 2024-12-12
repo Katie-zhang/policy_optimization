@@ -111,9 +111,9 @@ def generate_dataset_from_policy(
         state = torch.tensor(cur_state, dtype=torch.float32).unsqueeze(0).to(device)
         with torch.no_grad():
             actions_prob = policy(state) 
-        idx_one = np.random.choice(len(actions), p=actions_prob.squeeze(0).detach().cpu().numpy())
+        idx_one = np.random.choice(len(actions), p=actions_prob.squeeze(0).detach().numpy())
         while True:
-            idx_two = np.random.choice(len(actions), p=actions_prob.squeeze(0).detach().cpu().numpy())
+            idx_two = np.random.choice(len(actions), p=actions_prob.squeeze(0).detach().numpy())
             if idx_one != idx_two:
                 break
         action_one = actions[idx_one]
@@ -130,8 +130,7 @@ def generate_dataset_from_policy(
                 cur_state, action_one, action_two, 1, p_list[idx_two][idx_one]
             )
         pref_dataset.append(transition)
-    states =  torch.cat([torch.tensor(x.state , dtype=torch.float32) for x in pref_dataset], dim=0).unsqueeze(1).to(device)
-   
+    states =  torch.cat([torch.tensor(x.state) for x in pref_dataset], dim=0).to(device)
     action_to_index = {-10: 0, 0: 1, 10: 2}
     
     positive_actions = torch.cat(
@@ -143,9 +142,7 @@ def generate_dataset_from_policy(
         [torch.tensor(action_to_index[x.action_0] if x.pref == 1 else action_to_index[x.action_1]).unsqueeze(0) for x in pref_dataset],
         dim=0
     ).to(device)
-    
-    chosen_probs = torch.tensor([x.chosen_probs for x in pref_dataset], dtype=torch.float32).to(device)
-    return pref_dataset, states, positive_actions, negative_actions, chosen_probs
+    return pref_dataset, states, positive_actions, negative_actions
    
 
 
