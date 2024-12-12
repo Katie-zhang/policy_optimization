@@ -366,6 +366,7 @@ class SelfPlayPreferenceOptimizer:
         weight_decay: float = 0.0,
         batch_size: int = 64,
         beta: float = 1e-4,
+        tau: float = None,
         t: int = 1,
         logger: Logger = None,
         nash_point: List[float] = None
@@ -376,7 +377,9 @@ class SelfPlayPreferenceOptimizer:
         self.loss_type = loss_type
         
         self.batch_size = batch_size
+        
         self.beta = beta
+        
         self.t = t
         self.logger = logger
         self.nash_point = nash_point
@@ -384,7 +387,9 @@ class SelfPlayPreferenceOptimizer:
         self.optimizer = torch.optim.AdamW(
             self.policy.parameters(), lr=learning_rate, weight_decay=weight_decay
         )
-
+        if self.loss_type == "inpo":
+            self.tau = tau
+            self.ref_policy_initial = copy.deepcopy(self.ref_policy)
     def optimize_one_epoch(
         self,
         states: torch.tensor,
@@ -399,9 +404,12 @@ class SelfPlayPreferenceOptimizer:
             self.optimizer.zero_grad()
 
             _states = states[i : i + self.batch_size]
+            
             distributions = self.policy(_states)
             ref_distributions = self.ref_policy(_states)
-
+            if self.loss_type == "inpo":
+                ref_distributions_initial = self.ref_policy_initial(_states)
+                
             _positive_actions = positive_actions[i : i + self.batch_size]
             _negative_actions = negative_actions[i : i + self.batch_size]
 
@@ -419,7 +427,15 @@ class SelfPlayPreferenceOptimizer:
                 np.arange(len(_states)), _negative_actions
             ] + 1e-10)
 
-            
+            if self.loss_type == "inpo":
+                ref_initial_positive_logprobs = torch.log(ref_distributions_initial[
+                    np.arange(len(_states)), _positive_actions
+                ] + 1e-10)
+                ref_initial_negative_logprobs = torch.log(ref_distributions_initial[
+                    np.arange(len(_states)), _negative_actions
+                ] + 1e-10)
+                
+                ref_initail_log_ratios = ref_initial_positive_logprobs - ref_initial_negative_logprobs
             
             pi_log_ratios = pi_positive_logprobs - pi_negative_logprobs
             ref_log_ratios = ref_positive_logprobs - ref_negative_logprobs
@@ -439,6 +455,10 @@ class SelfPlayPreferenceOptimizer:
                 loss = loss.mean()
                 
             elif self.loss_type == "inpo":
+                h = pi_log_ratios - self.tau / self.beta * ref_initail_log_ratios - (self.beta - self.tau) / self.beta * ref_log_ratios
+                loss = (h - 1 / (2 * self.beta)) ** 2
+                loss = loss.mean()
+                
                 
             total_loss += loss.item()
 
@@ -495,8 +515,8 @@ class SelfPlayPreferenceOptimizer:
                     self.logger.info(
                         f"[Policy] Epoch: {epoch} loss: {loss:.4f} grad norm: {gradient_norm:.4f} "
                     )
-                    
-            if epoch % update_ref_policy_interval == 0: # update ref_policy t times
+                 
+            if self.t != 1 and epoch % update_ref_policy_interval == 0: # update ref_policy t times
                 self.ref_policy = copy.deepcopy(self.policy)
                 _, states, positive_actions, negative_actions, chosen_probs = generate_dataset_from_policy(actions, p_list, self.ref_policy)
                 
