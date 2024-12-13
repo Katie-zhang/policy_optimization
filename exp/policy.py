@@ -9,6 +9,7 @@ import torch.nn.functional as F
 from torch.utils.tensorboard import SummaryWriter
 import matplotlib.pyplot as plt
 import copy
+import torch.optim as optim
 
 from utils.logger import Logger
 
@@ -77,3 +78,29 @@ class Ref_PolicyModel(nn.Module):
         batch_size = state.shape[0]
         prob = prob.repeat(batch_size,1)
         return prob
+    
+    
+def get_initial_policy(ref_distribution:torch.tensor,actions ,device:str):
+    
+    state_dim = 1  
+    actions = np.array([0, 1, 2])  
+    model = PolicyModel(state_dim=state_dim, actions=actions, device=device).to(device)
+
+    target_probs = ref_distribution.to(device).unsqueeze(0)
+
+    
+    state = torch.zeros((1, state_dim)).to(device)
+    
+    criterion = nn.MSELoss()  
+    optimizer = optim.Adam(model.parameters(), lr=0.01)
+    
+    num_epochs = 50
+    for epoch in range(num_epochs):
+        optimizer.zero_grad()
+        output = model(state)
+        loss = criterion(output, target_probs)
+        loss.backward()
+        optimizer.step()
+    
+    output = model(state)
+    print("Trained Output Probabilities:", output.detach().cpu().numpy())
