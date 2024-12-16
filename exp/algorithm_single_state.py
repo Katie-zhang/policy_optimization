@@ -427,6 +427,7 @@ class OnlinePreferenceOptimizer:
                 np.arange(len(_states)), _negative_actions
             ] + 1e-10)
 
+
             if self.loss_type == "inpo":
                 ref_initial_positive_logprobs = torch.log(ref_distributions_initial[
                     np.arange(len(_states)), _positive_actions
@@ -458,8 +459,7 @@ class OnlinePreferenceOptimizer:
                 h = pi_log_ratios - self.tau / self.beta * ref_initail_log_ratios - (self.beta - self.tau) / self.beta * ref_log_ratios
                 loss = (h - 1 / (2 * self.beta)) ** 2
                 loss = loss.mean()
-                
-              
+                  
               
             total_loss += loss.item()
 
@@ -613,13 +613,12 @@ class SPPOClosedForm:
 ####################################################################################################
 #                                      COMAL                                                       #
 ####################################################################################################
-class OnlinePreferenceOptimizer:
+class COMALPreferenceOptimizer:
     def __init__(
         self,
         policy: nn.Module,
         ref_policy: nn.Module,
         score_ref_policy: nn.Module,
-        loss_type: str = "dpo",
         learning_rate: float = 1e-3,
         weight_decay: float = 0.0,
         batch_size: int = 64,
@@ -630,15 +629,18 @@ class OnlinePreferenceOptimizer:
         logger: Logger = None,
         nash_point: List[float] = None
     ):
+        
         self.policy = policy
         self.previous_policy = copy.deepcopy(policy)
         self.ref_policy = ref_policy
+        
         self.score_ref_policy = score_ref_policy
-        self.loss_type = loss_type
+        
         
         self.batch_size = batch_size
         
         self.beta = beta
+        self.tau = tau
         
         self.K_t = K_t
         self.t = t
@@ -702,8 +704,7 @@ class OnlinePreferenceOptimizer:
             
             loss = (h - 1 / (2 * self.beta)) ** 2
             loss = loss.mean()
-                
-              
+                 
               
             total_loss += loss.item()
 
@@ -731,39 +732,76 @@ class OnlinePreferenceOptimizer:
 
         return total_loss / k, total_gradient_norm / k, action_0_prob, action_1_prob
 
+    def inpo_optimize_one_kt(
+        self,
+        states: torch.tensor,
+        positive_actions: torch.tensor,
+        negative_actions: torch.tensor,
+        p_list:List[List[float]],
+        inner_num_epochs: int,
+        current_t: int,
+        current_kt: int
+        ):
+        
+        actions = [-10, 0, 10]
+        eval_epoch_interval = 10
+        action_0_probs = []
+        action_1_probs = []
+        scores = []
+        
+        for epoch in range(inner_num_epochs):
+            loss, gradient_norm, action_0_prob, action_1_prob = self.optimize_one_epoch(
+                states, positive_actions, negative_actions
+            )
+            action_0_probs.append(action_0_prob)
+            action_1_probs.append(action_1_prob)
+            
+            score = model_comparison(self.policy, self.score_ref_policy, p_list)        
+            scores.append(score)
+            
+            if epoch % eval_epoch_interval == 0:
+                if self.logger:
+                    self.logger.info(
+                        f"[Policy] Epoch: {epoch} t: {current_t} K_t: {current_kt} loss: {loss:.4f} grad norm: {gradient_norm:.4f} "
+                    )
+                 
+        # update pre_policy 
+        self.pre_policy = copy.deepcopy(self.policy)
+        _, states, positive_actions, negative_actions, _ = generate_dataset_from_policy(actions, p_list, self.pre_policy)
+        
+                 
+        return action_0_probs, action_1_probs, scores
+        
+        
+        
     def optimize(
         self,
         states: torch.tensor,
         positive_actions: torch.tensor,
         negative_actions: torch.tensor,
-        chosen_probs: torch.tensor,
         p_list:List[List[float]],
         num_epochs: int = 10,
     ):
-        update_ref_policy_interval = num_epochs // self.t
-        actions = [-10, 0, 10]
-        eval_epoch_interval = 5
+        
+        inner_num_epochs = num_epochs // (self.t * self.K_t)
+        
+        scores = []
         action_0_probs = []
         action_1_probs = []
         
-        scores = []
-        for epoch in range(num_epochs):
-            loss, gradient_norm, action_0_prob, action_1_prob = self.optimize_one_epoch(
-                states, positive_actions, negative_actions,chosen_probs
-            )
-            action_0_probs.append(action_0_prob)
-            action_1_probs.append(action_1_prob)
-            score = model_comparison(self.policy, self.score_ref_policy, p_list)
-            scores.append(score)
-            if epoch % eval_epoch_interval == 0:
-                if self.logger:
-                    self.logger.info(
-                        f"[Policy] Epoch: {epoch} loss: {loss:.4f} grad norm: {gradient_norm:.4f} "
-                    )
-                 
-            if self.t != 1 and epoch % update_ref_policy_interval == 0: # update ref_policy t times
-                self.ref_policy = copy.deepcopy(self.policy)
-                _, states, positive_actions, negative_actions, chosen_probs = generate_dataset_from_policy(actions, p_list, self.ref_policy)
+        for t in range(self.t): 
+            for kt in range(self.K_t):
+                inpo_action_0_probs, inpo_action_1_probs, inpo_scores = self.inpo_optimize_one_kt(
+                    states, positive_actions, negative_actions, p_list, inner_num_epochs, t, kt
+                )
                 
-        two_action_prob_plot(action_0_probs, action_1_probs,self.nash_point,'SPPO')
+                action_0_probs.extend(inpo_action_0_probs)
+                action_1_probs.extend(inpo_action_1_probs)
+                scores.extend(inpo_scores)
+            
+            self.ref_policy = copy.deepcopy(self.policy) # update ref_policy t times
+                 
+        two_action_prob_plot(action_0_probs, action_1_probs,self.nash_point,'COMAL')
         plot_scores(scores, num_epochs)
+               
+                
